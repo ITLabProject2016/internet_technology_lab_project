@@ -1,3 +1,6 @@
+# Sensitive information about the server
+settings.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
