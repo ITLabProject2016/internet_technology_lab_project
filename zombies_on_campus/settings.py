@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'zombies',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,7 +78,27 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Templates' directory
+# Template path: to avoid hardcoding the directory
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
+# Add any other directories where templates may be
+# Absolute paths should be used.
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+)
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+# Relative path of static media folder
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
+# Where static files (JavaScript, images, etc) will be
 STATIC_URL = '/static/'
+
+# Directories where we keep our static files
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)

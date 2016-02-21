@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load staticfiles %}}
+
+<!--Title block can be added (if we want a user's tab to have something specific written-->
+
+{% block body %}
+    <h1>Extended the base.html</h1>
+    <p>This is 'about' page. We should write about:</p>
+    <ul>
+        <li>Our game</li>
+        <li>Ourselves</li>
+        <li>Our project</li>
+        <li>What was used to create the page</li>
+        <li>Our GitHub page</li>
+        <li>FB?</li>
+        <li>Twitter?</li>
+        <li>Anything else really.</li>
+    </ul>
+{% endblock %}

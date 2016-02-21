@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Zombies on Campus {% block title %}{% endblock %}</title>
+        <p>Head: our login goes here? For now they're in body - if needed, cut paste here</p>
+    </head>
+
+<!--Delete <hr /> later, now only for visual clarity-->
+<hr />
+
+    <body>
+        <div>
+            {% block body %}
+                <p>This is where the main logic and everything else important goes.</p>
+            {% endblock %}
+        </div>
+
+        <hr />
+        <div>
+            <p></p>TO DO: logic to check whether the user has logged in or not<br />
+
+<!--TO DO: check if the user has logged in. If so, do not display register/login.-->
+
+            <a href="{% url 'story' %}">Play</a><br />
+            <a href="{% url 'register' %}">Register</a><br />
+            <a href="{% url 'login' %}">Login</a><br />
+            <a href="{% url 'profile' %}">Profile</a><br />
+            <a href="{% url 'about' %}">About</a><br />
+            <!--TO DO: can we not show a link to a page user is already on?-->
+            <a href="{% url 'home' %}"?>Home</a><br />
+        </div>
+
+    </body>
+
 </html>
