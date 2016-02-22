@@ -1,10 +1,13 @@
+# Need render to use our templates!
 from django.shortcuts import render
 
 
 # This is the home page. Creates a view for it.
 def home(request):
     # So far context dictionary is empty, but may be useful later
-    context_dict = {'welcome_message' : "Hello! This will be our main page."}
+    # Dictionaries are constructed by specifying key and then value {key:value}.
+    # Key is used in templates, using Django template language. Value is what's actually shown.
+    context_dict = {'welcome_message': "Hello! This will be our main page."}
     return render(request, 'zombies/home.html', context_dict)
 
 

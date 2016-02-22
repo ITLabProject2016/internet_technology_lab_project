@@ -10,6 +10,15 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+# These will be needed when the project goes live
+# from django.conf import settings
+# from django.conf.urls.static import static
+
+# This as well
+# if not settings.DEBUG:
+#         urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -24,6 +33,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+# Will need to set this when the project goes live.
 ALLOWED_HOSTS = []
 
 
@@ -78,6 +88,9 @@ USE_L10N = True
 USE_TZ = True
 
 
+# ALWAYS USE OS.PATH.JOIN().
+# Otherwise a lot of pain and errors will be had.
+
 # Templates' directory
 # Template path: to avoid hardcoding the directory
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
@@ -92,13 +105,22 @@ TEMPLATE_DIRS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-# Relative path of static media folder
+# Requires absolute path
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
-# Where static files (JavaScript, images, etc) will be
+# Where static files (JavaScript, images, etc) will be found.
+# IMPOTANT: do not remove the slashes.
 STATIC_URL = '/static/'
 
 # Directories where we keep our static files
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+
+# Media paths
+
+# Where user uploaded files will reside
+MEDIA_URL = '/media/'
+
+# Where the files that were uplaoded will be stored on a disk.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
