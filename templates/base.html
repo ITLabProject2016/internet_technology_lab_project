@@ -34,6 +34,8 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
 <!--TO DO: check if the user has logged in. If so, do not display register/login.-->
 
             <a href="{% url 'story' %}">Play</a><br />
+            <!--Delete the-end later on - should not be accessible to user unless he/she finished the game-->
+            <a href="{% url 'the_end' %}">The end test</a> <br />
             <a href="{% url 'register' %}">Register</a><br />
             <a href="{% url 'login' %}">Login</a><br />
             <a href="{% url 'profile' %}">Profile</a><br />
