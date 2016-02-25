@@ -5,7 +5,11 @@
 <!--Title block can be added (if we want a user's tab to have something specific written-->
 
 {% block body %}
-    <h1>Extended the base.html</h1>
+    {% if user.is_authenticated %}
+        <h1>Hello, {{ user.username }}!</h1>
+    {% else %}
+        <h1>You have not logged in yet.</h1>
+    {% endif %}
     <p>Change later to the logic/views needed.</p>
     <br />
     <p>On the whole, this is where the magic happens (program logic, ifs/elses, fors, etc.)</p>

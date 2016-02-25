@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# If we change anything here, we need to run 'python manage.py migrate'
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -88,13 +88,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-# ALWAYS USE OS.PATH.JOIN().
-# Otherwise a lot of pain and errors will be had.
-
 # Templates' directory
 # Template path: to avoid hardcoding the directory
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-
 # Add any other directories where templates may be
 # Absolute paths should be used.
 TEMPLATE_DIRS = (
@@ -104,23 +100,23 @@ TEMPLATE_DIRS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
 # Requires absolute path
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
-
 # Where static files (JavaScript, images, etc) will be found.
 # IMPOTANT: do not remove the slashes.
 STATIC_URL = '/static/'
-
 # Directories where we keep our static files
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
 
-# Media paths
 
+# Media paths
 # Where user uploaded files will reside
 MEDIA_URL = '/media/'
-
 # Where the files that were uplaoded will be stored on a disk.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Where we redirect people that have not logged in if they try to access pages that require them to login
+LOGIN_URL = '/zombies/login/'

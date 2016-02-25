@@ -2,9 +2,23 @@
 
 {% load staticfiles %}}
 
-<!--Title block can be added (if we want a user's tab to have something specific written-->
-
 {% block body %}
-    <h1>Extended the base.html</h1>
-    <p>Change later to the register page</p>
+    <h1>Register on Zombies on Campus</h1>
+    {% if registered %}
+        <strong>Thank you for registering!</strong> <br />
+        <a href="{% url 'home' %}">Return to the homepage</a><br />
+    {% else %}
+        <strong>Register here.</strong><br />
+
+        <form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <input type="submit" name="submit" value="Register" />
+        </form>
+    {% endif %}
+
 {% endblock %}

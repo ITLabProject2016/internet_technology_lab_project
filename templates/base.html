@@ -13,7 +13,7 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
 
     <head>
         <meta charset="UTF-8">
-        <title>Zombies on Campus {% block title %}{% endblock %}</title>
+        <title>Zombies on Campus{% block title %}{% endblock %}</title>
         <p>Head: our login goes here? For now they're in body - if needed, cut paste here</p>
     </head>
 
@@ -29,19 +29,25 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
 
         <hr />
         <div>
-            <p></p>TO DO: logic to check whether the user has logged in or not<br />
+            <!--TO DO: additional block for links that may have to be shown in specific pages-->
+            <!--Also different ways of formatting this with if/else can be used.-->
+            <!--Didn't want to spend too much time as we aim to have dynamic login.-->
+            {% if not user.is_authenticated %}
+                <a href="{% url 'register' %}">Register</a><br />
+                <a href="{% url 'login' %}">Login</a><br />
+            {% endif %}
+                <a href="{% url 'story' %}">Play</a><br />
+                <!--Delete the-end later on - should not be accessible to user unless he/she finished the game-->
+                <a href="{% url 'the_end' %}">The end test</a> <br />
 
-<!--TO DO: check if the user has logged in. If so, do not display register/login.-->
-
-            <a href="{% url 'story' %}">Play</a><br />
-            <!--Delete the-end later on - should not be accessible to user unless he/she finished the game-->
-            <a href="{% url 'the_end' %}">The end test</a> <br />
-            <a href="{% url 'register' %}">Register</a><br />
-            <a href="{% url 'login' %}">Login</a><br />
-            <a href="{% url 'profile' %}">Profile</a><br />
-            <a href="{% url 'about' %}">About</a><br />
-            <!--TO DO: can we not show a link to a page user is already on?-->
-            <a href="{% url 'home' %}"?>Home</a><br />
+                <a href="{% url 'profile' %}">Profile</a><br />
+                <a href="{% url 'about' %}">About</a><br />
+                <!--TO DO: can we not show a link to a page user is already on?-->
+                <a href="{% url 'home' %}">Home</a><br />
+            {% if user.is_authenticated %}
+                <br />
+                <a href="{% url 'logout' %}">Logout</a><br />
+            {% endif %}
         </div>
 
     </body>

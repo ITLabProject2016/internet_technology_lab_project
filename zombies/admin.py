@@ -1,3 +1,5 @@
 from django.contrib import admin
+from zombies.models import UserProfile
 
-# Register your models here.
+# Registering models
+admin.site.register(UserProfile)

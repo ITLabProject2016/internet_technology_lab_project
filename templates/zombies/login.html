@@ -5,6 +5,15 @@
 <!--Title block can be added (if we want a user's tab to have something specific written-->
 
 {% block body %}
-    <h1>Extended the base.html</h1>
-    <p>Change later to the login page</p>
+    <h1>Login to Zombies on Campus</h1>
+
+    <form id="login_form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <!--Name values have to match those in login view-->
+        Username: <input type="text" name="username" value="" size="50" /><br />
+        Password: <input type="password" name="password" value="" size="50" /><br />
+
+        <input type="submit" value="submit" />
+    </form>
+
 {% endblock %}
