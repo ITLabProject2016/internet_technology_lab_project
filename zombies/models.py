@@ -27,3 +27,20 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+class StoryPoint(models.Model):
+    title = models.CharField(max_length=128,blank=False,null=False)
+    photo = models.CharField(max_length=128,blank=True,null=True)
+    story_description = models.CharField(max_length= 2500,blank=False,null=False)
+    story_choices  = models.CharField(max_length=300,blank=True,null=True)
+    parent_storypoint_id = models.ForeignKey('self',blank=True,null=True)
+
+    def __unicode__(self):
+        return  self.title
+
+
+class UserProfile_StoryPoint(models.Model):
+    user = models.ForeignKey(UserProfile)
+    storypoint = models.ForeignKey(StoryPoint   )
+
+    def __unicode__(self):
+        return self.storypoint.title
