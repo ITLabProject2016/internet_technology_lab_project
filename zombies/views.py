@@ -52,7 +52,7 @@ def user_login(request):
 
     # If request.method is GET
     else:
-        return render(request, 'zombies/login.html', {})
+        return render(request, 'zombies/login NOT USED.html', {})
 
 
 @login_required
@@ -99,7 +99,7 @@ def register(request):
         profile_form = UserProfileForm()
 
 
-    return render(request, 'zombies/register.html',
+    return render(request, 'zombies/register NOT USED.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
 
 
