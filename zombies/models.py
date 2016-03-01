@@ -27,20 +27,29 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+# Explanation of changes: title - not sure if needed, so deleted. Photo - commented out.
+# Need to use ImageField (https://docs.djangoproject.com/en/1.7/ref/models/fields/#filefield)
+# Others: renamed for clarity, reduced max length (stories have to bo short).
+# Added experience - so that user can get experience depending on how well he/she does.
+# story_type - whether beginning, mid or end.
 class StoryPoint(models.Model):
-    title = models.CharField(max_length=128,blank=False,null=False)
-    photo = models.CharField(max_length=128,blank=True,null=True)
-    story_description = models.CharField(max_length= 2500,blank=False,null=False)
-    story_choices  = models.CharField(max_length=300,blank=True,null=True)
-    parent_storypoint_id = models.ForeignKey('self',blank=True,null=True)
+    parentSP = models.ForeignKey('self', null=True)
+    story_id = models.IntegerField(max_length=6, unique=True)
+    description = models.CharField(max_length=1000, blank=False, null=False)
+    choiceText = models.CharField(max_length=100, blank=True, null=True)
+    experience = models.IntegerField(default=0)
+    story_type = models.CharField(max_length=5, default='mid', blank=False, null=False)
+
 
     def __unicode__(self):
-        return  self.title
+        return str(self.description)
 
 
-class UserProfile_StoryPoint(models.Model):
-    user = models.ForeignKey(UserProfile)
-    storypoint = models.ForeignKey(StoryPoint   )
-
-    def __unicode__(self):
-        return self.storypoint.title
+# Not too sure if this model is needed - we should be able to do everything with UserProfile.
+# Might need to ask Leif whether we need to create more models for stats.
+# class UserProfile_StoryPoint(models.Model):
+#     user = models.ForeignKey(UserProfile)
+#     storypoint = models.ForeignKey(StoryPoint   )
+#
+#     def __unicode__(self):
+#         return self.storypoint.title

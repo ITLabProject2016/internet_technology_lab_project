@@ -13,6 +13,21 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='StoryPoint',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('story_id', models.IntegerField(unique=True, max_length=6)),
+                ('description', models.CharField(max_length=1000)),
+                ('choiceText', models.CharField(max_length=100, null=True, blank=True)),
+                ('experience', models.IntegerField(default=0)),
+                ('story_type', models.CharField(default=b'mid', max_length=5)),
+                ('parentSP', models.ForeignKey(to='zombies.StoryPoint', null=True)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='UserProfile',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
