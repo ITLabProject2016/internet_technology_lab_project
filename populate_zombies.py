@@ -18,20 +18,20 @@ def populate():
     sp1 = add_sp(None, 1, "You are in the library.", None, 10, "start")
 
     # Level 2
-    sp2 = add_sp(sp1, 2, "You bump into your friend", "Run", 10, "mid")
-    sp3 = add_sp(sp1, 3, "Zombie is friendly", "Talk to zombie", 10, "mid")
+    sp2 = add_sp(sp1, 2, "You bump into your friend.", "Run.", 10, "mid")
+    sp3 = add_sp(sp1, 3, "Zombie is friendly.", "Talk to zombie.", 10, "mid")
 
     # Level 3
-    sp4 = add_sp(sp3, 4, "He's an asshole. You didn't like him.", "Talk more", 10, "mid")
+    sp4 = add_sp(sp3, 4, "He's an asshole. You didn't like him.", "Talk more.", 10, "mid")
     sp5 = add_sp(sp3, 5, "You become very close.", "Shake hands.", 10, "mid")
 
     # Level 4
-    sp6 = add_sp(sp4, 6, "You die", "Punch him", 10, "end")
-    sp7 = add_sp(sp4, 7, "You become a zombie killer", "Run away", 10, "end")
+    sp6 = add_sp(sp4, 6, "You die.", "Punch him.", 10, "end")
+    sp7 = add_sp(sp4, 7, "You become a zombie killer.", "Run away.", 10, "end")
     sp8 = add_sp(sp5, 8, "He catches you. You are forced into zombie marriage.",
                  "You are uncomfortable. Run away.", 10, "end")
-    sp9 = add_sp(sp5, 9, "You get married, but he cheats on you with another zombie. Such is life (death?)",
-                 "Kiss", 10, "end")
+    sp9 = add_sp(sp5, 9, "You get married. He decides you are too tasty not to eat you. Such is life (death?).",
+                 "Your relationship continues.", 10, "end")
 
 
 
