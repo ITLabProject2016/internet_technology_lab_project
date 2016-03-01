@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'zombies',
+    # Registration add-on. We don't have to do hard-lifting
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,5 +120,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# Where we redirect people that have not logged in if they try to access pages that require them to login
-LOGIN_URL = '/zombies/login/'
+# Required stuff for registration add-on
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7  # Do we need this?
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/zombies/'
+LOGIN_URL = '/accounts/login/'

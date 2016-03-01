@@ -2,15 +2,22 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 # Allows to access variables within settings.py file.
 from django.conf import settings
+from registration.backends.simple.views import RegistrationView
+
+
+# Registration add-on: when user registers, redirect to home page
+class MyRegistrationView(RegistrationView):
+    # In TwD12, uses self. Lots of errors with it, so I removed it
+    # Not too sure of the consequences, but seems to work. -Simonas
+    def get_success_url(request, user):
+        return '/zombies/'
+
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'zombies_on_campus.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
-    # This is where we connect different applications if we desire to make more than 1.
     url(r'^admin/', include(admin.site.urls)),
     url(r'^zombies/', include('zombies.urls')),
+    url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 )
 
 # ONLY FOR DEVELOPMENT PURPOSES. SHOULD NOT BE DEPLOYED WITH THIS.
