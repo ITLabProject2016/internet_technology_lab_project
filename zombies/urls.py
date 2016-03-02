@@ -11,6 +11,6 @@ urlpatterns = patterns('',
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^story/$', views.story, name='story'),
     url(r'^the-end/$', views.the_end, name='the_end'),
-
+    url(r'^story-change/$', views.story_change, name='story-change'),
 )
 

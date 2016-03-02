@@ -10,18 +10,34 @@
 
     <div id="story_content">
 
-    <button id="trigger" type="button">Click me!</button>
+        <div id="storyImagePrev">
+            here we may hav a small image to make it interesting
+        </div>
 
-        <p>
-        This should lead to the first story page. Description should be shown. <br />
-        Once the user picks a choice, should lead to another page (though preferably, <br />
-        everything would happen on the same page, without any change in URLs),  <br />
+        <div id="storyDesc">
+            <p>Haha!!!! you see no text here!!!</p>
+        </div>
+
+        <div id="storyChoices">
+            <form>
+                <input type="radio" name="choice" value="1" checked> haha first choice</br>
+                <input type="radio" name="choice" value="2"> haha second choice</br>
+                <input type="radio" name="choice" value="3"> haha third choice</br>
+                <input type="radio" name="choice" value="4"> haha last choice
+            </form>
+        </div>
+
+        <button id="trigger" type="button">Click me!</button>
+
+        <!--
+        This should lead to the first story page. Description should be shown.
+        Once the user picks a choice, should lead to another page (though preferably,
+        everything would happen on the same page, without any change in URLs),
         which would again shown the clicable choices (choice text).
-        <br />
-        <br />
-        Once the end point is reached, either redirect to another page, where stats <br />
-        are shown, or show it on the same page.
-    </p>
+
+        Once the end point is reached, either redirect to another page, where stats
+        are shown, or show it on the same page. -->
+
     </div>
 
 {% endblock %}

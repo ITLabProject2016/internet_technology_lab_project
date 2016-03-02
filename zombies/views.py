@@ -32,6 +32,10 @@ def story(request):
     return render(request, 'zombies/story.html', {})
 
 
+def story_change(request):
+    context_dict = {'description': "This is one story description loaded directly from views.py!!!!"}
+    return render(request, 'zombies/story_part.html', context_dict)
+
 # This will be the address the user reaches after finishing the story.
 # However, should it be different from story? Should we have a dynamic page
 # instead, which should not be loaded - depending on which story point user is in,
