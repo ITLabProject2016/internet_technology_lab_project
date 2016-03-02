@@ -5,8 +5,14 @@
 <!--Title block can be added (if we want a user's tab to have something specific written-->
 
 {% block body %}
-    <h1>Extends the base.html</h1>
-    <p>
+
+    <script src="{% static "js/story-load.js" %}"></script>
+
+    <div id="story_content">
+
+    <button id="trigger" type="button">Click me!</button>
+
+        <p>
         This should lead to the first story page. Description should be shown. <br />
         Once the user picks a choice, should lead to another page (though preferably, <br />
         everything would happen on the same page, without any change in URLs),  <br />
@@ -16,4 +22,6 @@
         Once the end point is reached, either redirect to another page, where stats <br />
         are shown, or show it on the same page.
     </p>
+    </div>
+
 {% endblock %}
