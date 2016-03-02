@@ -32,6 +32,10 @@ class Story(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=1000)
 
+    # Corrects "Story" to "Stories"
+    class Meta:
+        verbose_name_plural = "Stories"
+
     def __unicode__(self):
         return str(self.story_id)
 

@@ -19,4 +19,36 @@
 
     <button id="trigger" type="button">Click me!</button>
 
+
+    <!--THIS IS JUST A TEST TO SEE IF WE CAN GET DATA FROM THE DB-->
+    <!--Getting all story points is not a problem - the problem is to get only relevant ones-->
+    <br />
+    <div id="test"></div>
+        {% if storypoints %}
+            <ul>
+                {% for storypoint in storypoints %}
+                <li>{{ storypoint.choiceText }}</li>
+                    {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no storypoints present.</strong><br />
+        {% endif %}
+        <p>Story count: {{ count }}</p>
+        <p>Random story nr: {{ random_story }}</p>
+        <br />
+        <p>Testing if I can get description of the first object: "{{test}}:{{test.description}}"</p>
+        <br />
+        <p>Testing how to get child objects from the parent one (those who have a FK referring to the object)</p>
+        {% if choices %}
+            <ul>
+                {% for choice in choices %}
+                <li>{{ choice.choiceText }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no choices present.</strong><br />
+        {% endif %}
+
+    </div>
+
 </div>
