@@ -33,8 +33,8 @@ class UserProfile(models.Model):
 # Added experience - so that user can get experience depending on how well he/she does.
 # story_type - whether beginning, mid or end.
 class StoryPoint(models.Model):
-    parentSP = models.ForeignKey('self', null=True)
     story_id = models.IntegerField(max_length=6, unique=True)
+    parentSP = models.ForeignKey('self', null=True)
     description = models.CharField(max_length=1000, blank=False, null=False)
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)
@@ -42,7 +42,7 @@ class StoryPoint(models.Model):
 
 
     def __unicode__(self):
-        return str(self.description)
+        return str(self.story_id)
 
 
 # Not too sure if this model is needed - we should be able to do everything with UserProfile.

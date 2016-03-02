@@ -33,6 +33,7 @@ def story(request):
 
 
 def story_change(request):
+    # get user's cookie
     context_dict = {'description': "This is one story description loaded directly from views.py!!!!"}
     return render(request, 'zombies/story_part.html', context_dict)
 

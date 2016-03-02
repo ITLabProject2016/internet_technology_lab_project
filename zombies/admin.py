@@ -3,7 +3,7 @@ from zombies.models import UserProfile, StoryPoint #, UserProfile_StoryPoint
 
 
 class StoryPointAdmin(admin.ModelAdmin):
-    list_display = ('parentSP', 'story_id', 'choiceText', 'description', 'experience', 'story_type')
+    list_display = ('story_id', 'parentSP', 'choiceText', 'description', 'experience', 'story_type')
 
 
 # Registering models
