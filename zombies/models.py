@@ -27,14 +27,24 @@ class UserProfile(models.Model):
         return self.user.username
 
 
+class Story(models.Model):
+    story_id = models.IntegerField(max_length=6, unique=True)
+    name = models.CharField(max_length=100, unique=True)
+    description = models.CharField(max_length=1000)
+
+    def __unicode__(self):
+        return str(self.story_id)
+
+
 # Explanation of changes: title - not sure if needed, so deleted. Photo - commented out.
 # Need to use ImageField (https://docs.djangoproject.com/en/1.7/ref/models/fields/#filefield)
 # Others: renamed for clarity, reduced max length (stories have to bo short).
 # Added experience - so that user can get experience depending on how well he/she does.
 # story_type - whether beginning, mid or end.
 class StoryPoint(models.Model):
-    story_id = models.IntegerField(max_length=6, unique=True)
+    story_point_id = models.IntegerField(max_length=6, unique=True)
     parentSP = models.ForeignKey('self', null=True)
+    main_story_id = models.ForeignKey(Story)
     description = models.CharField(max_length=1000, blank=False, null=False)
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)
@@ -42,7 +52,7 @@ class StoryPoint(models.Model):
 
 
     def __unicode__(self):
-        return str(self.story_id)
+        return str(self.story_point_id)
 
 
 # Not too sure if this model is needed - we should be able to do everything with UserProfile.
