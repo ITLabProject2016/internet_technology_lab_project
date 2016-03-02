@@ -38,7 +38,7 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
             <!--TO DO: can we not show a link to a page user is already on?-->
 
             {% if not user.is_authenticated %}
-                <li></li><a href="{% url 'registration_register' %}">Register</a></li>
+                <li><a href="{% url 'registration_register' %}">Register</a></li>
                 <li><a href="{% url 'auth_login' %}">Login</a></li>
             {% endif %}
 
