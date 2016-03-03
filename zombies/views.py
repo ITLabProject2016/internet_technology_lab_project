@@ -67,3 +67,28 @@ def the_end(request):
     return render(request, 'zombies/the_end.html', {})
 
 
+# Two methods below are for testing only:
+# seeing whether it is possible to make it work with simple links
+def storytest(request):
+    story_count = len(Story.objects.all())
+    random_story = randrange(1, story_count + 1)
+    storypoint_list = StoryPoint.objects.filter(main_story_id=random_story)
+    story = storypoint_list.order_by('story_point_id')[0]
+    choices = StoryPoint.objects.filter(parentSP=story)
+
+    context_dict = {'choices': choices, 'beginning': story}
+
+    return render(request, 'zombies/sptest.html', context_dict)
+
+
+def sp(request, spid):
+    storypointID = int(spid)
+    storypoint = StoryPoint.objects.filter(story_point_id=storypointID)[0]
+    choices = StoryPoint.objects.filter(parentSP=storypoint)
+
+    descr = storypoint.description
+
+    context_dict = {}
+    context_dict['story'] = storypoint
+    context_dict['choices'] = choices
+    return render(request, 'zombies/sp.html', context_dict)

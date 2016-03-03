@@ -12,5 +12,7 @@ urlpatterns = patterns('',
     url(r'^story/$', views.story, name='story'),
     url(r'^the-end/$', views.the_end, name='the_end'),
     url(r'^story-change/$', views.story_change, name='story-change'),
+    url(r'^storytest/$', views.storytest, name='storytest'),
+    url(r'^storytest/(?P<spid>\d+)/$', views.sp, name='sp'),
 )
 
