@@ -6,13 +6,10 @@ from zombies import views
 # any of these URLs (after "zombies/"), appropriate view will be shown.
 # Please comment liberally if you do something fancy with URLs.
 urlpatterns = patterns('',
-    url(r'^$', views.home, name='home'),
+    url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='home'),
     url(r'^about/$', views.about, name='about'),
     url(r'^profile/$', views.profile, name='profile'),
-    url(r'^story/$', views.story, name='story'),
-    url(r'^the-end/$', views.the_end, name='the_end'),
-    url(r'^story-change/$', views.story_change, name='story-change'),
-    url(r'^storytest/$', views.storytest, name='storytest'),
-    url(r'^storytest/(?P<spid>\d+)/$', views.sp, name='sp'),
+    url(r'^story-point/(?P<spid>\d+)/$', views.story_point, name='story-point'),
 )
 

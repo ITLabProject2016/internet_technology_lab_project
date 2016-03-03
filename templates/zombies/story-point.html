@@ -12,10 +12,10 @@
     <strong>Choices:</strong></br>
 
     {% for choice in choices %}
-        <button class="story_button" type="button" value="{% url 'sp' choice.story_point_id %}">{{ choice.choiceText }}</button></br>
+        <input type="radio"  name="choice" value="{% url 'story-point' choice.story_point_id %}"/>{{ choice.choiceText }} </br>
     {% endfor %}
 
 {% else %}
     <p>You have reached the end. Congratulations!</p>
-    <button class="story_button" type="button" value="/zombies/storytest/1/">Play again!</button></br>
+    <button class="story_button" type="button" value="/zombies/story-point/1/">Play again!</button></br>
 {% endif %}

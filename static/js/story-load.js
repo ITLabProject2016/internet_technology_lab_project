@@ -11,11 +11,19 @@ $(document).ready(function () {
             //alert("you clicked a story button");
             //alert($(this).val());
             $.get($(this).val(), function (data) {
-
                 $('#main_content').html(data); //we need this line to make the connection
-
             });
         }
+    });
+
+    $('input[name=choice]').click(function () {
+        //alert("you clicked a choice");
+        //alert($(this).val());
+        $.get($(this).val(), function (data) {
+
+            $('#main_content').html(data); //we need this line to make the connection
+
+        });
     });
 });
 
