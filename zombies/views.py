@@ -81,6 +81,17 @@ def storytest(request):
     return render(request, 'zombies/sptest.html', context_dict)
 
 
+# Takes number passed through URL, matches with the corresponding storypoint (lets call it SP).
+# Then, gets the story points that have SP as their foreign key. In templates, shows the choice text.
+# Links in template lead to the choice's story part (again, by passing the story+_point_id (spid)).
+# Problems with this approach: URL changes every time you click on a story point.
+# Story points can be accessed by simply entering the URL.
+# Can we make something similar, but with JS, as we have now when we click play? Can we pass
+# context dictionary to JS files? If we can, we could do similar logic and make it work, perhaps.
+# If not, we need to:
+# 1. Figure out what main story to pick, get the first story point, present choices.
+# 2. Change choice text/description/picture according to the choice selected (just as we have now).
+# 3. Figure out how to pass values associated with choices to the view.
 def sp(request, spid):
     storypointID = int(spid)
     storypoint = StoryPoint.objects.filter(story_point_id=storypointID)[0]
