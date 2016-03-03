@@ -19,11 +19,14 @@ $(document).ready(function () {
     $('input[name=choice]').click(function () {
         //alert("you clicked a choice");
         //alert($(this).val());
+        $('#main_content').fadeOut("slow");
         $.get($(this).val(), function (data) {
 
             $('#main_content').html(data); //we need this line to make the connection
 
         });
+        $('#main_content').hide();
+        $('#main_content').fadeIn("slow");
     });
 });
 
