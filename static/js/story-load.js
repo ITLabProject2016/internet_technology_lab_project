@@ -1,13 +1,22 @@
 $(document).ready(function () {
 
-    $('#trigger').click(function () {
-        $.get('/zombies/story-change/', function (data) {
-            $('#story_content').html(data); //we need this line to make the connection
-
-        });
-
+    //alert("ready");
+    $("p").click(function () {
+        //alert("you clicked a p");
     });
 
+    $("button").click(function () {
+        //alert("you clicked a button");
+        if ($(this).hasClass('story_button')) {
+            //alert("you clicked a story button");
+            //alert($(this).val());
+            $.get($(this).val(), function (data) {
+
+                $('#main_content').html(data); //we need this line to make the connection
+
+            });
+        }
+    });
 });
 
 //$('#story_content').hide(); //may be in use

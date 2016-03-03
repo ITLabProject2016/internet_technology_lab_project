@@ -15,5 +15,6 @@
     <br />
         <!--The number could be derived in the view itself instead of hardcoding-->
         <!--Didn't want to do it now, I don't know what approach we will take-->
-        <a href="/zombies/storytest/1">Play test</a>
+        <script src="{% static "js/story-load.js" %}"></script>
+        <button class="story_button" type="button" value="/zombies/storytest/1/">Play!</button>
 {% endblock %}

@@ -4,19 +4,15 @@ from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from zombies.models import StoryPoint, Story
 from random import randrange
 
-
-
 # This is the home page.
 def home(request):
     context_dict = {'welcome_message': "Hello! This will be our main page."}
     return render(request, 'zombies/home.html', context_dict)
 
-
 # Links to about template. Any further logic should go here.
 def about(request):
     context_dict = {'welcome_message' : "Hello! This will be our about page."}
     return render(request, 'zombies/about.html', context_dict)
-
 
 # Links to profile template.
 # Not too sure about the decorator - profile view should not be shown if you're not logged in.
