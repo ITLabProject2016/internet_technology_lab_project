@@ -1,9 +1,15 @@
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
-
 body {
-    background: url('http://placehold.it/1920x1080') no-repeat center center fixed;
+    /*background: url('http://placehold.it/1920x1080') no-repeat center center fixed;*/
+    background: url("/static/images/uog.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
+
+#holder{
+    margin-top: 35%;
+
+}
+

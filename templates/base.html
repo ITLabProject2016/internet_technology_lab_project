@@ -46,13 +46,16 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
         <div class="navbar-header"></div>
 
         <div id="navbar" class="navbar-collapse collapse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'home' %}">Zombies on Campus</a>
+            </div>
             <ul class="nav navbar-nav  navbar-right">
                 <!--TO DO: can we not show a link to a page user is already on?-->
-                <li class="active"><a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <!--<li class="active"><a href="{#% url 'home' %#}"><span class="glyphicon glyphicon-home"></span> Home</a>-->
+                </li>
 
                 {% if not user.is_authenticated %}
                     <li><a href="{% url 'auth_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="{% url 'registration_register' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                 {% endif %}
 
                 {% if user.is_authenticated %}
@@ -67,10 +70,20 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
     </div>
 </nav>
 
-<div id="main_content">
-    {% block body %}
-        <p>This is where the main logic and everything else important goes.</p>
-    {% endblock %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div id="holder" class="jumbotron">
+                <div id="main_content">
+                    {% block body %}
+                        <p>This is where the main logic and everything else important goes.</p>
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

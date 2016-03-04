@@ -1,21 +1,24 @@
 {% load staticfiles %}
 <script src="{% static "js/story-load.js" %}"></script>
-<h3>Story part: description</h3>
-{% if story %}
-    <p><i><strong>{{ story.description }}</strong></i></p>
-{% else %}
-    <p><strong>No description found! Call the police!</strong></p>
-{% endif %}
+<div id="story_content">
+    <h3>Story part: description</h3>
+    {% if story %}
+        <p><i><strong>{{ story.description }}</strong></i></p>
+    {% else %}
+        <p><strong>No description found! Call the police!</strong></p>
+    {% endif %}
 
-{% if choices %}
-    <p>What do you do?</p>
-    <strong>Choices:</strong></br>
+    {% if choices %}
+        <p>What do you do?</p>
+        <strong>Choices:</strong></br>
 
-    {% for choice in choices %}
-        <input type="radio"  name="choice" value="{% url 'story-point' choice.story_point_id %}"/>{{ choice.choiceText }} </br>
-    {% endfor %}
+        {% for choice in choices %}
+            <input type="radio" name="choice" value="{% url 'story-point' choice.story_point_id %}"/>
+            {{ choice.choiceText }} </br>
+        {% endfor %}
 
-{% else %}
-    <p>You have reached the end. Congratulations!</p>
-    <button class="story_button" type="button" value="/zombies/story-point/1/">Play again!</button></br>
-{% endif %}
+    {% else %}
+        <p>You have reached the end. Congratulations!</p>
+        <button class="story_button" type="button" value="/zombies/story-point/1/">Play again!</button></br>
+    {% endif %}
+</div>
