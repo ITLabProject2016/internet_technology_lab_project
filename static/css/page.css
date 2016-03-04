@@ -1,6 +1,7 @@
 /* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 body {
     /*background: url('http://placehold.it/1920x1080') no-repeat center center fixed;*/
+    background-color: #164e82;
     background: url("/static/images/uog.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,6 +11,6 @@ body {
 
 #holder{
     margin-top: 35%;
-
+    background-color: rgba(220, 220, 220, 1.0);
 }
 
