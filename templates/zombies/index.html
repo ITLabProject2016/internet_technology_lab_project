@@ -9,11 +9,51 @@
     {% if user.is_authenticated %}
         <p>Hello, {{ user.username }}!</p>
     {% else %}
-        <p>You have not logged in yet.</p>
+        <p>Hello, Stranger.</p>
     {% endif %}
     <br/>
+
+
+
+
     <script src="{% static "js/story-load.js" %}"></script>
-    <button class="story_start_button btn btn-lg btn-danger" type="button" value="/zombies/story-point/1/"><span class="glyphicon glyphicon-tower"></span> Play!</button>
+
+
+
+
+   <table class="table table-hover">
+    <tbody>
+
+
+     {% if stories %}
+             {% for story in stories %}
+      <tr>            <td>
+
+
+              <p class="text-justify text-danger">{{ story.name }} </p>
+
+
+
+                  </td>
+                  <td>
+                    <button class="story_start_button btn btn-lg btn-danger" type="button" value="/zombies/story-point/1/"><span class="glyphicon glyphicon-tower"></span> Play!</button>
+                  </td>
+
+ </tr>
+                {% endfor %}
+
+
+
+    </tbody>
+  </table>
+
+
+
+        {% else %}
+            <strong>There are no stories present.</strong>
+        {% endif %}
+
+
     {% if not user.is_authenticated %}
         <a href="/accounts/register/" class="btn btn-lg btn-primary" role="button"><span class="glyphicon glyphicon-user"></span> Register</a>
     {% endif %}

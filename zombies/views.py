@@ -6,7 +6,9 @@ from random import randrange
 
 # This is the home page.
 def index(request):
-    context_dict = {'welcome_message': "Hello! This will be our main page."}
+
+    story_list = Story.objects.order_by('story_id')[:4]
+    context_dict = {'stories': story_list}
     return render(request, 'zombies/index.html', context_dict)
 
 # Links to about template. Any further logic should go here.
