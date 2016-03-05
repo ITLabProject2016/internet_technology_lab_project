@@ -1,32 +1,42 @@
 {% load staticfiles %}
 <script src="{% static "js/story-load.js" %}"></script>
-<div id="story_content">
 
-    <div id="story_desc">
-        {% if story %}
+{% if story %}
+    <div id="story_content">
+        <div id="story_desc">
+
             <p><i><strong>{{ story.description }}</strong></i></p>
-        {% else %}
-            <p><strong>No description found! Call the police!</strong></p>
-        {% endif %}
-    </div>
 
-    <div id="story_choices">
-        {% if choices %}
-            <p>What do you do?</p></br>
-            <strong>Choices:</strong></br></br>
+        </div>
 
-            <div class="btn-group-vertical">
-                {% for choice in choices %}
-                    <button type="button" class="story_button btn btn-primary"
-                            value="{% url 'story-point' choice.story_point_id %}"> {{ choice.choiceText }} </button>
-                {% endfor %}
+        <div id="story_choices">
+            {% if choices %}
+                <p>What do you do?</p></br>
+                <strong>Choices:</strong></br></br>
+
+                <div class="btn-group-vertical">
+                    {% for choice in choices %}
+                        <button type="button" class="story_button btn btn-primary"
+                                value="{% url 'story-point' choice.main_story_id choice.story_point_id %}"> {{ choice.choiceText }} </button>
+                    {% endfor %}
+                </div>
+                </div>
+
+                <div id="the_end">
+
+            {% else %}
+                <p>You have reached the end. Congratulations!</p>
+                <button class="story_start_button btn btn-lg btn-danger" type="button"
+                        value="{% url 'story-point' story.main_story_id 1 %}">Play
+                    again!
+                </button>
+                <button class="home btn btn-lg btn-danger" type="button"
+                        value="{% url 'index-min' %}">Play
+                    another!
+                </button></br>
+            {% endif %}
             </div>
     </div>
-
-    <div id="the_end">
-        {% else %}
-            <p>You have reached the end. Congratulations!</p>
-            <button class="story_start_button btn btn-lg btn-danger" type="button" value="/zombies/story-point/1/">Play again!</button></br>
-        {% endif %}
-    </div>
-</div>
+{% else %}
+    <p><strong>No description found! Call the police!</strong></p>
+{% endif %}

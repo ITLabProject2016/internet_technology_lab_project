@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # USEFUL INFO:
 # Whenever changes to the models are made, need to register those changes like so:
 #   python manage.py makemigrations <app_name>
@@ -54,10 +55,12 @@ class StoryPoint(models.Model):
     experience = models.IntegerField(default=0)
     story_type = models.CharField(max_length=5, default='mid', blank=False, null=False)
 
-
     def __unicode__(self):
         return str(self.story_point_id)
 
+    def __to_string__(self):
+        Str = 'story point obj: ' + str(self.main_story_id) +' '+str(self.story_point_id) +' '+ str(self.description)+' '+ str(self.story_type)
+        return str(Str)
 
 # Not too sure if this model is needed - we should be able to do everything with UserProfile.
 # Might need to ask Leif whether we need to create more models for stats.

@@ -14,11 +14,11 @@ class MyRegistrationView(RegistrationView):
 
 
 urlpatterns = patterns('',
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^zombies/', include('zombies.urls')),
-    url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
-)
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^zombies/', include('zombies.urls')),
+                       url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
+                       url(r'^accounts/', include('registration.backends.simple.urls')),
+                       )
 
 # ONLY FOR DEVELOPMENT PURPOSES. SHOULD NOT BE DEPLOYED WITH THIS.
 # If DEBUG is set to True, additional URL matching pattern appended to the existing one.
@@ -28,7 +28,5 @@ if settings.DEBUG:
     urlpatterns += patterns(
         'django.views.static',
         (r'^media/(?P<path>.*)',
-        'serve',
-        {'document_root': settings.MEDIA_ROOT}), )
-
-
+         'serve',
+         {'document_root': settings.MEDIA_ROOT}), )
