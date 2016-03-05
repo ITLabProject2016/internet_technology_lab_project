@@ -8,21 +8,20 @@ from random import randrange
 # This is the home page.
 # We now list stories
 def index(request):
-    story_list = Story.objects.order_by('story_id')
+    story_list = Story.objects.order_by('id')
     context_dict = {'stories': story_list}
     return render(request, 'zombies/index.html', context_dict)
 
 
 def index_min(request):
-    story_list = Story.objects.order_by('story_id')
+    story_list = Story.objects.order_by('id')
     context_dict = {'stories': story_list}
     return render(request, 'zombies/index_min.html', context_dict)
 
 
 # Links to about template. Any further logic should go here.
 def about(request):
-    context_dict = {'welcome_message': "Hello! This will be our about page."}
-    return render(request, 'zombies/about.html', context_dict)
+    return render(request, 'zombies/about.html', {})
 
 
 # Links to profile template.
@@ -47,8 +46,8 @@ def profile(request):
 def story_point(request, sid, spid):
     storyID = int(sid)
     storypointID = int(spid)
-    story = Story.objects.get(story_id=storyID)
-    storypoint = StoryPoint.objects.filter(main_story_id=story).get(story_point_id=storypointID)
+    story = Story.objects.get(id=storyID)
+    storypoint = StoryPoint.objects.filter(main_story_id=story).get(id=storypointID)
     choices = StoryPoint.objects.filter(main_story_id=story).filter(parentSP=storypoint)
     descr = storypoint.description
 

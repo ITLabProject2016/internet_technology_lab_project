@@ -13,7 +13,10 @@ from django.contrib.auth.models import User
 
 # Don't forget to import/register models to admin.py
 # http://www.tangowithdjango.com/book17/chapters/models.html#configuring-the-admin-interface
-
+#
+# for a good well-being please read
+# https://docs.djangoproject.com/en/1.9/topics/db/models/
+#
 
 class UserProfile(models.Model):
     # Link UserProfile with a User model instance
@@ -29,7 +32,7 @@ class UserProfile(models.Model):
 
 
 class Story(models.Model):
-    story_id = models.IntegerField(max_length=6, unique=True)
+    #story_id = models.IntegerField(max_length=6, unique=True)
     name = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=1000)
 
@@ -38,7 +41,7 @@ class Story(models.Model):
         verbose_name_plural = "Stories"
 
     def __unicode__(self):
-        return str(self.story_id)
+        return str(self.id)
 
 
 # Explanation of changes: title - not sure if needed, so deleted. Photo - commented out.
@@ -47,16 +50,22 @@ class Story(models.Model):
 # Added experience - so that user can get experience depending on how well he/she does.
 # story_type - whether beginning, mid or end.
 class StoryPoint(models.Model):
-    story_point_id = models.IntegerField(max_length=6, unique=True)
+    #story_point_id = models.IntegerField(max_length=6, unique=True)
+    #we dont need ids because django creates them by default
+    STORY_TYPES = (
+        ('start', 'start'),
+        ('mid', 'mid'),
+        ('end', 'end'),
+    )
     parentSP = models.ForeignKey('self', null=True)
     main_story_id = models.ForeignKey(Story)
     description = models.CharField(max_length=1000, blank=False, null=False)
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)
-    story_type = models.CharField(max_length=5, default='mid', blank=False, null=False)
+    story_type = models.CharField(max_length=5, choices=STORY_TYPES, blank=False, null=False)
 
     def __unicode__(self):
-        return str(self.story_point_id)
+        return str(self.id)
 
     def __to_string__(self):
         Str = 'story point obj: ' + str(self.main_story_id) +' '+str(self.story_point_id) +' '+ str(self.description)+' '+ str(self.story_type)

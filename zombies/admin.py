@@ -4,12 +4,16 @@ from zombies.models import UserProfile, StoryPoint, Story  # , UserProfile_Story
 
 class StoryPointAdmin(admin.ModelAdmin):
     list_display = (
-        'main_story_id', 'story_point_id', 'parentSP', 'choiceText', 'description', 'experience', 'story_type')
+        'id', 'main_story_id', 'parentSP', 'choiceText', 'description', 'experience', 'story_type')
+
+class StoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'id', 'name', 'description')
 
 
 # Registering models
 admin.site.register(UserProfile)
-admin.site.register(Story)
+admin.site.register(Story, StoryAdmin)
 admin.site.register(StoryPoint, StoryPointAdmin)
 
 # admin.site.register(UserProfile_StoryPoint)
