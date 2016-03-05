@@ -35,6 +35,7 @@ class Story(models.Model):
     #story_id = models.IntegerField(max_length=6, unique=True)
     name = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=1000)
+    visits = models.IntegerField(default=0)
 
     # Corrects "Story" to "Stories"
     class Meta:
@@ -63,6 +64,7 @@ class StoryPoint(models.Model):
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)
     story_type = models.CharField(max_length=5, choices=STORY_TYPES, blank=False, null=False)
+    visits = models.IntegerField(default=0)
 
     def __unicode__(self):
         return str(self.id)

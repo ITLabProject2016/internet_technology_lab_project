@@ -48,6 +48,14 @@ def story_point(request, sid, spid):
     storypointID = int(spid)
     story = Story.objects.get(id=storyID)
     storypoint = StoryPoint.objects.filter(main_story_id=story).get(id=storypointID)
+
+    #first our small_data
+    if storyID == 1:
+        story.visits = story.visits + 1
+        story.save()
+    storypoint.visits = storypoint.visits + 1
+    storypoint.save()
+
     choices = StoryPoint.objects.filter(main_story_id=story).filter(parentSP=storypoint)
     descr = storypoint.description
 

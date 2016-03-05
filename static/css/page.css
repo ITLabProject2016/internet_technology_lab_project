@@ -14,3 +14,6 @@ body {
     background-color: rgba(220, 220, 220, 1.0);
 }
 
+.profile {
+    min-height: 300px;
+}
