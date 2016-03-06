@@ -46,8 +46,8 @@ def profile(request):
 def story_point(request, sid, spid):
     storyID = int(sid)
     storypointID = int(spid)
-    print storyID
-    print storypointID
+    #print storyID
+    #print storypointID
     story = Story.objects.get(id=sid)
 
     storypoint = StoryPoint.objects.filter(main_story_id = story).get(story_point_id = storypointID)

@@ -20,7 +20,7 @@ def populate():
     story = add_story("zombies on campus", "stub description hahahaha")
 
     # # Level 1
-    sp1 = add_sp(story, 1, None,  "You are on my campus when virual zombies start to attack you.", None, 10, "start")
+    sp1 = add_sp(story, 1, None,  "You are in the library.", None, 10, "start")
 
     # Level 2
     sp2 = add_sp(story, 2, sp1,  "You bump into your friend.", "Run.", 10, "mid")
