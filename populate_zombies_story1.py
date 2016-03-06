@@ -17,7 +17,7 @@ from zombies.models import Story, StoryPoint
 
 def populate():
     #the story name has to be unique
-    story = add_story("zombies on campus", "stub description hahahaha")
+    story = add_story("Zombies on Campus", "Stub description.")
 
     # # Level 1
     sp1 = add_sp(story, 1, None,  "You are in the library.", None, 10, "start")
