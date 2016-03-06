@@ -60,6 +60,7 @@ class StoryPoint(models.Model):
     )
     parentSP = models.ForeignKey('self', null=True)
     main_story_id = models.ForeignKey(Story)
+    story_point_id = models.IntegerField(default=0)
     description = models.CharField(max_length=1000, blank=False, null=False)
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)

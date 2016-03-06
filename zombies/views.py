@@ -46,11 +46,14 @@ def profile(request):
 def story_point(request, sid, spid):
     storyID = int(sid)
     storypointID = int(spid)
-    story = Story.objects.get(id=storyID)
-    storypoint = StoryPoint.objects.filter(main_story_id=story).get(id=storypointID)
+    print storyID
+    print storypointID
+    story = Story.objects.get(id=sid)
+
+    storypoint = StoryPoint.objects.filter(main_story_id = story).get(story_point_id = storypointID)
 
     #first our small_data
-    if storyID == 1:
+    if storypoint == 1:
         story.visits = story.visits + 1
         story.save()
     storypoint.visits = storypoint.visits + 1
@@ -63,4 +66,4 @@ def story_point(request, sid, spid):
     context_dict['story'] = storypoint
     context_dict['choices'] = choices
     return render(request, 'zombies/story-point.html', context_dict)
-
+    #return HttpResponse(storypoint.__to_string__())

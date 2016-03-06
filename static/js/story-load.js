@@ -9,27 +9,25 @@ $(document).ready(function () {
         //alert("you clicked a button");
         if ($(this).hasClass('home')) {
             //alert($('.story_start_button').val());
-            $('#main_content').fadeOut("slow");
-            $('#main_content').promise().done(function () {
-                $.get($('.home').val(), function (data) {
-                    $('#main_content').hide();
-                    $('#main_content').html(data); //we need this line to make the connection
-                    $('#main_content').hide();
-                    $('#main_content').fadeIn("slow");
-                });
+
+            $.get($(this).val(), function (data) {
+                $('#main_content').hide();
+                $('#main_content').html(data); //we need this line to make the connection
+                $('#main_content').hide();
+                $('#main_content').fadeIn("slow");
             });
 
         } else if ($(this).hasClass('story_start_button')) {
             //alert($('.story_start_button').val());
-            $('#main_content').fadeOut("slow");
-            $('#main_content').promise().done(function () {
-                $.get($('.story_start_button').val(), function (data) {
-                    $('#main_content').hide();
-                    $('#main_content').html(data); //we need this line to make the connection
-                    $('#main_content').hide();
-                    $('#main_content').fadeIn("slow");
-                });
+            //$('#main_content').fadeOut("slow");
+            //alert($(this).val())
+            $.get($(this).val(), function (data) {
+                $('#main_content').hide();
+                $('#main_content').html(data); //we need this line to make the connection
+                $('#main_content').hide();
+                $('#main_content').fadeIn("slow");
             });
+
 
         } else if ($(this).hasClass('story_button')) {
             //alert($('.story_start_button').val());
