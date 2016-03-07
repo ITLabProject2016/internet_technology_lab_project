@@ -6,6 +6,7 @@ class StoryPointAdmin(admin.ModelAdmin):
     list_display = (
         'id', 'main_story_id', 'parentSP', 'choiceText', 'description', 'experience', 'story_type', 'visits')
 
+
 class StoryAdmin(admin.ModelAdmin):
     list_display = (
         'id', 'name', 'description', 'visits')

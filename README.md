@@ -4,9 +4,6 @@
 
 <h4>To do: </h4>
 <ul>
-    <li>Fix the registration (does not match the template at all).</li>
-    <li>Play again/Play another are exactly the same. Delete/make 
-    "play another" show only those stories that were not played.</li>
     <li>Got some csrf errors when logging in (once). Need to figure out
     if it was a bug in our code or something just hiccuped.</li>
     <li>Could add a little house as our "home" icon? I think they look
@@ -26,4 +23,6 @@
     <li>Make form fields more visually appealing.</li>
     <li>If the user enters a username that already exists, he/she is
     shown the same page again. Should not be this way</li>
+    <li>Password change form needs to be updated. What are the form
+    parameters though?</li>
 </ul>

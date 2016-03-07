@@ -31,6 +31,8 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
     <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
     <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "css/page.css" %}" rel="stylesheet">
+    {# Experimenting with fonts. Default are kind of boring. #}
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
 
     <title>Zombies on Campus{% block title %}{% endblock %}</title>
 </head>
@@ -47,7 +49,7 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
 
         <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'home' %}">Zombies on Campus</a>
+                <a class="navbar-brand" href="{% url 'home' %}"><strong>Zombies on Campus</strong></a>
             </div>
             <ul class="nav navbar-nav  navbar-right">
                 <!--TO DO: can we not show a link to a page user is already on?-->
@@ -63,7 +65,7 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
                     <li><a href="{% url 'auth_password_change' %}">Change password</a></li>
                     <li><a href="{% url 'auth_logout' %}?next=/zombies/">Logout</a></li>
                 {% endif %}
-
+                <li><a href="{% url 'statistics' %}"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
                 <li><a href="{% url 'about' %}"><span class="glyphicon glyphicon-education"></span> About</a></li>
             </ul>
         </div>

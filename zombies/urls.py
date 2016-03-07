@@ -13,4 +13,5 @@ urlpatterns = patterns(
     #url(r'^story-point/(?P<spid>\d+)/$', views.story_point, name='story-point'),
     url(r'^index-min/$', views.index_min, name='index-min'),
     url(r'^story-point/(?P<sid>\d+)/(?P<spid>\d+)/$', views.story_point, name='story-point'),
+    url(r'^statistics/$', views.statistics, name='statistics'),
 )

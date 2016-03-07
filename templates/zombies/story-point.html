@@ -27,13 +27,9 @@
             {% else %}
                 <p>You have reached the end. Congratulations!</p>
                 <button class="story_start_button btn btn-lg btn-danger" type="button"
-                        value="{% url 'story-point' story.main_story_id 1 %}">Play
-                    again!
-                </button>
+                        value="{% url 'story-point' story.main_story_id 1 %}">Play the story again</button>
                 <button class="home btn btn-lg btn-danger" type="button"
-                        value="{% url 'index-min' %}">Play
-                    another!
-                </button></br>
+                        value="{% url 'index-min' %}">Play another story</button></br>
             {% endif %}
             </div>
     </div>

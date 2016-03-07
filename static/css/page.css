@@ -17,3 +17,15 @@ body {
 .profile {
     min-height: 300px;
 }
+
+.stats {
+    padding-left: 24px;
+}
+
+/* Just testing various fonts. The default ones are rather boring. */
+/* We could use something like: */
+.welcome_font {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
+    color: darkred;
+}

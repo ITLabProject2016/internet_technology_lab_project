@@ -7,9 +7,9 @@
 {% block body %}
 
     {% if user.is_authenticated %}
-        <p>Hello, {{ user.username }}!</p>
+        <p><span class="welcome_font">Welcome back to the campus, {{ user.username }}. <br />Where will the night take you..?</span></p>
     {% else %}
-        <p>Hello, Stranger.</p>
+        <p><span class="welcome_font">Welcome to the campus, stranger. Where will the night take you?..</span></p>
     {% endif %}
     <br/>
 
@@ -27,7 +27,7 @@
                     </td>
                     <td>
                         <button class="story_start_button btn btn-lg btn-danger" type="button"
-                                value="{% url 'story-point' story.id 1 %}"><span class="glyphicon glyphicon-tower"></span> Play!
+                                value="{% url 'story-point' story.id 1 %}"><span class="glyphicon glyphicon-tint"></span> Play!
                         </button>
                     </td>
                 </tr>
