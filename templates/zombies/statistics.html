@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block body %}
+    <div class="container row-spacing">
+
+        <div class="sub-heading">
+            <h4><span class="glyphicon glyphicon-tree-deciduous"></span><strong> Stories</strong></h4>
+            {% if trees_count %}
+                <span class="stats"><strong>Currently there are {{ trees_count }} original beginning points.</strong></span>
+            {% else %}
+            {% endif %}
+        </div>
+
+        <div class="sub-heading">
+            <h4><span class="glyphicon glyphicon-leaf"></span><strong> Story lines</strong></h4>
+            {% if branches_count %}
+                <span class="stats"><strong>Currently there are {{ branches_count }} original story lines.</strong></span>
+            {% else %}
+                <span class="stats"><strong>Unfortunately, there are no story lines at the moment.</strong></span>
+            {%  endif %}
+        </div>
+
+        <div class="sub-heading">
+            <h4><span class="glyphicon glyphicon-user"></span><strong> Survivors</strong></h4>
+            {% if players %}
+                <span class="stats"><strong>There are {{ players }} registered survivors on the campus.</strong></span>
+            {% else %}
+                <span class="stats"><strong>There are no registered survivors on the campus. Be the first one!</strong></span>
+            {% endif %}
+        </div>
+
+        <div class="sub-heading">
+            <h4><span class="glyphicon glyphicon-road"></span><strong> Choices</strong></h4>
+            {% if choices %}
+                <span class="stats"><strong>Survivors have made {{ choices }} choices.</strong></span>
+            {% else %}
+                <span class="stats"><strong>Survivors have not made any choices yet. Be the leader!</strong></span>
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock %}
