@@ -24,4 +24,6 @@
     need to change a bit if we decide to go for it, though (unless
     profile pic is really small).</li>
     <li>Make form fields more visually appealing.</li>
+    <li>If the user enters a username that already exists, he/she is
+    shown the same page again. Should not be this way</li>
 </ul>
