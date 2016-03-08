@@ -25,4 +25,6 @@
     shown the same page again. Should not be this way</li>
     <li>Password change form needs to be updated. What are the form
     parameters though?</li>
+    <li>At the moment, story lines do not reflect the real count of 
+    stories. They show story points. We need to count the endings.</li>
 </ul>
