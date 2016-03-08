@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 
 
 # USEFUL INFO:
@@ -25,10 +26,20 @@ class UserProfile(models.Model):
     # User can choose a picture. Should not be necessary to upload it. Otherwise may be a bit annoying.
     # Images will be uploaded to /media/profile_images/ (unless we change it in settings.py).
     picture = models.ImageField(upload_to='profile_images', blank=True)
+    # Change with something else. For now, it's just a test. Experience/etc.
+    exp = models.IntegerField(default=0)
 
     # Return username when object is printed
     def __unicode__(self):
         return self.user.username
+
+
+# Allows us to populate the user with additional fields.
+# Links UserProfile with User.
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+post_save.connect(create_user_profile, sender=User)
 
 
 class Story(models.Model):

@@ -23,9 +23,25 @@ body {
 }
 
 /* Just testing various fonts. The default ones are rather boring. */
-/* We could use something like: */
+/* We could use something like: https://www.google.com/fonts */
 .welcome_font {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 30px;
+    /* Can change the font here of a welcome message, if needed be */
     color: darkred;
+}
+
+.username {
+    color: #080808;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.experience {
+    color: #0f0f0f;
+    font-size: 20px;
+}
+
+.badges {
+    color: #080808;
+    font-size: 15px;
+    font-weight: bold;
 }

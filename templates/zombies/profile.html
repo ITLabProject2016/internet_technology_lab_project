@@ -7,11 +7,29 @@
 {% block profile %}
     <div class="container">
         <div class="profile row" style="background-color: #985f0d">
+
             <div class="profile col-sm-4" style="background-color: #1b6d85">
-                <p>User's profile</p>
+                <p><span class="username">{{ username }}'s profile</span></p>
+                <div class="badges">
+                    <strong>Badges:</strong><br/>
+                    {% if experience > 100 %}
+                        {# Just a random icon. We can put any images we like (preferably small) #}
+                        <span class="glyphicon glyphicon-tint"></span> Zombie killer
+                    {% else %}
+                    {% endif %}
+                </div>
             </div>
+                <div class = "experience">
+                    {% if experience %}
+                        Your current experience: {{ experience }}
+                    {% else %}
+                        You have no experience yet. Get back in the campus!
+                    {% endif %}
+                </div>
         </div>
+
         <div class="profile col-sm-6"></div>
-    </div>
+        </div>
+
     </div>
 {% endblock %}

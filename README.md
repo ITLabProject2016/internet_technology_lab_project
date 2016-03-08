@@ -26,5 +26,7 @@
     <li>Password change form needs to be updated. What are the form
     parameters though?</li>
     <li>At the moment, story lines do not reflect the real count of 
-    stories. They show story points. We need to count the endings.</li>
+    stories. Nr of story points is shown. Need to count the endings.</li>
+    <li>Header - not black, just overlay on the wallpaper</li>
+    <li>Random stories instead of a list?</li>
 </ul>

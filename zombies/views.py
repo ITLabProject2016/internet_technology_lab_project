@@ -30,7 +30,13 @@ def about(request):
 # But is the decorator the best way to achieve it?
 @login_required
 def profile(request):
-    return render(request, 'zombies/profile.html', {})
+    username = request.user.username
+    user_profile = request.user.userprofile
+    experience = user_profile.exp
+    context_dict = {}
+    context_dict['username'] = username
+    context_dict['experience'] = experience
+    return render(request, 'zombies/profile.html', context_dict)
 
 
 def story_point(request, sid, spid):
@@ -39,6 +45,14 @@ def story_point(request, sid, spid):
     story = Story.objects.get(id=sid)
 
     storypoint = StoryPoint.objects.filter(main_story_id=story).get(story_point_id=storypointID)
+
+    # Adds experience to the currently logged in user
+    # If the user is not logged in, skips it
+    # We can play around with experience points (e.g. ending without death gives more)
+    if request.user.is_authenticated():
+        user_profile = request.user.userprofile
+        user_profile.exp += storypoint.experience
+        user_profile.save()
 
     # First our small_data
     # Problem: updated every time story point is visited. So for 3 steps, +3. Should be +1.
