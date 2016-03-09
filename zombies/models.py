@@ -26,8 +26,10 @@ class UserProfile(models.Model):
     # User can choose a picture. Should not be necessary to upload it. Otherwise may be a bit annoying.
     # Images will be uploaded to /media/profile_images/ (unless we change it in settings.py).
     picture = models.ImageField(upload_to='profile_images', blank=True)
-    # Change with something else. For now, it's just a test. Experience/etc.
+    # Calculate user's experience. Can add badges, give permissions, etc. based on that.
     exp = models.IntegerField(default=0)
+    # Calculate how many stories user has finished.
+    finished_stories = models.IntegerField(default=0)
 
     # Return username when object is printed
     def __unicode__(self):

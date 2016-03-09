@@ -5,28 +5,21 @@
 <h4>To do: </h4>
 <ul>
     <li>Got some csrf errors when logging in (once). Need to figure out
-    if it was a bug in our code or something just hiccuped.</li>
-    <li>Could add a little house as our "home" icon? I think they look
-    quite neat.</li>
     <li>Add proper stories.</li>
     <li>Do we want to show all stories at once? We could have a 
-    massive "play" button, and after clicking it the user would be
-    shown a random story.</li>
-    <li>User stats. E.g., how many stories completed, etc.</li>
-    <li>Global stats. For example, how many deaths in total, how many
-    marriages, that kind of stuff. We could add "ending" variable,
-    which would indicate the ending, then simply check it and
-    increment the counter when the appropriate ending is reached.</li>
-    <li>Profile picture. Also, can we show it in the toolbar? CSS may 
-    need to change a bit if we decide to go for it, though (unless
-    profile pic is really small).</li>
+    big "play" button, and after clicking it the user would be
+    shown a random story. Above it - login form/buttons</li>
+    <li>More user stats: deaths, marriages, heroic deeds, etc.</li>
+    <li>More global stats</li>
+    <li>Profile picture. At the moment user profile has only a stub - 
+    need to figure out a way how to connect registration redux with 
+    the custom attributes.</li>
     <li>Make form fields more visually appealing.</li>
     <li>If the user enters a username that already exists, he/she is
-    shown the same page again. Should not be this way</li>
+    shown the same page again. Should not be this way.</li>
     <li>Password change form needs to be updated. What are the form
-    parameters though?</li>
-    <li>At the moment, story lines do not reflect the real count of 
-    stories. Nr of story points is shown. Need to count the endings.</li>
+    parameters though? No idea, registration redux is really badly 
+    documented.</li>
     <li>Header - not black, just overlay on the wallpaper</li>
     <li>Random stories instead of a list?</li>
 </ul>

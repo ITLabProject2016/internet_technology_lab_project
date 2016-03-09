@@ -5,9 +5,7 @@ from zombies.models import StoryPoint, Story
 from django.contrib.auth.models import User
 
 
-
-# This is the home page.
-# We now list stories
+# Home page. At the moment, we list all the stories. Should we not present a random one instead?
 def index(request):
     story_list = Story.objects.order_by('id')
     context_dict = {'stories': story_list}
@@ -25,20 +23,23 @@ def about(request):
     return render(request, 'zombies/about.html', {})
 
 
-# Links to profile template.
-# Not too sure about the decorator - profile view should not be shown if you're not logged in.
-# But is the decorator the best way to achieve it?
+# Links to profile template. Profile view should not be shown if you're not logged in.
 @login_required
 def profile(request):
     username = request.user.username
     user_profile = request.user.userprofile
     experience = user_profile.exp
+    # This is more of a placeholder. We can collect stats such as: deaths, marriages, heroic deeds, etc.
+    # Depends on our creativity and how much we're willing to tinker with it.
+    finished = user_profile.finished_stories
     context_dict = {}
     context_dict['username'] = username
     context_dict['experience'] = experience
+    context_dict['finished_stories'] = finished
     return render(request, 'zombies/profile.html', context_dict)
 
 
+# Links to the story_point template. Main stats are collected here.
 def story_point(request, sid, spid):
     storyID = int(sid)
     storypointID = int(spid)
@@ -53,6 +54,13 @@ def story_point(request, sid, spid):
         user_profile = request.user.userprofile
         user_profile.exp += storypoint.experience
         user_profile.save()
+
+    storytype = storypoint.story_type
+    print storytype
+    if storytype == 'end':
+        user_profile.finished_stories += 1
+        user_profile.save()
+
 
     # First our small_data
     # Problem: updated every time story point is visited. So for 3 steps, +3. Should be +1.
@@ -74,8 +82,14 @@ def story_point(request, sid, spid):
 
 # Simple global statistics about the game.
 def statistics(request):
-    # Get the relevant
-    branches = len(StoryPoint.objects.all())
+    # Get all storypoints
+    spoints = StoryPoint.objects.all()
+    stories = 0
+    # If the story point has a type of ending, then it means it's a distinct story.
+    for sp in spoints:
+        if sp.story_type == 'end':
+            stories += 1
+
     trees = len(Story.objects.all())
     users = len(User.objects.all())
 
@@ -86,7 +100,7 @@ def statistics(request):
         choices_made += storypoint.visits
 
     context_dict = {}
-    context_dict['branches_count'] = branches
+    context_dict['branches_count'] = stories
     context_dict['trees_count'] = trees
     context_dict['players'] = users
     context_dict['choices'] = choices_made

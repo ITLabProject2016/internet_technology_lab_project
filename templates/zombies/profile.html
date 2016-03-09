@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}}
+{% load staticfiles %}
 
 <!--Title block can be added (if we want a user's tab to have something specific written-->
 
@@ -10,6 +10,11 @@
 
             <div class="profile col-sm-4" style="background-color: #1b6d85">
                 <p><span class="username">{{ username }}'s profile</span></p>
+                {# We could include some code to show the user's profile picture. This is just to show how it'd look #}
+                <div class="profile_pic">
+                    <img src="{% static "images/tallahassee.jpg" alt="{{ username }} %}" style="width:125px;height:125px;"
+                    class="img-circle">
+                </div>
                 <div class="badges">
                     <strong>Badges:</strong><br/>
                     {% if experience > 100 %}
@@ -20,12 +25,22 @@
                     {% endif %}
                 </div>
             </div>
-                <div class = "experience">
-                    {% if experience %}
-                        Your current experience: {{ experience }}
-                    {% else %}
-                        You have no experience yet. Get back in the campus!
-                    {% endif %}
+                <div class = "user_stats">
+                    <div class="experience">
+                        {% if experience %}
+                            Your current experience: {{ experience }}
+                        {% else %}
+                            You have no experience yet. Get back in the campus!
+                        {% endif %}
+                    </div>
+
+                    <div class="finished_stories">
+                        {% if finished_stories %}
+                            You have finished {{ finished_stories }} {% if finished_stories == 1 %}story{% else %}stories{% endif %}.
+                        {% else %}
+                            You have not finished any stories yet.
+                        {% endif %}
+                    </div>
                 </div>
         </div>
 
