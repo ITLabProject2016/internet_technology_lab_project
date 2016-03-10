@@ -41,7 +41,7 @@
         {% endif %}
 
     {% if not user.is_authenticated %}
-        <a href="/accounts/register/" class="btn btn-lg btn-primary" role="button"><span
+        <a href="{% url 'registration_register' %}" class="btn btn-lg btn-primary" role="button"><span
                 class="glyphicon glyphicon-user"></span> Register</a>
     {% endif %}
 
