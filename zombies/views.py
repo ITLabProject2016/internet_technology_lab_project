@@ -56,12 +56,13 @@ def story_point(request, sid, spid):
         user_profile.save()
 
     storytype = storypoint.story_type
-    print storytype
+    # Similar structure can be used to count other outcomes.
     if storytype == 'end':
-        user_profile.finished_stories += 1
-        user_profile.save()
-
-
+        # If we do not make sure user is authenticated, the program hangs.
+        if request.user.is_authenticated():
+            user_profile.finished_stories += 1
+            user_profile.save()
+        
     # First our small_data
     # Problem: updated every time story point is visited. So for 3 steps, +3. Should be +1.
     # Do not write story.id = sid. What is passed from URL is ALWAYS a string. Need to cast to int.
@@ -77,7 +78,6 @@ def story_point(request, sid, spid):
     context_dict['story'] = storypoint
     context_dict['choices'] = choices
     return render(request, 'zombies/story-point.html', context_dict)
-    #return HttpResponse(storypoint.__to_string__())
 
 
 # Simple global statistics about the game.
