@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse
 from zombies.models import StoryPoint, Story
 from django.contrib.auth.models import User
+from itertools import cycle
 
 
 # Home page. At the moment, we list all the stories. Should we not present a random one instead?
@@ -62,13 +63,15 @@ def story_point(request, sid, spid):
         if request.user.is_authenticated():
             user_profile.finished_stories += 1
             user_profile.save()
-        
+
     # First our small_data
     # Problem: updated every time story point is visited. So for 3 steps, +3. Should be +1.
     # Do not write story.id = sid. What is passed from URL is ALWAYS a string. Need to cast to int.
-    if story.id == int(sid):
+    # warning a story should logged to be viewed only ONCE at the starting point
+    if int(storypoint.id) == 1:
         story.visits += 1
         story.save()
+
     storypoint.visits += 1
     storypoint.save()
 
@@ -84,6 +87,8 @@ def story_point(request, sid, spid):
 def statistics(request):
     # Get all storypoints
     spoints = StoryPoint.objects.all()
+
+
     stories = 0
     # If the story point has a type of ending, then it means it's a distinct story.
     for sp in spoints:
@@ -104,4 +109,27 @@ def statistics(request):
     context_dict['trees_count'] = trees
     context_dict['players'] = users
     context_dict['choices'] = choices_made
+
+    class Piece:
+        def __init__(self):
+            self.value = 20
+            self.color = "#F7464A"
+            self.highlight = "#FF5A5E"
+            self.label = "story_part"
+
+    colors = cycle(["#F7464A","#46BFBD","#FDB45C","#949FB1","#4D5360"])
+    colorsh = cycle(["#FF5A5E","#5AD3D1","#FFC870","#A8B3C5","#616774"])
+
+    pie = []
+    stories = Story.objects.all()
+    for s in stories:
+        piece = Piece()
+        piece.label = s.name
+        piece.value = s.visits
+        piece.color = next(colors)
+        piece.highlight = next(colorsh)
+        pie.append(piece)
+
+    context_dict['pie'] = pie
+
     return render(request, 'zombies/statistics.html', context_dict)

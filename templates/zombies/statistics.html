@@ -1,44 +1,128 @@
 {% extends 'base.html' %}
-
 {% load staticfiles %}
+{% block profile %}
 
-{% block body %}
-    <div class="container row-spacing">
+    <script src="{% static "chartjs/js/Chart.js" %}"></script>
 
-        <div class="sub-heading">
-            <h4><span class="glyphicon glyphicon-tree-deciduous"></span><strong> Stories</strong></h4>
-            {% if trees_count %}
-                <span class="stats"><strong>Currently there are {{ trees_count }} original beginning points.</strong></span>
-            {% else %}
-            {% endif %}
+    <script>
+        var pieData = [
+
+            {% for piece in pie %}
+                {
+                    value: {{  piece.value }},
+                    color: "{{ piece.color }}",
+                    highlight: "{{ piece.highlight }}",
+                    label: "{{ piece.label }}"
+                },
+            {% endfor %}
+
+
+        ];
+
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+
+        var barChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                },
+                {
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)",
+                    data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+                }
+            ]
+        }
+
+        window.onload = function () {
+            var ctx = document.getElementById("bar").getContext("2d");
+            window.myBar = new Chart(ctx).Bar(barChartData, {
+                responsive: true
+            });
+            var ctx = document.getElementById("pie").getContext("2d");
+            window.myPie = new Chart(ctx).Pie(pieData);
+        }
+    </script>
+
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6 jumbotron">
+
+        <div class="row internal">
+            <h2>All you need to know about Zombies!</h2>
         </div>
 
-        <div class="sub-heading">
-            <h4><span class="glyphicon glyphicon-leaf"></span><strong> Story lines</strong></h4>
-            {% if branches_count %}
-                <span class="stats"><strong>Currently there are {{ branches_count }} original story lines.</strong></span>
-            {% else %}
-                <span class="stats"><strong>Unfortunately, there are no story lines at the moment.</strong></span>
-            {%  endif %}
-        </div>
+        <div class="row internal">
 
-        <div class="sub-heading">
-            <h4><span class="glyphicon glyphicon-user"></span><strong> Survivors</strong></h4>
-            {% if players %}
-                <span class="stats"><strong>There are {{ players }} registered survivors on the campus.</strong></span>
-            {% else %}
-                <span class="stats"><strong>There are no registered survivors on the campus. Be the first one!</strong></span>
-            {% endif %}
-        </div>
+            <div class="col-md-5">
 
-        <div class="sub-heading">
-            <h4><span class="glyphicon glyphicon-road"></span><strong> Choices</strong></h4>
-            {% if choices %}
-                <span class="stats"><strong>Survivors have made {{ choices }} choices.</strong></span>
-            {% else %}
-                <span class="stats"><strong>Survivors have not made any choices yet. Be the leader!</strong></span>
-            {% endif %}
+                <div class="row">
+                    <canvas id="pie" width="350%" height="350%"/>
+                </div>
+
+            </div>
+
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="sub-heading">
+                    <h4><span class="glyphicon glyphicon-tree-deciduous"></span><strong> Stories</strong></h4>
+                    {% if trees_count %}
+                        <span class="stats"><strong>There are {{ trees_count }} available stories to play.</strong></span>
+                    {% else %}
+                    {% endif %}
+                </div>
+
+                <div class="sub-heading">
+                    <h4><span class="glyphicon glyphicon-leaf"></span><strong> Story lines</strong></h4>
+                    {% if branches_count %}
+                        <span class="stats"><strong>Currently there are {{ branches_count }} original story
+                            lines.</strong></span>
+                    {% else %}
+                        <span class="stats"><strong>Unfortunately, there are no story lines at the
+                            moment.</strong></span>
+                    {% endif %}
+                </div>
+
+                <div class="sub-heading">
+                    <h4><span class="glyphicon glyphicon-user"></span><strong> Survivors</strong></h4>
+                    {% if players %}
+                        <span class="stats"><strong>There are {{ players }} registered survivors on the
+                            campus.</strong></span>
+                    {% else %}
+                        <span class="stats"><strong>There are no registered survivors on the campus. Be the first
+                            one!</strong></span>
+                    {% endif %}
+                </div>
+
+                <div class="sub-heading">
+                    <h4><span class="glyphicon glyphicon-road"></span><strong> Choices</strong></h4>
+                    {% if choices %}
+                        <span class="stats"><strong>Survivors have made {{ choices }} choices.</strong></span>
+                    {% else %}
+                        <span class="stats"><strong>Survivors have not made any choices yet. Be the
+                            leader!</strong></span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <br/>
+        </div>
+        <div class="row internal">
+            <canvas id="bar" height="30%" width="80%"/>
         </div>
 
     </div>
+    <div class="col-md-3"></div>
+
+
 {% endblock %}

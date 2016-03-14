@@ -14,6 +14,13 @@ body {
     background-color: rgba(220, 220, 220, 1.0);
 }
 
+.internal {
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
 .profile {
     min-height: 300px;
 }
