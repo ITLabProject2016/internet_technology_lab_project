@@ -64,3 +64,9 @@ body {
     border-radius: 100%;
     display: inline-block;
 }
+
+/*Set how leaderboard (usernames) appear*/
+#survivors_list {
+    font-size: 18px;
+}
+

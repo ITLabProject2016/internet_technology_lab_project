@@ -149,3 +149,21 @@ def statistics(request):
     context_dict['story_bad_ends'] = story_bad_ends
 
     return render(request, 'zombies/statistics.html', context_dict)
+
+
+# Experimental. Leaderboard: shows how many people have completed various things, who has completed the most, etc.
+def survivors(request):
+
+    context_dict = {}
+    player_list = User.objects.all().order_by('-userprofile__exp')
+    user_exp = []
+    for player in player_list:
+        username = player.username
+        # Experience gained
+        exp = player.userprofile.exp
+        # Stories completed
+        stories = player.userprofile.finished_stories
+        user_exp.append([username, exp, stories])
+    context_dict['user_info'] = user_exp
+
+    return render(request, 'zombies/survivors.html', context_dict)

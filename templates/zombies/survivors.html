@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block body %}
+    <h3><strong>Survivors' ranking</strong></h3><br/>
+    {% if user_info %}
+        <table id="survivors_list" width="100%">
+            <tr>
+                <td><strong>Username</strong></td>
+                <td><strong>Experience</strong></td>
+                <td><strong>Stories</strong></td>
+            </tr>
+            <!-- Uncomment for empty row between the table header and data
+            <tr>
+                <td><br/></td>
+            </tr>
+            -->
+            {% for username, experience, stories in user_info %}
+                <tr>
+                    <td>{{ username }}</td>
+                    <td>{{ experience }}</td>
+                    <td>{{ stories }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <strong>No users have registered. Zombies feel lonely...</strong>
+    {% endif %}
+{% endblock %}
