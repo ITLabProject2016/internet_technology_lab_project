@@ -153,17 +153,20 @@ def statistics(request):
 
 # Experimental. Leaderboard: shows how many people have completed various things, who has completed the most, etc.
 def survivors(request):
-
     context_dict = {}
+    # Get all registered users
     player_list = User.objects.all().order_by('-userprofile__exp')
-    user_exp = []
+    # Initiate a list of user experiences
+    user_info = []
     for player in player_list:
         username = player.username
         # Experience gained
         exp = player.userprofile.exp
         # Stories completed
         stories = player.userprofile.finished_stories
-        user_exp.append([username, exp, stories])
-    context_dict['user_info'] = user_exp
+        user_info.append([username, exp, stories])
+    context_dict['user_info'] = user_info
 
     return render(request, 'zombies/survivors.html', context_dict)
+
+
