@@ -1,0 +1,62 @@
+{# CHANGE THIS FILE TO CHANGE BOTH PROFILE AND SURVIVOR_PROFILE: #}
+{# BOTH SHARE MORE COMMONALITIES THAN THERE ARE DIFFERENCES #}
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+<!--Title block can be added (if we want a user's tab to have something specific written-->
+
+{% block profile %}
+    <div class="container">
+        <div class="profile row" style="background-color: #985f0d">
+
+            <div class="profile col-sm-4" style="background-color: #1b6d85">
+                <p><span class="username">{% block username %}Your profile{% endblock %}</span></p>
+                {# We could include some code to show the user's profile picture. This is just to show how it'd look #}
+                <div class="profile_pic">
+                    {% block profile_pic %}
+                        <strong>Profile picture goes here</strong>
+                    {% endblock %}
+                </div>
+                <div class="badges">
+                    {% block badges %}
+                        {% if experience > 99 %}
+                            <strong>Badges:</strong><br/>
+                            {# Just a random icon. We can put any images we like (preferably small) #}
+                            <span class="glyphicon glyphicon-tint"></span> Zombie killer
+                        {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+                {% block user_stats %}
+                    <div class = "user_stats">
+                        <div class="experience">
+                            {% if experience %}
+                                {% block exp_text %}
+                                    Your current experience: {{ experience }}
+                                {% endblock %}
+                            {% else %}
+                                {% block no_exp_text %}
+                                    You have no experience yet. Get back in the campus!
+                                {% endblock %}
+                            {% endif %}
+                        </div>
+
+                        <div class="finished_stories">
+                            {% if finished_stories %}
+                                {% block stories_text %}You have{% endblock %} finished
+                                {{ finished_stories }} {% if finished_stories == 1 %}story{% else %}stories{% endif %}.
+                            {% else %}
+                                {% block no_stories_text %}You have{% endblock %} not finished any stories yet.
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endblock %}
+
+                {% block additional_info %}
+                {% endblock %}
+            </div>
+        <div class="profile col-sm-6"></div>
+        </div>
+    </div>
+{% endblock %}

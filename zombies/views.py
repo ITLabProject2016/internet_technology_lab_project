@@ -42,11 +42,11 @@ def profile(request):
 
 # Links to the story_point template. Main stats are collected here.
 def story_point(request, sid, spid):
-    storyID = int(sid)
-    storypointID = int(spid)
+    # storyID = int(sid) # not used anymore, delet elater
+    storypoint_id = int(spid)
     story = Story.objects.get(id=sid)
 
-    storypoint = StoryPoint.objects.filter(main_story_id=story).get(story_point_id=storypointID)
+    storypoint = StoryPoint.objects.filter(main_story_id=story).get(story_point_id=storypoint_id)
 
     # Adds experience to the currently logged in user
     # If the user is not logged in, skips it
@@ -151,22 +151,42 @@ def statistics(request):
     return render(request, 'zombies/statistics.html', context_dict)
 
 
-# Experimental. Leaderboard: shows how many people have completed various things, who has completed the most, etc.
+# Shows how many people have completed various things, who has completed the most, etc.
 def survivors(request):
     context_dict = {}
     # Get all registered users
     player_list = User.objects.all().order_by('-userprofile__exp')
     # Initiate a list of user experiences
     user_info = []
+    # Iterate over all players
     for player in player_list:
+        # Get player's username
         username = player.username
-        # Experience gained
+        # Get their experience
         exp = player.userprofile.exp
-        # Stories completed
+        # Get how many stories they have completed
         stories = player.userprofile.finished_stories
+        # Add them all to a list as another list (so that it can be used in template with ease)
         user_info.append([username, exp, stories])
     context_dict['user_info'] = user_info
 
     return render(request, 'zombies/survivors.html', context_dict)
 
+
+# Others profile that users can check out via survivors tab
+def survivor_profile(request, username):
+    context_dict = {}
+    # Get survivor according to the username that was passed
+    survivor = User.objects.get(username=username)
+    # Get their user_profile
+    survivor_prof = survivor.userprofile
+    # Get relevant info
+    exp = survivor_prof.exp
+    finished_stories = survivor_prof.finished_stories
+    # Add everything to context dictionary
+    context_dict['username'] = username
+    context_dict['experience'] = exp
+    context_dict['finished_stories'] = finished_stories
+
+    return render(request, 'zombies/survivor_profile.html', context_dict)
 

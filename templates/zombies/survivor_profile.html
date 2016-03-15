@@ -1,0 +1,23 @@
+{# If changes to names in the views are made, we can use blocks from profile_base.html. List of useful blocks: #}
+{# username; profile_pic; badges; badges_text; user_stats; additional_info #}
+{% extends 'profile_base.html' %}
+
+{% load staticfiles %}
+
+{% block username %}
+    {{ username }}'s profile
+{% endblock %}
+
+{% block exp_text %}
+    User has accumulated {{ experience }} experience.
+{% endblock %}
+{% block no_exp_text %}
+    User has no experience yet.
+{% endblock %}
+
+{% block stories_text %}
+    User has
+{% endblock %}
+{% block no_stories_text %}
+    User has
+{% endblock %}

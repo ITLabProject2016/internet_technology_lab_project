@@ -18,7 +18,12 @@
             -->
             {% for username, experience, stories in user_info %}
                 <tr>
-                    <td>{{ username }}</td>
+                    <td>
+                        {# Need this to make links work #}
+                        <div style="height:100%;width:100%">
+                            <a href="{% url 'survivor_profile' username %}">{{ username }}</a>
+                        </div>
+                    </td>
                     <td>{{ experience }}</td>
                     <td>{{ stories }}</td>
                 </tr>

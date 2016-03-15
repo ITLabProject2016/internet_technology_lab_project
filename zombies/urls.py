@@ -15,4 +15,5 @@ urlpatterns = patterns(
     url(r'^story-point/(?P<sid>\d+)/(?P<spid>\d+)/$', views.story_point, name='story-point'),
     url(r'^statistics/$', views.statistics, name='statistics'),
     url(r'^survivors/$', views.survivors, name='survivors'),
+    url(r'^survivor/(?P<username>.*)/$', views.survivor_profile, name='survivor_profile'),
 )
