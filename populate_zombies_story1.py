@@ -20,25 +20,25 @@ def populate():
     story = add_story("Zombies on Campus", "Stub description.")
 
     # # Level 1
-    sp1 = add_sp(story, 1, None,  "You are in the library.", None, 10, "start")
+    sp1 = add_sp(story, 1, None,  "You are in the library.", None, 10, "start", None)
 
     # Level 2
-    sp2 = add_sp(story, 2, sp1,  "You bump into your friend.", "Run.", 10, "mid")
-    sp3 = add_sp(story, 3, sp1,  "Zombie is friendly.", "Talk to zombie.", 10, "mid")
+    sp2 = add_sp(story, 2, sp1,  "You bump into your friend.", "Run.", 10, "mid", None)
+    sp3 = add_sp(story, 3, sp1,  "Zombie is friendly.", "Talk to zombie.", 10, "mid", None)
 
     # Level 3
-    sp4 = add_sp(story, 4, sp3,  "He's an asshole. You didn't like him.", "Talk more.", 10, "mid")
-    sp5 = add_sp(story, 5, sp3, "You become very close.", "Shake hands.", 10, "mid")
+    sp4 = add_sp(story, 4, sp3,  "He's an asshole. You didn't like him.", "Talk more.", 10, "mid", None)
+    sp5 = add_sp(story, 5, sp3, "You become very close.", "Shake hands.", 10, "mid", None)
 
     # Level 4
-    sp6 = add_sp(story, 6, sp4,  "You die.", "Punch him.", 10, "end")
-    sp7 = add_sp(story, 7, sp4,  "You become a zombie killer.", "Run away.", 10, "end")
+    sp6 = add_sp(story, 6, sp4,  "You die.", "Punch him.", 10, "end", "good")
+    sp7 = add_sp(story, 7, sp4,  "You become a zombie killer.", "Run away.", 10, "end", "bad")
 
     #Level 5
     sp8 = add_sp(story, 8, sp5,  "He catches you. You are forced into zombie marriage.",
-                 "You are uncomfortable. Run away.", 10, "end")
+                 "You are uncomfortable. Run away.", 10, "end", "good")
     sp9 = add_sp(story, 9, sp5,  "You get married. He decides you are too tasty not to eat you. Such is life (death?).",
-                 "Your relationship continues.", 10, "end")
+                 "Your relationship continues.", 10, "end", "good")
 
 
 # sid - story_id; n - name; desc - description
@@ -52,7 +52,7 @@ def add_story(n, desc):
 # choice - what the user will be shown BEFORE selecting this story point
 # exp - how much experience points the user will get
 # type - type of the story point (mid/end/start)
-def add_sp(mid, sid,storypoint_parent, desc, choice, exp, type):
+def add_sp(mid, sid,storypoint_parent, desc, choice, exp, type, end):
     sp = StoryPoint.objects.create(
         main_story_id=mid,
         story_point_id = sid,
@@ -60,7 +60,9 @@ def add_sp(mid, sid,storypoint_parent, desc, choice, exp, type):
         description = desc,
         choiceText = choice,
         experience = exp,
-        story_type = type)
+        story_type = type,
+        ending_type = end,
+    )
 
     return sp
 

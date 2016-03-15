@@ -71,6 +71,13 @@ class StoryPoint(models.Model):
         ('mid', 'mid'),
         ('end', 'end'),
     )
+
+    STORY_END = (
+        ('good', 'good'),
+        ('bad', 'bad'),
+        ('none', 'none'),
+    )
+
     parentSP = models.ForeignKey('self', null=True)
     main_story_id = models.ForeignKey(Story)
     story_point_id = models.IntegerField(default=0)
@@ -78,6 +85,7 @@ class StoryPoint(models.Model):
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)
     story_type = models.CharField(max_length=5, choices=STORY_TYPES, blank=False, null=False)
+    ending_type = models.CharField(max_length=5, choices=STORY_END, blank=False, null=True)
     visits = models.IntegerField(default=0)
 
     def __unicode__(self):

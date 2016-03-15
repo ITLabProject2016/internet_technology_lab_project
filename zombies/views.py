@@ -89,11 +89,11 @@ def statistics(request):
     spoints = StoryPoint.objects.all()
 
 
-    stories = 0
+    story_ends = 0
     # If the story point has a type of ending, then it means it's a distinct story.
     for sp in spoints:
         if sp.story_type == 'end':
-            stories += 1
+            story_ends += 1
 
     trees = len(Story.objects.all())
     users = len(User.objects.all())
@@ -105,11 +105,13 @@ def statistics(request):
         choices_made += storypoint.visits
 
     context_dict = {}
-    context_dict['branches_count'] = stories
+    context_dict['branches_count'] = story_ends
     context_dict['trees_count'] = trees
     context_dict['players'] = users
     context_dict['choices'] = choices_made
 
+    #for the pie
+    #the pie will demonstrate the preferences among the stories
     class Piece:
         def __init__(self):
             self.value = 20
@@ -131,5 +133,19 @@ def statistics(request):
         pie.append(piece)
 
     context_dict['pie'] = pie
+
+    #for the bar now
+    #the bar will show the visited good and bad endings for each story
+    story_good_ends = [0]*len(Story.objects.all())
+    story_bad_ends = [0]*len(Story.objects.all())
+
+    for sp in spoints:
+        if sp.story_type == 'end' and sp.ending_type=="good":
+            story_good_ends[int(sp.main_story_id.id)-1] += sp.visits
+        elif sp.story_type == 'end' and sp.ending_type=="bad":
+            story_bad_ends[int(sp.main_story_id.id)-1] += sp.visits
+
+    context_dict['story_good_ends'] = story_good_ends
+    context_dict['story_bad_ends'] = story_bad_ends
 
     return render(request, 'zombies/statistics.html', context_dict)

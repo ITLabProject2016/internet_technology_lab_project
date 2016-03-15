@@ -6,7 +6,7 @@ from django.contrib.auth.admin import User
 
 class StoryPointAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'main_story_id', 'parentSP', 'choiceText', 'description', 'experience', 'story_type', 'visits')
+        'id', 'main_story_id', 'parentSP', 'choiceText', 'description', 'experience', 'story_type', 'ending_type', 'visits')
 
 
 class StoryAdmin(admin.ModelAdmin):
