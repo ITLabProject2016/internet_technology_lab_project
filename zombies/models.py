@@ -25,7 +25,7 @@ class UserProfile(models.Model):
 
     # User can choose a picture. Should not be necessary to upload it. Otherwise may be a bit annoying.
     # Images will be uploaded to /media/profile_images/ (unless we change it in settings.py).
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    picture = models.ImageField(upload_to='img/profile', blank=True, default=None)
     # Calculate user's experience. Can add badges, give permissions, etc. based on that.
     exp = models.IntegerField(default=0)
     # Calculate how many stories user has finished.
@@ -48,6 +48,7 @@ class Story(models.Model):
     #story_id = models.IntegerField(max_length=6, unique=True)
     name = models.CharField(max_length=100, unique=True)
     description = models.CharField(max_length=1000)
+    picture = models.ImageField(upload_to='img/story', blank=True, default=None)
     visits = models.IntegerField(default=0)
 
     # Corrects "Story" to "Stories"
@@ -82,6 +83,7 @@ class StoryPoint(models.Model):
     main_story_id = models.ForeignKey(Story)
     story_point_id = models.IntegerField(default=0)
     description = models.CharField(max_length=1000, blank=False, null=False)
+    picture = models.ImageField(upload_to='img/story_point', blank=True, default=None)
     choiceText = models.CharField(max_length=100, blank=True, null=True)
     experience = models.IntegerField(default=0)
     story_type = models.CharField(max_length=5, choices=STORY_TYPES, blank=False, null=False)
