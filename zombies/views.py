@@ -10,6 +10,10 @@ from itertools import cycle
 def index(request):
     story_list = Story.objects.order_by('id')
     context_dict = {'stories': story_list}
+    # We have to clear the cookies, otherwise if the exits the story before finishing it,
+    # the cookie will persist and the expandable view will list all the story points visited
+    # before the session was abruptly ended
+    request.session['progression'] = ""
     return render(request, 'zombies/index.html', context_dict)
 
 
@@ -40,9 +44,9 @@ def profile(request):
     return render(request, 'zombies/profile.html', context_dict)
 
 
-# Links to the story_point template. Main stats are collected here.
+# Links to the story_point template. Main stats are collected here, as well as
+# the story progression text.
 def story_point(request, sid, spid):
-    # storyID = int(sid) # not used anymore, delet elater
     storypoint_id = int(spid)
     story = Story.objects.get(id=sid)
 
@@ -77,7 +81,21 @@ def story_point(request, sid, spid):
 
     choices = StoryPoint.objects.filter(main_story_id=story).filter(parentSP=storypoint)
 
+    # Kind of works, but not fully - cannot figure out how to add stuff to the description
+    progression = request.session.get('progression')
+    if not progression:
+        progression = storypoint.description
+    else:
+        # Can add something before storypoint.description to denote beginning of another story point.
+        # Unfortunately, newline character does not work in cookies. STILL TO BE DONE (if possible...)!
+        progression += " " + storypoint.description
+    request.session['progression'] = progression
+    # Clear the cookies if the user has finished a story
+    if not choices:
+        request.session['progression'] = ""
+
     context_dict = {}
+    context_dict['progression'] = progression
     context_dict['story'] = storypoint
     context_dict['choices'] = choices
     return render(request, 'zombies/story-point.html', context_dict)
