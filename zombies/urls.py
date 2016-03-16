@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, url
 from zombies import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Patterns we are using on zombies project. If the user enters something that matches
 # any of these URLs (after "zombies/"), appropriate view will be shown.
