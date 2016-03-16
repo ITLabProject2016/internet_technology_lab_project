@@ -14,9 +14,10 @@ from zombies.models import StoryPoint, Story
 
 storypoints = StoryPoint.objects.all()
 for sp in storypoints:
-    file = open("./populate/diff.png")
+    file = open("./populate/dev.jpg")
     dJango_file = File(file, 'r')
-    name = "picture.png"
+    name = os.path.basename(file)
+    print name
     sp.picture.save(name, dJango_file)
     sp.save()
 

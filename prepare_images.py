@@ -8,8 +8,8 @@ import glob
 
 ##################################
 #change me!!!!
-DIR = "/home/kostis/Desktop/"
-OUT_DIR = "./populate"
+DIR = "/home/kostis/Desktop/img/"
+OUT_DIR = "./populate_img"
 opt_width = 500;
 ##################################
 
