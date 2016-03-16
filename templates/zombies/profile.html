@@ -5,6 +5,6 @@
 {% load staticfiles %}
 
 {% block profile_pic %}
-    <img src="{% static "images/tallahassee.jpg" alt="{{ username }} %}" style="width:125px;height:125px;" class="img-circle">
+    <img id="profile_img" class="img-circle" src="{% static "images/tallahassee.jpg" %}" alt="{{ username }}">
 {% endblock %}
 

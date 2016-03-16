@@ -25,6 +25,10 @@ body {
     margin-right: 5%;
 }
 
+.botmar {
+    margin-bottom: 5%;
+}
+
 
 .profile {
     min-height: 300px;
@@ -43,7 +47,7 @@ body {
 
 .username {
     color: #080808;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -63,6 +67,7 @@ body {
     border: 2px solid black;
     border-radius: 100%;
     display: inline-block;
+    margin-bottom: 10%;
 }
 
 /*Set how leaderboard (usernames) appear*/
@@ -70,3 +75,7 @@ body {
     font-size: 18px;
 }
 
+#profile_img {
+    width: 180px;
+    height: 180px;
+}
