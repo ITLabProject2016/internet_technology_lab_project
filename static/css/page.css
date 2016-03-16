@@ -91,3 +91,54 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
+
+
+/* Collapsible text font and other stuff - innards of the "Where am I" tab */
+#collapseOne {
+    background: rgba(0,0,0,0.2);
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    color: #f2f2f2;
+}
+
+/* How the topmost part appears ("Where am I?..") */
+.panel {
+    background:rgba(0,0,0,0.2); /*almost transparent box - black colour*/
+}
+
+/* Similar to above, for playing around with tab heading */
+#headingOne {
+    background:rgba(0,0,0,0.2);
+}
+
+/* Title's font, etc. */
+.panel-title {
+    color: #f2f2f2;
+}
+
+/* I think not necessary */
+/*#accordion {*/
+    /*color: #f2f2f2;*/
+/*}*/
+
+
+/* Button that launches a new window - font colours and so on */
+.modal-body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #f2f2f2;
+}
+
+/* Background of the new window */
+.modal-content {
+    background:rgba(0,0,0,0.4);
+}
+
+/* Can add this class to buttons, change their transparency and other properties if we wish */
+.custom_buttons {
+    background: rgba(0,0,0,0.4);
+}
+
+/* What happens when we hover over them */
+/* STILL NEEDS TO BE DONE: WHEN CLICKED, IT APPEARS TO BE BLUE, SO NEED TO CHANGE THAT */
+.custom_buttons:hover {
+    background: rgba(0,0,0,0.8);
+}
