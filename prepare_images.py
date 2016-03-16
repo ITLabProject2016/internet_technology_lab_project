@@ -7,10 +7,14 @@ import glob
 #gets images from a dir recursively, resizes them to optimal width and copies them to a new dir
 
 ##################################
-#change me!!!!
+#change me to your pictures dir!!!!
 DIR = "/home/kostis/Desktop/img/"
-OUT_DIR = "./populate_img"
-opt_width = 350;
+
+#story icons are saved at  "./populate_img/stories"  with width 100
+#story point icons are saved at  "./populate_img/points"  with width 350
+
+OUT_DIR = "./populate_img/stories"
+opt_width = 100;
 ##################################
 
 G = glob.glob(DIR+"*.jpg")

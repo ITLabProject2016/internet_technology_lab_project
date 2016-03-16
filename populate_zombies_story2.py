@@ -50,7 +50,7 @@ def populate():
 # sid - story_id; n - name; desc - description
 def add_story(n, desc, pic):
 
-    path = "./populate_img/"+pic+".jpg"
+    path = "./populate_img/stories/"+pic+".jpg"
     dJango_file = File(open(path), 'r')
     name = os.path.basename(path)
 
@@ -69,7 +69,7 @@ def add_story(n, desc, pic):
 # type - type of the story point (mid/end/start)
 def add_sp(mid, sid,storypoint_parent, desc, pic, choice, exp, type, end):
 
-    path = "./populate_img/"+pic+".jpg"
+    path = "./populate_img/points/"+pic+".jpg"
     dJango_file = File(open(path), 'r')
     name = os.path.basename(path)
 
