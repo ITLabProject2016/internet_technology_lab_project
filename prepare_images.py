@@ -10,13 +10,14 @@ import glob
 #change me!!!!
 DIR = "/home/kostis/Desktop/"
 OUT_DIR = "./populate"
-opt_width = 300;
+opt_width = 500;
 ##################################
 
 G = glob.glob(DIR+"*.jpg")
 G1 = glob.glob(DIR+"*.png")
 G2 = glob.glob(DIR+"*.JPEG")
-G = G + G1 + G2
+G3 = glob.glob(DIR+"*.JPG")
+G = G + G1 + G2 + G3
 
 for filePath in G:
 
@@ -32,6 +33,6 @@ for filePath in G:
     height = int(height * ratio)
 
     img = img.resize([width,height])
-    img.save(os.path.join(OUT_DIR, os.path.basename(filePath)))
-    print os.path.join(OUT_DIR, os.path.basename(filePath))
+    img.save(os.path.join(os.path.join(OUT_DIR, os.path.splitext(os.path.basename(filePath))[0]))+".jpg")
+    print os.path.join(os.path.join(OUT_DIR, os.path.splitext(os.path.basename(filePath))[0]))+".jpg"
 
