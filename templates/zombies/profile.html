@@ -19,8 +19,7 @@
                         <img id="profile_img" class="img-circle" src="{% url 'media' "img/profile/tallahassee.jpg" %}" />
                     {% endblock %}
                 </div>
-                <p><span class="username">Username</span></p>
-                {# We could include some code to show the user's profile picture. This is just to show how it'd look #}
+                <p><span class="username">{% block uname %}{{ username }}{% endblock %}</span></p>
                 <div class="badges">
                     {% block badges %}
                         {% if experience > 99 %}
