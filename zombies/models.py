@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+import os
+from uuid import uuid4
 
 
 # USEFUL INFO:
@@ -17,15 +19,29 @@ from django.db.models.signals import post_save
 #
 # for a good well-being please read
 # https://docs.djangoproject.com/en/1.9/topics/db/models/
-#
+
+# Credit to: http://stackoverflow.com/questions/15140942/django-imagefield-change-file-name-on-upload
+def path_and_rename(instance, filename):
+    upload_to = 'img/profile'
+    ext = filename.split('.')[-1]
+    # get filename
+    if instance.pk:
+        filename = '{}.{}'.format(instance.pk, ext)
+    else:
+        # set filename as random string
+        filename = '{}.{}'.format(uuid4().hex, ext)
+    # return the whole path to the file
+    return os.path.join(upload_to, filename)
+
 
 class UserProfile(models.Model):
     # Link UserProfile with a User model instance
     user = models.OneToOneField(User)
 
     # User can choose a picture. Should not be necessary to upload it. Otherwise may be a bit annoying.
-    # Images will be uploaded to /media/profile_images/ (unless we change it in settings.py).
-    picture = models.ImageField(upload_to='img/profile', blank=True, default=None)
+    # Images will be uploaded to /media/profile/ (unless we change it in settings.py).
+    # DO NOT delete default link. If user chooses not to upload the picture, default will be given.
+    picture = models.ImageField(upload_to=path_and_rename, blank=True, default="img/profile/tallahassee.jpg")
     # Calculate user's experience. Can add badges, give permissions, etc. based on that.
     exp = models.IntegerField(default=0)
     # Calculate how many stories user has finished.

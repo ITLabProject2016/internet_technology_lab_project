@@ -1,9 +1,10 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse
-from zombies.models import StoryPoint, Story
+from zombies.models import StoryPoint, Story, UserProfile
 from django.contrib.auth.models import User
 from itertools import cycle
+from zombies.forms import UserProfileForm
 
 
 # Home page. At the moment, we list all the stories. Should we not present a random one instead?
@@ -27,6 +28,19 @@ def index_min(request):
 def about(request):
     return render(request, 'zombies/about.html', {})
 
+@login_required
+def profile_pic(request):
+    if request.method == 'POST':
+        picture_form = UserProfileForm(request.POST, request.FILES)
+        if picture_form.is_valid():
+            user_profile = request.user.userprofile
+            picture = picture_form.cleaned_data['picture']
+            user_profile.picture = picture
+            user_profile.save()
+            return HttpResponseRedirect('/zombies/profile')
+    else:
+        picture_form = UserProfileForm()
+    return render(request, 'zombies/profile_pic.html', {'picture_form': picture_form})
 
 # Links to profile template. Profile view should not be shown if you're not logged in.
 @login_required
@@ -34,15 +48,36 @@ def profile(request):
     username = request.user.username
     user_profile = request.user.userprofile
     experience = user_profile.exp
+    picture = user_profile.picture.url
     # This is more of a placeholder. We can collect stats such as: deaths, marriages, heroic deeds, etc.
     # Depends on our creativity and how much we're willing to tinker with it.
     finished = user_profile.finished_stories
     context_dict = {}
     context_dict['username'] = username
+    context_dict['picture'] = picture
     context_dict['experience'] = experience
     context_dict['finished_stories'] = finished
     return render(request, 'zombies/profile.html', context_dict)
 
+
+# Others profile that users can check out via survivors tab
+def survivor_profile(request, username):
+    context_dict = {}
+    # Get survivor according to the username that was passed
+    survivor = User.objects.get(username=username)
+    # Get their user_profile
+    survivor_prof = survivor.userprofile
+    picture = survivor_prof.picture.url
+    # Get relevant info
+    exp = survivor_prof.exp
+    finished_stories = survivor_prof.finished_stories
+    # Add everything to context dictionary
+    context_dict['username'] = username
+    context_dict['picture'] = picture
+    context_dict['experience'] = exp
+    context_dict['finished_stories'] = finished_stories
+
+    return render(request, 'zombies/survivor_profile.html', context_dict)
 
 # Links to the story_point template. Main stats are collected here, as well as
 # the story progression text.
@@ -189,22 +224,4 @@ def survivors(request):
     context_dict['user_info'] = user_info
 
     return render(request, 'zombies/survivors.html', context_dict)
-
-
-# Others profile that users can check out via survivors tab
-def survivor_profile(request, username):
-    context_dict = {}
-    # Get survivor according to the username that was passed
-    survivor = User.objects.get(username=username)
-    # Get their user_profile
-    survivor_prof = survivor.userprofile
-    # Get relevant info
-    exp = survivor_prof.exp
-    finished_stories = survivor_prof.finished_stories
-    # Add everything to context dictionary
-    context_dict['username'] = username
-    context_dict['experience'] = exp
-    context_dict['finished_stories'] = finished_stories
-
-    return render(request, 'zombies/survivor_profile.html', context_dict)
 
