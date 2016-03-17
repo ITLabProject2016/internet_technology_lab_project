@@ -7,7 +7,8 @@
 {% block body %}
 
     {% if user.is_authenticated %}
-        <p><span class="welcome_font">Welcome back to the campus, {{ user.username }}. <br />Where will the night take you..?</span></p>
+        <p><span class="welcome_font">Welcome back to the campus, {{ user.username }}. <br/>Where will the night take you..?</span>
+        </p>
     {% else %}
         <p><span class="welcome_font">Welcome to the campus, stranger. Where will the night take you?..</span></p>
     {% endif %}
@@ -15,26 +16,20 @@
 
     <script src="{% static "js/story-load.js" %}"></script>
 
-    <table class="table table-hover">
-        <tbody>
-
-
         {% if stories %}
-            {% for story in stories %}
-                <tr>
-                    <td>
-                        <p class="text-justify text-danger">{{ story.name }} </p>
-                    </td>
-                    <td>
-                        <button class="story_start_button btn btn-lg btn-danger" type="button"
-                                value="{% url 'story-point' story.id 1 %}">Play
-                        </button>
-                    </td>
-                </tr>
-            {% endfor %}
 
-            </tbody>
-            </table>
+            {% for story in stories %}
+
+
+                        <button class="story_start_button btn btn-lg btn-danger" type="button"
+                                value="{% url 'story-point' story.id 1 %}">
+                            <img src="{% url 'media' story.picture %}" class="img-rounded" alt="{{ story.name }}"
+                                 width="100">
+                        </button>
+                        <p class="text-justify text-danger">{{ story.name }} </p>
+
+
+            {% endfor %}
 
         {% else %}
             <strong>There are no stories present.</strong>

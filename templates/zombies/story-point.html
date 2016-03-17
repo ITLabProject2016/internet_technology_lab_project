@@ -16,7 +16,7 @@
                 <p>What do you do?</p></br>
                 <strong>Choices:</strong></br></br>
 
-                <div class="btn-group-vertical">
+                <div class="btn-group-vertical btn-block">
                     {% for choice in choices %}
                         <button type="button" class="story_button btn btn-primary"
                                 value="{% url 'story-point' choice.main_story_id choice.story_point_id %}"> {{ choice.choiceText }} </button>
