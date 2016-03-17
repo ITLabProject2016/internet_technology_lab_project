@@ -156,13 +156,13 @@ body {
     background: rgba(0,0,0,0.8);
 }
 
-.a_button {
+.story_button {
      background: rgba(0,0,0,0.4);
      border: none;
      border-radius: 5px;
 }
 
-.a_button:hover {
+.story_button:hover {
     background: rgba(0,0,0,0.8);
 }
 
