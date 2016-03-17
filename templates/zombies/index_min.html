@@ -9,24 +9,28 @@
 
 <script src="{% static "js/story-load.js" %}"></script>
 
-    {% if stories %}
-        {% for story in stories %}
+{% if stories %}
 
-
-            <button class="story_start_button btn btn-lg btn-danger" type="button"
-                    value="{% url 'story-point' story.id 1 %}">
-                <img src="{% url 'media' story.picture %}" class="img-rounded" alt="{{ story.name }}"
-                     width="100">
-            </button>
-            <p class="text-justify text-danger">{{ story.name }} </p>
-
-
-        {% endfor %}
-
-
-    {% else %}
-        <strong>There are no stories present.</strong>
+    {% for story in stories %}
+        {% if forloop.counter0|divisibleby:2 %}
+            <div class="row botmar">
+        {% endif %}
+    <div class="col-md-6">
+        <button class="story_start_button btn btn-lg btn-danger" type="button"
+                value="{% url 'story-point' story.id 1 %}">
+            <img src="{% url 'media' story.picture %}" class="img-rounded" alt="{{ story.name }}"
+                 width="100">
+        </button>
+        <p class="text-justify text-danger">{{ story.name }} </p>
+    </div>
+    {% if forloop.counter|divisibleby:2 %}
+        </div>
     {% endif %}
+    {% endfor %}
+
+{% else %}
+    <strong>There are no stories present.</strong>
+{% endif %}
 
 {% if not user.is_authenticated %}
     <a href="/accounts/register/" class="btn btn-lg btn-primary" role="button"><span
