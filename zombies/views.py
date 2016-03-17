@@ -72,7 +72,7 @@ def story_point(request, sid, spid):
     # Problem: updated every time story point is visited. So for 3 steps, +3. Should be +1.
     # Do not write story.id = sid. What is passed from URL is ALWAYS a string. Need to cast to int.
     # warning a story should logged to be viewed only ONCE at the starting point
-    if int(storypoint.id) == 1:
+    if int(storypoint.story_point_id) == 1:
         story.visits += 1
         story.save()
 
@@ -84,15 +84,15 @@ def story_point(request, sid, spid):
     # Kind of works, but not fully - cannot figure out how to add stuff to the description
     progression = request.session.get('progression')
     if not progression:
-        progression = storypoint.description
+        progression = [storypoint.description]
     else:
         # Can add something before storypoint.description to denote beginning of another story point.
-        # Unfortunately, newline character does not work in cookies. STILL TO BE DONE (if possible...)!
-        progression += " " + storypoint.description
+        progression = progression + [storypoint.description]
+
     request.session['progression'] = progression
     # Clear the cookies if the user has finished a story
     if not choices:
-        request.session['progression'] = ""
+        request.session['progression'] = [' ']
 
     context_dict = {}
     context_dict['progression'] = progression

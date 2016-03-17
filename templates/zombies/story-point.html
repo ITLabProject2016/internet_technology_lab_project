@@ -7,11 +7,12 @@
     <div id="story_content">
         <div id="story_desc">
             <img class="botmar" src="{% url 'media' story.picture %}"/>
+
             <p><i><strong>{{ story.description }}</strong></i></p>
 
         </div>
 
-        <div id="story_choices">
+        <div id="story_choices" class="botmar">
             {% if choices %}
                 <p>What do you do?</p>
                 <div class="btn-group-vertical btn-block">
@@ -21,61 +22,49 @@
                     {% endfor %}
                 </div>
                 </div>
-
-                {# LAURA: CHOOSE ONE OF THE TWO OPTIONS, DO NOT LEAVE BOTH #}
-                {# FIRST ONE IS COLLAPSABLE TAB, SECOND ONE IS THE BUTTON THAT CALLS A NEW WINDOW ON THE TOP #}
-
-                {# Nice collapsible tab #}
-                <br/>
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                  <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                      <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Where am I?..
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                      <div class="panel-body">
-                          {{ progression }}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br /> <br />
                 {# Modal (http://getbootstrap.com/javascript/#modals) that is launched when button is clicked#}
                 {# I added "custom_buttons" class, so that we can change the button's type. We can use it on other buttons if we wish,#}
                 {# to make them transparent and so on, instead of default blue/green/whatever#}
-                <button type="button" class="btn btn-primary btn-lg custom_buttons" data-toggle="modal" data-target="#myModal">
-                  The story so far...
+
+                <button type="button" class="btn btn-primary btn-lg custom_buttons" data-toggle="modal"
+                        data-target="#myModal">
+                    The story so far...
                 </button>
                 {# Modal's body #}
                 {# Change class to "modal fade bs-example-modal-lg" to make the modal larger#}
-                <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  {# If making modal larger, change class to modal-dialog modal-lg #}
-                  {# Alternatively, can just leave "modal fade" and "modal-dialog", looks nice enough #}
-                  <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">The story so far...</h4>
-                      </div>
-                      <div class="modal-body">
-                        {{ progression }}
-                      </div>
-                     </div>
-                  </div>
+                <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel">
+                    {# If making modal larger, change class to modal-dialog modal-lg #}
+                    {# Alternatively, can just leave "modal fade" and "modal-dialog", looks nice enough #}
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">The story so far...</h4>
+                            </div>
+                            <div class="modal-body">
+                            {% if progression %}
+                                {% for message in progression %}
+                                {{ message }}
+                                <br/>
+                                {% endfor %}
+                             {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-            <div id="the_end">
-                {% else %}
-                    <p>You have reached the end. Congratulations!</p>
-                    <button class="story_start_button btn btn-lg btn-danger" type="button"
-                            value="{% url 'story-point' story.main_story_id 1 %}">Play the story again</button>
-                    <button class="home btn btn-lg btn-danger" type="button"
-                            value="{% url 'index-min' %}">Play another story</button></br>
-                {% endif %}
+                <div id="the_end">
+            {% else %}
+                <p>You have reached the end. Congratulations!</p>
+                <button class="story_start_button btn btn-lg btn-danger" type="button"
+                        value="{% url 'story-point' story.main_story_id 1 %}">Play the story again
+                </button>
+                <button class="home btn btn-lg btn-danger" type="button"
+                        value="{% url 'index-min' %}">Play another story
+                </button></br>
+            {% endif %}
             </div>
     </div>
 {% else %}
