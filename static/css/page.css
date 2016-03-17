@@ -164,8 +164,6 @@ body {
 
 .a_button:hover {
     background: rgba(0,0,0,0.8);
-    border: none;
-    transition-duration: 0.2s;
 }
 
 .story_start_button {
@@ -173,9 +171,13 @@ body {
      border: rgba(0,0,0,0.4);
      border-radius: 0px;
      border: none;
+     padding: 0px 0px;
 }
 
 .story_start_button:hover {
     background: rgba(0,0,0,0.8);
-    border: none;
+}
+
+ul.nav a:hover {
+    background: rgba(0,0,0,0.2);
 }
