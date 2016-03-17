@@ -14,5 +14,4 @@
     message, or something that would let one know what is happening</li>
     <li>CSS for all links. Transparent background, etc.</li>
     <li>Make buttons nicer - perhaps transparent?</li>
-    <li><strong>Profile HTML missing error when clicking on some user??</strong>
 </ol>
