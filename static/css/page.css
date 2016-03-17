@@ -14,6 +14,7 @@ body {
     background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     color: #f2f2f2;
+    border-radius: 0px;
 }
 
 .internal {
@@ -92,6 +93,10 @@ body {
     color: white;
 }
 
+.font_style {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
 
 /* Collapsible text font and other stuff - innards of the "Where am I" tab */
 #collapseOne {
@@ -135,10 +140,42 @@ body {
 /* Can add this class to buttons, change their transparency and other properties if we wish */
 .custom_buttons {
     background: rgba(0,0,0,0.4);
+    user-select:none;
+    transition-duration: 0.2s;
+
 }
 
 /* What happens when we hover over them */
-/* STILL NEEDS TO BE DONE: WHEN CLICKED, IT APPEARS TO BE BLUE, SO NEED TO CHANGE THAT */
+/* STILL NEEDS TO BE DONE: WHEN CLICKED, IT APPEARS TO BE BLUE, SO NEED TO CHANGE THAT
+ not working now wtf*/
 .custom_buttons:hover {
+    color: rgba(0,0,0.8);
+}
+
+.custom_buttons:active {
     background: rgba(0,0,0,0.8);
+}
+
+.a_button {
+     background: rgba(0,0,0,0.4);
+     border: none;
+     border-radius: 0px;
+}
+
+.a_button:hover {
+    background: rgba(0,0,0,0.8);
+    border: none;
+    transition-duration: 0.2s;
+}
+
+.story_start_button {
+     background: rgba(0,0,0,0.4);
+     border: rgba(0,0,0,0.4);
+     border-radius: 0px;
+     border: none;
+}
+
+.story_start_button:hover {
+    background: rgba(0,0,0,0.8);
+    border: none;
 }
