@@ -26,7 +26,7 @@
         <div class="col-md-6">
             <button class="story_start_button btn btn-lg btn-danger" type="button"
                     value="{% url 'story-point' story.id 1 %}">
-                <img src="{% url 'media' story.picture %}" class="img-responsive" alt="{{ story.name }}"
+                <img src="{% url 'media' story.picture %}" class="img-rounded" alt="{{ story.name }}"
                      width="120">
             </button>
             {# <p class="font_style text-justify text-danger">{{ story.name }} </p> we don't need name if we add photo with their names #}
