@@ -16,7 +16,7 @@
             <div class="col-md-4 hormar profile">
                 <div class="profile_pic">
                     {% block profile_pic %}
-                        <img id="profile_img" class="img-circle" src="{% url 'media' "img/profile/tallahassee.jpg" %}" />
+                        <img id="profile_img" class="img-circle" src="{{ picture }}" />
                     {% endblock %}
                 </div>
                 <p><span class="username">{% block uname %}{{ username }}{% endblock %}</span></p>
