@@ -58,7 +58,7 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
                 {% if user.is_authenticated %}
                     <li>
                         <div class="dropdown-menu-right font_style dropdown_custom">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tower"></span> User</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-tower"></span> {{ user.username }}</a>
                             <span class="caret"></span>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url 'profile' %}"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
