@@ -52,14 +52,9 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
                 <a class="navbar-brand" href="{% url 'home' %}">Zombies on Campus</a>
             </div>
             <ul class="nav navbar-nav  navbar-right">
-                <li><a href="{% url 'survivors' %}"><span class="glyphicon glyphicon-tower"></span> Survivors</a></li>
-                <li><a href="{% url 'statistics' %}"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
-                <li><a href="{% url 'about' %}"><span class="glyphicon glyphicon-education"></span> About</a></li>
-
                 {% if not user.is_authenticated %}
                     <li><a href="{% url 'auth_login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 {% endif %}
-
                 {% if user.is_authenticated %}
                     <li>
                         <div class="dropdown-menu-right font_style dropdown_custom">
@@ -71,6 +66,12 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
                             </ul>
                         </div>
                     </li>
+                <li><a href="{% url 'survivors' %}"><span class="glyphicon glyphicon-tower"></span> Survivors</a></li>
+                <li><a href="{% url 'statistics' %}"><span class="glyphicon glyphicon-stats"></span> Stats</a></li>
+                <li><a href="{% url 'about' %}"><span class="glyphicon glyphicon-education"></span> About</a></li>
+
+
+
                 {% endif %}
             </ul>
         </div>
