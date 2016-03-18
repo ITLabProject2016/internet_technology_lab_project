@@ -74,7 +74,7 @@
 
 
     <div class="col-md-3"></div>
-    <div class="col-md-6 jumbotron">
+    <div id="stats_holder" class="col-md-6 jumbotron">
 
         <div class="row internal">
             <h2>All you need to know about Zombies.</h2>
@@ -85,7 +85,7 @@
             <div class="col-md-5">
 
                 <div class="row">
-                    <canvas id="pie" width="250%" height="250%"/>
+                    <canvas id="pie" width="200%" height="200%"/>
                 </div>
                 <div class="row hormar"><br/>
                 <p><span class="glyphicon glyphicon-stats"></span> The preference of players among stories.</p>
@@ -98,7 +98,7 @@
                 <div class="sub-heading">
                     <h4><span class="glyphicon glyphicon-tree-deciduous"></span><strong> Stories</strong></h4>
                     {% if trees_count %}
-                        <span class="stats"><strong>There are {{ trees_count }} available stories to play.</strong></span>
+                        <span class="stats">There are {{ trees_count }} available stories to play.</span>
                     {% else %}
                     {% endif %}
                 </div>
@@ -106,32 +106,32 @@
                 <div class="sub-heading">
                     <h4><span class="glyphicon glyphicon-leaf"></span><strong> Story lines</strong></h4>
                     {% if branches_count %}
-                        <span class="stats"><strong>Currently there are {{ branches_count }} original story
-                            lines.</strong></span>
+                        <span class="stats">Currently there are {{ branches_count }} original story
+                            lines.</span>
                     {% else %}
-                        <span class="stats"><strong>Unfortunately, there are no story lines at the
-                            moment.</strong></span>
+                        <span class="stats">Unfortunately, there are no story lines at the
+                            moment.</span>
                     {% endif %}
                 </div>
 
                 <div class="sub-heading">
                     <h4><span class="glyphicon glyphicon-user"></span><strong> Survivors</strong></h4>
                     {% if players %}
-                        <span class="stats"><strong>There are {{ players }} registered survivors on the
-                            campus.</strong></span>
+                        <span class="stats">There are {{ players }} registered survivors on the
+                            campus.</span>
                     {% else %}
-                        <span class="stats"><strong>There are no registered survivors on the campus. Be the first
-                            one!</strong></span>
+                        <span class="stats">There are no registered survivors on the campus. Be the first
+                            one!</span>
                     {% endif %}
                 </div>
 
                 <div class="sub-heading">
                     <h4><span class="glyphicon glyphicon-road"></span><strong> Choices</strong></h4>
                     {% if choices %}
-                        <span class="stats"><strong>Survivors have made {{ choices }} choices.</strong></span>
+                        <span class="stats">Survivors have made {{ choices }} choices.</span>
                     {% else %}
-                        <span class="stats"><strong>Survivors have not made any choices yet. Be the
-                            leader!</strong></span>
+                        <span class="stats">Survivors have not made any choices yet. Be the
+                            leader!</span>
                     {% endif %}
                 </div>
             </div>

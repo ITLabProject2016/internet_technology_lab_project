@@ -17,6 +17,15 @@ body {
     border-radius: 10px;
 }
 
+#stats_holder {
+    margin-top: 5%;
+    background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    font-size: 17px;
+    color: #f2f2f2;
+    border-radius: 10px;
+}
+
 .internal {
     margin-bottom: 5%;
     margin-left: 5%;
@@ -38,7 +47,7 @@ body {
 }
 
 .stats {
-    padding-left: 24px;
+    padding-left: 20px;
 }
 
 /* Just testing various fonts. The default ones are rather boring. */
@@ -84,11 +93,6 @@ body {
 }
 
 .navbar a {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-}
-
-.holder {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
