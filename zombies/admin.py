@@ -1,5 +1,5 @@
 from django.contrib import admin
-from zombies.models import UserProfile, StoryPoint, Story  # , UserProfile_StoryPoint
+from zombies.models import UserProfile, StoryPoint, Story
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.admin import User
 
@@ -22,11 +22,9 @@ class UserProfileInline(admin.StackedInline):
 class UserAdmin(UserAdmin):
     inlines = (UserProfileInline, )
 
-# Registering models
+# Registering the models
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.register(UserProfile)
 admin.site.register(Story, StoryAdmin)
 admin.site.register(StoryPoint, StoryPointAdmin)
-
-# admin.site.register(UserProfile_StoryPoint)
