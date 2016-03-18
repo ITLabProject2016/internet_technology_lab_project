@@ -3,7 +3,7 @@ from django.test import TestCase
 # Create your tests here.
 
 from django.test import TestCase
-from models import Story, StoryPoint
+from models import Story, StoryPoint, UserProfile
 
 
 class StoryMethodTests(TestCase):
@@ -31,3 +31,13 @@ class StoryMethodTests(TestCase):
        self.assertEquals((storyPoint.picture=='testpic2'),True)
        self.assertEquals((storyPoint.visits==1),True)
        self.assertEquals((storyPoint.main_story_id_id==5),True)
+
+
+    def test_ensure_userProfile_is_inserted(self):
+
+     userProfile = UserProfile(user_id=123,exp=1,finished_stories=3,picture='testpic3')
+     userProfile.save()
+     self.assertEquals((userProfile.user_id==123), True)
+     self.assertEquals((userProfile.exp==1), True)
+     self.assertEquals((userProfile.finished_stories==3), True)
+     self.assertEquals((userProfile.picture=='testpic3'), True)
