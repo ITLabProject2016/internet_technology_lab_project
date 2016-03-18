@@ -11,7 +11,7 @@ class MyRegistrationView(RegistrationView):
     # In TwD12, uses self. Lots of errors with it, so I removed it
     # Not too sure of the consequences, but seems to work. -Simonas
     def get_success_url(request, user):
-        return '/zombies/profile_pic/'
+        return '/zombies/'
 
 
 urlpatterns = patterns('',

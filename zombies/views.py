@@ -28,8 +28,10 @@ def index_min(request):
 def about(request):
     return render(request, 'zombies/about.html', {})
 
+# Links to profile template. Profile view should not be shown if you're not logged in.
 @login_required
-def profile_pic(request):
+def profile(request):
+
     if request.method == 'POST':
         picture_form = UserProfileForm(request.POST, request.FILES)
         if picture_form.is_valid():
@@ -40,11 +42,7 @@ def profile_pic(request):
             return HttpResponseRedirect('/zombies/profile')
     else:
         picture_form = UserProfileForm()
-    return render(request, 'zombies/profile_pic.html', {'picture_form': picture_form})
 
-# Links to profile template. Profile view should not be shown if you're not logged in.
-@login_required
-def profile(request):
     username = request.user.username
     user_profile = request.user.userprofile
     experience = user_profile.exp
@@ -57,6 +55,7 @@ def profile(request):
     context_dict['picture'] = picture
     context_dict['experience'] = experience
     context_dict['finished_stories'] = finished
+    context_dict['picture_form'] = picture_form
     return render(request, 'zombies/profile.html', context_dict)
 
 
