@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/page.css" afterPath="$PROJECT_DIR$/static/css/page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/zombies/index.html" afterPath="$PROJECT_DIR$/templates/zombies/index.html" />
     </list>
     <ignored path="zombies_on_campus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +25,7 @@
     <favorites_list name="zombies_on_campus" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="dev.jpg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/populate_img/stories/dev.jpg">
           <provider selected="true" editor-type-id="images">
@@ -37,7 +36,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/zombies/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.4827585">
+            <state vertical-scroll-proportion="0.0">
               <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding />
             </state>
@@ -47,8 +46,8 @@
       <file leaf-file-name="page.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.647541">
-              <caret line="175" column="4" selection-start-line="175" selection-start-column="4" selection-end-line="175" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.3327869">
+              <caret line="165" column="23" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -57,7 +56,7 @@
       <file leaf-file-name="story-point.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/zombies/story-point.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3448277">
+            <state vertical-scroll-proportion="0.0">
               <caret line="34" column="85" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="85" />
               <folding />
             </state>
@@ -804,7 +803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/zombies/story-point.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3448277">
+        <state vertical-scroll-proportion="0.0">
           <caret line="34" column="85" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="85" />
           <folding />
         </state>
@@ -812,7 +811,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/zombies/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4827585">
+        <state vertical-scroll-proportion="0.0">
           <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding />
         </state>
@@ -820,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.647541">
-          <caret line="175" column="4" selection-start-line="175" selection-start-column="4" selection-end-line="175" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.3327869">
+          <caret line="165" column="23" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="23" />
           <folding />
         </state>
       </provider>
