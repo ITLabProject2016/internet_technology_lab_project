@@ -8,8 +8,8 @@
     <li><strong>Deployment</strong></li>
     <li><strong>Add proper stories.</strong></li>
     <li><storng>Upload pictures to the stories.</storng></li>
+    <li>Story images should be in static folder, not media. Media is for user uploaded files.</li>
     <li>Fix user dropdown list to be consistent with other design</li>
-    <li></li>
     <li>If the user enters a username that already exists, he/she is shown the same page again. Should not be this way.
         Should show an error message, or something that would let one know what is happening.</li>
     <li>Buttons - make them exactly the same in all of the pages.</li>
