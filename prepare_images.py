@@ -8,13 +8,13 @@ import glob
 
 ##################################
 #change me to your pictures dir!!!!
-DIR = "/home/kostis/Desktop/zombie_pictures/"
+DIR = "/home/kostis/Desktop/space_pictures/"
 
 #story icons are saved at  "./populate_img/stories"  with width 100
 #story point icons are saved at  "./populate_img/points"  with width 350
 
 OUT_DIR = "./populate_img/points"
-opt_width = 350;
+opt_width = 300;
 ##################################
 
 G = glob.glob(DIR+"*.jpg")
