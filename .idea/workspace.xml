@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7be22013-75f0-4b3b-b857-824c46635554" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/page.css" afterPath="$PROJECT_DIR$/static/css/page.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/zombies/statistics.html" afterPath="$PROJECT_DIR$/templates/zombies/statistics.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
     </list>
     <ignored path="zombies_on_campus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,17 +27,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/zombies/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.137931">
+            <state vertical-scroll-proportion="-6.206897">
               <caret line="9" column="85" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="85" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48192772">
+            <state vertical-scroll-proportion="-2.7586207">
               <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
               <folding />
             </state>
@@ -57,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.896552">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.4698795">
+              <caret line="60" column="124" selection-start-line="60" selection-start-column="124" selection-end-line="60" selection-end-column="124" />
               <folding />
             </state>
           </provider>
@@ -138,9 +135,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/templates/zombies/index.html" />
         <option value="$PROJECT_DIR$/templates/zombies/survivors.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/zombies/statistics.html" />
         <option value="$PROJECT_DIR$/static/css/page.css" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
       </list>
     </option>
   </component>
@@ -785,22 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/zombies/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.137931">
-          <caret line="9" column="85" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.896552">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/zombies/story-point.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.448277">
@@ -819,8 +800,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48192772">
+        <state vertical-scroll-proportion="-2.7586207">
           <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/zombies/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.206897">
+          <caret line="9" column="85" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4698795">
+          <caret line="60" column="124" selection-start-line="60" selection-start-column="124" selection-end-line="60" selection-end-column="124" />
           <folding />
         </state>
       </provider>
