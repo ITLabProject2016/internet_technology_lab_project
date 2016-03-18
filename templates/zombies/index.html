@@ -17,8 +17,6 @@
     <script src="{% static "js/story-load.js" %}"></script>
 
     {% if stories %}
-
-
         {% for story in stories %}
             {% if forloop.counter0|divisibleby:2 %}
                 <div class="row botmar">
