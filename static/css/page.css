@@ -157,13 +157,13 @@ body {
 }
 
 .story_button {
-     background: rgba(0,0,0,0.4);
+     background: rgba(0,0,0,0.8);
      border: none;
      border-radius: 5px;
 }
 
 .story_button:hover {
-    background: rgba(0,0,0,0.8);
+    background: #993d00;
 }
 
 .a_button {
