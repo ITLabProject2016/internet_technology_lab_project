@@ -32,30 +32,24 @@
                     <br/>
                     <a href="{% url 'auth_password_change' %}">Change password</a>
                 {% endblock %}
-
-                <div class="badges">
-                    {% block badges %}
-                        {% if experience > 99 %}
-                            <strong>Badges:</strong><br/>
-                            {# Just a random icon. We can put any images we like (preferably small) #}
-                            <span class="glyphicon glyphicon-tint"></span> Zombie killer
-                        {% endif %}
-                    {% endblock %}
-                </div>
             </div>
 
             {% block user_stats %}
                 <div class="user_stats">
                     <div class="experience">
                         {% if experience %}
-                            {% block exp_text %}
-                                </br>
-                                <p class="botmar">Your current experience: {{ experience }}</p>
-                            {% endblock %}
+                            <div class="botmar">
+                                {% block exp_text %}
+                                    </br>
+                                    <p>Your current experience: {{ experience }}</p>
+                                {% endblock %}
+                            </div>
                         {% else %}
-                            {% block no_exp_text %}
-                                <p class="botmar">You have no experience yet. Get back in the campus!</p>
-                            {% endblock %}
+                            <div class="botmar">
+                                {% block no_exp_text %}
+                                    <p>You have no experience yet. Get back in the campus!</p>
+                                {% endblock %}
+                            </div>
                         {% endif %}
                     </div>
 
@@ -67,6 +61,16 @@
                             {% block no_stories_text %}You have{% endblock %} not finished any stories yet.
                         {% endif %}
                     </div>
+
+                <div class="badges">
+                    {% block badges %}
+                        {% if experience > 99 %}
+                            Badges:<br/><br/>
+                            <span class="glyphicon glyphicon-tint"></span> Zombie killer <br/>
+                        {% endif %}
+                    {% endblock %}
+                </div>
+
                 </div>
             {% endblock %}
 

@@ -44,7 +44,7 @@ body {
     margin-right: 5%;
 }
 
-.botmar, .finished_stories, .username {
+.botmar, .finished_stories, .username .badges {
     margin-bottom: 5%;
     color: white;
 }
@@ -70,10 +70,9 @@ body {
 }
 
 .badges {
-    color: #080808;
-    font-size: 15px;
-    font-weight: bold;
-    padding-top: 10px;
+    color: white;
+    position: relative;
+    top: 50px;
 }
 
 .profile_pic {
