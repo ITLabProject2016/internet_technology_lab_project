@@ -14,7 +14,7 @@ body {
     background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     color: #f2f2f2;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 #stats_holder {
@@ -23,7 +23,14 @@ body {
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     font-size: 17px;
     color: #f2f2f2;
-    border-radius: 10px;
+    border-radius: 6px;
+}
+
+#profile_holder {
+    background:rgba(0,0,0,0.5); /*almost transparent box - black colour*/
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    font-size: 17px;
+    border-radius: 6px;
 }
 
 .internal {
@@ -37,8 +44,9 @@ body {
     margin-right: 5%;
 }
 
-.botmar {
+.botmar, .finished_stories, .username {
     margin-bottom: 5%;
+    color: white;
 }
 
 
@@ -48,13 +56,6 @@ body {
 
 .stats {
     padding-left: 20px;
-}
-
-/* Just testing various fonts. The default ones are rather boring. */
-/* We could use something like: https://www.google.com/fonts */
-.welcome_font {
-    /* Can change the font here of a welcome message, if needed be */
-    color: #f2f2f2;
 }
 
 .username {
@@ -92,12 +93,7 @@ body {
     height: 180px;
 }
 
-.navbar a {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-}
-
-.font_style {
+.font_style, .navbar a, .modal-body {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
@@ -128,13 +124,6 @@ body {
 /*#accordion {*/
     /*color: #f2f2f2;*/
 /*}*/
-
-
-/* Button that launches a new window - font colours and so on */
-.modal-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #f2f2f2;
-}
 
 /* Background of the new window */
 .modal-content {
@@ -181,11 +170,12 @@ body {
 }
 
 .story_start_button {
-     background: rgba(0,0,0,0.4);
+     background: #991f00;
      border: rgba(0,0,0,0.4);
      border-radius: 5px;
      border: none;
-     padding: 0px 0px;
+     padding: 5px 5px;
+     font-size: 16px;
 }
 
 .story_start_button:hover {
@@ -202,3 +192,31 @@ ul.nav a:hover {
     position: relative;
     top: 15px;
 }
+
+
+.dropdown_link:link {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown_link:hover{
+    padding: 15px 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+dropdown_link:active {
+    background: red;
+}
+
+.home {
+    background-color:#991f00;
+    border: none;
+    padding: 5px 5px;
+    font-size: 16px;
+}
+
+.home:hover {
+    background: rgba(0,0,0,0.8);
+}
+

@@ -58,10 +58,10 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
                 {% if user.is_authenticated %}
                     <li>
                         <div class="dropdown-menu-right font_style dropdown_custom">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ user.username }}</a>
+                            <a href="#" class="dropdown-toggle dropdown_link" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ user.username }}</a>
                             <span class="caret"></span>
                             <ul class="dropdown-menu">
-                                <li><a href="{% url 'profile' %}"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                                <li><a href="{% url 'profile' %}"></span> Profile</a></li>
                                 <li><a href="{% url 'auth_logout' %}?next=/zombies/">Logout</a></li>
                             </ul>
                         </div>
@@ -76,7 +76,7 @@ Otherwise, there WILL be errors, eventually. -Simonas-->
     </div>
 </nav>
 
- {% block profile %}
+{% block profile %}
 <div class="container">
     <div class="row">
         <div class="col-sm-3"></div>
