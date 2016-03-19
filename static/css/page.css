@@ -14,7 +14,7 @@ body {
     background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     color: #f2f2f2;
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 #stats_holder {
@@ -92,12 +92,7 @@ body {
     height: 180px;
 }
 
-.navbar a {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-}
-
-.font_style {
+.font_style, .navbar a, .modal-body {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
@@ -130,11 +125,7 @@ body {
 /*}*/
 
 
-/* Button that launches a new window - font colours and so on */
-.modal-body {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #f2f2f2;
-}
+
 
 /* Background of the new window */
 .modal-content {
@@ -204,6 +195,22 @@ ul.nav a:hover {
     top: 15px;
 }
 
+
+.dropdown_link:link {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown_link:hover{
+    padding: 15px 15px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+dropdown_link:active {
+    background: red;
+}
+
 .home {
     background-color:#991f00;
     border: none;
@@ -214,3 +221,5 @@ ul.nav a:hover {
 .home:hover {
     background: rgba(0,0,0,0.8);
 }
+
+
