@@ -20,7 +20,7 @@
                     {% endblock %}
                 </div>
 
-                 <p><span class="username">{% block uname %}{{ username }}{% endblock %}</span></p>
+                 <p><span class="username font_style">{% block uname %}{{ username }}{% endblock %}</span></p>
 
                 {# Uploading profile picture inside the profile template #}
                 {% block upload_pic  %}
@@ -49,6 +49,7 @@
                     <div class="experience">
                         {% if experience %}
                             {% block exp_text %}
+                                </br>
                                 <p class="botmar">Your current experience: {{ experience }}</p>
                             {% endblock %}
                         {% else %}
