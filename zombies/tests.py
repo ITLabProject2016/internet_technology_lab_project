@@ -22,17 +22,19 @@ class URLTests(TestCase):
             self.assertEqual(found.func, about)
 
 
+
+
+# Test cases for Views
+
+class ViewTests(TestCase):
+
         def test_index_view_test_no_story(self):
            c = Client()
            response = c.get("/zombies/")
            self.assertEquals(response.status_code,200)
            self.assertContains(response,"There are no stories present")
            self.assertContains(response, "Welcome to the campus, stranger. Where will the night take you?.")
-
-
-# Test cases for Views
-
-class ViewTests(TestCase):
+ 
 
         def test_index_view_test_one_story(self):
 
