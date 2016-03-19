@@ -1,18 +1,69 @@
 {# This file requires some serious clean-up - some divs are missing (or are there too many?), etc. #}
 {# We must correct it, and, ultimately, run through the tool Leif talked about to make sure all is ok #}
 {% load staticfiles %}
-<script src="{% static "js/story-load.js" %}"></script>
+<script src="{% static "typedjs/js/typed.min.js" %}"></script>
+{# <script src="{% static "js/story-load.js" %}"></script> #}
+<link href="{% static "typedjs/css/typed.css" %}" rel="stylesheet">
 
 {% if story %}
+
+    <script>
+
+        $(document).ready(function () {
+
+            //$('#main_content').hide();
+             $('.story_options').hide();
+
+             $(function () {
+                $(".element").typed({
+                    strings: ["{{ story.description }}"],
+                    typeSpeed: 5,
+                    callback: function() {
+                         $('.story_options').delay(500).fadeIn(900);
+                    }
+                });
+            });
+
+
+            $("button").click(function () {
+                //alert("you clicked a button");
+                if ($(this).hasClass('home') || $(this).hasClass('story_start_button') || $(this).hasClass('story_button')) {
+                    //alert($('.story_start_button').val());
+
+                    $.get($(this).val(), function (data) {
+                        $('#main_content').hide();
+                        $('#main_content').html(data); //we need this line to make the connection
+                        $('#main_content').fadeIn("slow");
+                    });
+                }
+            });
+
+            $('input[name=choice]').click(function () {
+                //alert("you clicked a choice");
+                //alert($(this).val());
+                $('#main_content').fadeOut("slow");
+                $.get($(this).val(), function (data) {
+
+                    $('#main_content').html(data); //we need this line to make the connection
+
+                });
+                $('#main_content').hide();
+                $('#main_content').fadeIn("slow");
+            });
+        });
+
+
+    </script>
+
     <div id="story_content">
         <div id="story_desc">
             <img class="botmar" src="{% url 'media' story.picture %}"/>
 
-            <p><i><strong>{{ story.description }}</strong></i></p>
+            <p><i><strong class="element"></strong></i></p>
 
         </div>
 
-        <div id="story_choices" class="botmar">
+        <div id="story_choices" class="story_options botmar">
             {% if choices %}
                 <p>What do you do?</p>
                 <div class="btn-group-vertical btn-block">
@@ -26,7 +77,7 @@
                 {# I added "custom_buttons" class, so that we can change the button's type. We can use it on other buttons if we wish,#}
                 {# to make them transparent and so on, instead of default blue/green/whatever#}
 
-                <button type="button" class="btn btn-primary btn-lg custom_buttons" data-toggle="modal"
+                <button type="button" class="story_options btn btn-primary btn-lg custom_buttons" data-toggle="modal"
                         data-target="#myModal">
                     The story so far...
                 </button>
@@ -44,12 +95,12 @@
                                 <h4 class="modal-title" id="myModalLabel">The story so far...</h4>
                             </div>
                             <div class="modal-body">
-                            {% if progression %}
-                                {% for message in progression %}
-                                {{ message }}
-                                <br/>
-                                {% endfor %}
-                             {% endif %}
+                                {% if progression %}
+                                    {% for message in progression %}
+                                        {{ message }}
+                                        <br/>
+                                    {% endfor %}
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -58,12 +109,12 @@
                 <div id="the_end">
             {% else %}
                 <p>You have reached the end. Congratulations!</p></br>
-                    <button class="story_start_button btn btn-lg btn-danger" type="button"
-                            value="{% url 'story-point' story.main_story_id 1 %}">Play the story again
-                    </button>
-                    <button class="home btn btn-lg btn-danger" type="button"
-                            value="{% url 'index-min' %}">Play another story
-                    </button></br>
+                <button class="story_start_button btn btn-lg btn-danger" type="button"
+                        value="{% url 'story-point' story.main_story_id 1 %}">Play the story again
+                </button>
+                <button class="home btn btn-lg btn-danger" type="button"
+                        value="{% url 'index-min' %}">Play another story
+                </button></br>
             {% endif %}
             </div>
     </div>
