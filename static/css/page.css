@@ -181,11 +181,12 @@ body {
 }
 
 .story_start_button {
-     background: rgba(0,0,0,0.4);
+     background: #991f00;
      border: rgba(0,0,0,0.4);
      border-radius: 5px;
      border: none;
-     padding: 0px 0px;
+     padding: 5px 5px;
+     font-size: 16px;
 }
 
 .story_start_button:hover {
@@ -201,4 +202,15 @@ ul.nav a:hover {
 .dropdown_custom {
     position: relative;
     top: 15px;
+}
+
+.home {
+    background-color:#991f00;
+    border: none;
+    padding: 5px 5px;
+    font-size: 16px;
+}
+
+.home:hover {
+    background: rgba(0,0,0,0.8);
 }
