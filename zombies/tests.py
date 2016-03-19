@@ -1,5 +1,25 @@
 from django.test import TestCase
 from zombies.models import Story,StoryPoint,UserProfile
+from django.core.urlresolvers import reverse
+from zombies.views import index
+from zombies.views import about
+from django.core.urlresolvers import resolve
+
+
+
+# Test cases for Views
+
+class URLTests(TestCase):
+
+        def test_root_url_resolves_to_index_view(self):
+            found = resolve('/zombies/')
+            self.assertEqual(found.func, index)
+
+
+        def test_root_url_resolves_to_about_view(self):
+            found = resolve('/zombies/about/')
+            self.assertEqual(found.func, about)
+
 
 
 class StoryMethodTests(TestCase):
