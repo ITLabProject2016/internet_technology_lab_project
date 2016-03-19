@@ -13,66 +13,207 @@
 
         <div class="row hormar profile">
 
-            <div class="col-md-4 hormar profile">
+            <div class="col-md-4 profile">
                 <div class="profile_pic">
                     {% block profile_pic %}
-                        <img id="profile_img" class="img-circle" src="{{ picture }}" />
+                        <img id="profile_img" class="img-circle" src="{{ picture }}"/>
                     {% endblock %}
                 </div>
 
-                 <p><span class="username font_style">{% block uname %}{{ username }}{% endblock %}</span></p>
+                <p><span class="username font_style">{% block uname %}{{ username }}{% endblock %}</span></p>
 
                 {# Uploading profile picture inside the profile template #}
-                {% block upload_pic  %}
+                {% block upload_pic %}
                     <form id="user_form" method="post" action="{% url 'profile' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ picture_form }}
-                        <input type="submit" name="submit" value="Upload image" />
+                        <input type="submit" name="submit" class="btn-primary" value="Upload image"/>
                     </form>
                     <br/>
                     <a href="{% url 'auth_password_change' %}">Change password</a>
                 {% endblock %}
             </div>
 
-            {% block user_stats %}
-                <div class="user_stats">
-                    <div class="experience">
+            <div class="col-md-8 user_stats">
+                {% block user_stats %}
+
+                    <h2 class="botmar">Player Status</h2>
+
+                    <div class="botmar">
                         {% if experience %}
-                            <div class="botmar">
-                                {% block exp_text %}
-                                    </br>
-                                    <p>Your current experience: {{ experience }}</p>
-                                {% endblock %}
-                            </div>
+                            <p>Your current experience is: {{ experience }}</p>
                         {% else %}
-                            <div class="botmar">
-                                {% block no_exp_text %}
-                                    <p>You have no experience yet. Get back in the campus!</p>
-                                {% endblock %}
-                            </div>
+                            <p>You have no experience yet. Get back in the campus!</p>
                         {% endif %}
                     </div>
 
-                    <div class="finished_stories">
+                    <div class="">
                         {% if finished_stories %}
                             {% block stories_text %}You have{% endblock %} finished
                             {{ finished_stories }} {% if finished_stories == 1 %}story{% else %}stories{% endif %}.
                         {% else %}
-                            {% block no_stories_text %}You have{% endblock %} not finished any stories yet.
+                            <p>You have not finished any stories yet.</p>
                         {% endif %}
                     </div>
 
-                <div class="badges">
-                    {% block badges %}
-                        {% if experience > 99 %}
-                            Badges:<br/><br/>
-                            <span class="glyphicon glyphicon-tint"></span> Zombie killer <br/>
-                        {% endif %}
-                    {% endblock %}
-                </div>
+                    <h3 class="">Exp Achievments</h3>
+                    <div class="row badge_holder_row">
 
-                </div>
-            {% endblock %}
+                        {% if experience > 0 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_1.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">You can move</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if experience >= 50 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_10.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Zombie Killer?</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if experience >= 100 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_9.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Definetely Zombie Killer</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if experience >= 300 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_12.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Zombie Assassin</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if experience >= 400 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_11.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Samurai Zombie Slayer</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if experience >= 500 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_8.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Legend</span></div>
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                    <h3 class="">Story Achievments</h3>
+                    <div class="badge_holder_row row">
+
+                        {% if finished_stories > 0 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_first.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">First Story</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if finished_stories >= 3 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_5.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Story Tester</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if finished_stories >= 5 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_6.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Story Player</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if finished_stories >= 10 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_4.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Wanderer</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if finished_stories >= 15 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_2.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Adventurer</span></div>
+                            </div>
+                        {% endif %}
+
+                        {% if finished_stories >= 20 %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_3.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Story Teller!</span></div>
+                            </div>
+                        {% endif %}
+
+
+                    </div>
+
+                {% endblock %}
+            </div>
+
 
             {% block additional_info %}
             {% endblock %}

@@ -1,0 +1,231 @@
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+body {
+    /*background: url('http://placehold.it/1920x1080') no-repeat center center fixed;*/
+    background-color: #164e82;
+    background: url("/static/images/uog.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#holder {
+    margin-top: 20%;
+    background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    color: #f2f2f2;
+    border-radius: 6px;
+}
+
+#stats_holder {
+    margin-top: 5%;
+    background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    font-size: 17px;
+    color: #f2f2f2;
+    border-radius: 6px;
+}
+
+#profile_holder {
+    background:rgba(0,0,0,0.5); /*almost transparent box - black colour*/
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    font-size: 17px;
+    border-radius: 6px;
+}
+
+.internal {
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.hormar {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.botmar, .finished_stories, .username .badges {
+    margin-bottom: 5%;
+    color: white;
+}
+
+
+.profile {
+    min-height: 300px;
+}
+
+.stats {
+    padding-left: 20px;
+}
+
+.username {
+    color: #080808;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.user_stats {
+    color: black;
+    font-size: 20px;
+}
+
+.badges {
+    color: white;
+    position: relative;
+    top: 50px;
+}
+
+.profile_pic {
+    border: 2px solid black;
+    border-radius: 100%;
+    display: inline-block;
+    margin-bottom: 10%;
+}
+
+/*Set how leaderboard (usernames) appear*/
+#survivors_list {
+    font-size: 18px;
+}
+
+#profile_img {
+    width: 180px;
+    height: 180px;
+}
+
+.font_style, .navbar a, .modal-body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+/* Collapsible text font and other stuff - innards of the "Where am I" tab */
+#collapseOne {
+    background: rgba(0,0,0,0.2);
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    color: #f2f2f2;
+}
+
+/* How the topmost part appears ("Where am I?..") */
+.panel {
+    background:rgba(0,0,0,0.2); /*almost transparent box - black colour*/
+}
+
+/* Similar to above, for playing around with tab heading */
+#headingOne {
+    background:rgba(0,0,0,0.2);
+}
+
+/* Title's font, etc. */
+.panel-title {
+    color: #f2f2f2;
+}
+
+/* I think not necessary */
+/*#accordion {*/
+    /*color: #f2f2f2;*/
+/*}*/
+
+/* Background of the new window */
+.modal-content {
+    background:rgba(0,0,0,0.4);
+}
+
+/* Can add this class to buttons, change their transparency and other properties if we wish */
+.custom_buttons {
+    background: rgba(0,0,0,0.4);
+    user-select:none;
+    transition-duration: 0.2s;
+
+}
+
+/* What happens when we hover over them */
+/* STILL NEEDS TO BE DONE: WHEN CLICKED, IT APPEARS TO BE BLUE, SO NEED TO CHANGE THAT
+ not working now wtf*/
+.custom_buttons:hover {
+    color: rgba(0,0,0.8);
+}
+
+.custom_buttons:active {
+    background: rgba(0,0,0,0.8);
+}
+
+.story_button {
+     background: rgba(0,0,0,0.8);
+     border: none;
+     border-radius: 5px;
+}
+
+.story_button:hover {
+    background: #801a00;
+}
+
+.a_button {
+     background: rgba(0,0,0,0.4);
+     border: none;
+     border-radius: 5px;
+}
+
+.a_button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.story_start_button {
+     background: #991f00;
+     border: rgba(0,0,0,0.4);
+     border-radius: 5px;
+     border: none;
+     padding: 5px 5px;
+     font-size: 16px;
+}
+
+.story_start_button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+ul.nav a:hover {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/*Dropdown button custom layout */
+.dropdown_custom {
+    position: relative;
+    top: 7px;
+    background:transparent;
+    border: 0px;
+    font-size: 14px;
+}
+
+
+/*.dropdown_link:link {*/
+    /*color: white;*/
+    /*text-decoration: none;*/
+/*}*/
+
+/*.dropdown_link:hover{*/
+    /*padding: 15px 15px;*/
+    /*background: rgba(0,0,0,0.2);*/
+    /*border-radius: 5px;*/
+/*}*/
+
+/*dropdown_link:active {*/
+    /*background: red;*/
+/*}*/
+
+.home {
+    background-color:#991f00;
+    border: none;
+    padding: 5px 5px;
+    font-size: 16px;
+}
+
+.home:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.about {
+    text-align: justify;
+}
+
+.about p {
+    font-size: 16px;
+}

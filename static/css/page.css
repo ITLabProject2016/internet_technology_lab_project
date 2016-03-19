@@ -52,6 +52,7 @@ body {
 
 .profile {
     min-height: 300px;
+    color: #ffffff;
 }
 
 .stats {
@@ -65,7 +66,7 @@ body {
 }
 
 .user_stats {
-    color: black;
+    color: white;
     font-size: 20px;
 }
 
@@ -229,3 +230,20 @@ ul.nav a:hover {
 .about p {
     font-size: 16px;
 }
+
+.badge_external {
+     margin-right: 35px;
+}
+
+.badge_internal {
+    background-color: #ff0000;
+}
+
+.badge_labels {
+    font-size: 14px;
+}
+
+.badge_holder_row{
+    margin-left: 0px  ;
+}
+
