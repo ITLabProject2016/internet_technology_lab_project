@@ -222,3 +222,10 @@ ul.nav a:hover {
     background: rgba(0,0,0,0.8);
 }
 
+.about {
+    text-align: justify;
+}
+
+.about p {
+    font-size: 16px;
+}
