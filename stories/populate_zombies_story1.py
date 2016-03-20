@@ -44,7 +44,7 @@ def populate():
 	sp8 = add_sp(story, 8, sp6,  "-Hello? Is the cafeteria shut? I'm trying to get some coffee, there is no one at the front... You notice blood dripping from his mouth.", "library_7", "Talk to him.", 10, "mid", None) 
 	sp9 = add_sp(story, 9, sp6,  "You run to the main building. You notice 5 other people walking slowly.", "univ", "Run!", 10, "mid", None) 
 	sp14 = add_sp(story, 14, sp7, "As you start running, you bump into zombies that heard your scream. You stand no chance.", "library_moon", "Ruuuuuun!!!", 5, "end", "bad")
-	sp15 = add_sp(story, 15, sp7, "You forget it's a second floor. You break your leg. While crying from pain, you notice someone approaching you.", "dark_alley", "Grab a knife and jump our of the window.", 10, "mid", None)
+	sp15 = add_sp(story, 15, sp7, "You forget it's a second floor. You break your leg. While crying from pain, you notice someone approaching you.", "dark_alley", "Grab a knife and jump out of the window.", 10, "mid", None)
 	sp22 = add_sp(story, 22, sp20, "You realise after a few minutes that the person is very sick. You don't notice how he turns into a zombie. The last thing you feel is his hands on your neck.", "tree_3", "You are too busy. Ignore him.", 5, "end", "bad")
 	sp23 = add_sp(story, 23, sp20, "The guy says that he was bitten by a zombie. He came to Google the antidote. He wants you to help him.", "bo_lab10", "Ask him if he is okay", 10, "mid", None)
 	sp26 = add_sp(story, 26, sp21, "You jump off the top of the library building. Afterlife is boring. Sometimes you dream about choosing the other option.", "library_7", "Kill yourself before you become a zombie.", 10, "end", "good")

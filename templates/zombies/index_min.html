@@ -22,9 +22,9 @@
                  width="120">
         </button>
     </div>
-    {% if forloop.counter|divisibleby:2 %}
-        </div>
-    {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+            </div>
+        {% endif %}
     {% endfor %}
 
 {% else %}

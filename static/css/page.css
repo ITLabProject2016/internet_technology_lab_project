@@ -132,11 +132,6 @@ body {
     color: #f2f2f2;
 }
 
-/* I think not necessary */
-/*#accordion {*/
-    /*color: #f2f2f2;*/
-/*}*/
-
 /* Background of the new window */
 .modal-content {
     background:rgba(0,0,0,0.4);
@@ -160,9 +155,9 @@ body {
 }
 
 .story_button {
-     background: rgba(0,0,0,0.8);
-     border: none;
-     border-radius: 5px;
+    background: rgba(0,0,0,0.8);
+    border: none;
+    border-radius: 5px;
 }
 
 .story_button:hover {
@@ -206,9 +201,9 @@ ul.nav a:hover {
     font-size: 14px;
 }
 
-.dropdown_custom {
+/*.dropdown_custom {*/
 
-}
+/*}*/
 
 .home {
     background-color:#991f00;
@@ -235,7 +230,7 @@ ul.nav a:hover {
 }
 
 .badge_external {
-     margin-right: 35px;
+    margin-right: 35px;
 }
 
 .badge_internal {
@@ -243,7 +238,6 @@ ul.nav a:hover {
 }
 
 .badge_labels {
-
     line-height: 1.2;
 }
 
@@ -254,6 +248,6 @@ ul.nav a:hover {
 
 
 .badge_holder_row{
-    margin-left: 0px  ;
+    margin-left: 0px;
 }
 
