@@ -14,6 +14,8 @@ django.setup()
 # Finally, uncomment and edit this line
 from django.core.files import File
 from zombies.models import Story, StoryPoint
+from story_functions import add_story
+from story_functions import add_sp
 
 
 def populate():
@@ -45,49 +47,6 @@ def populate():
 
     sp14 = add_sp(story, 14, sp8,  "You cant find a cure for the zombies because you are a software engineer remeber???", "lab", "On your way around you find the biology lab", 5, "end", "good")
     sp15 = add_sp(story, 15, sp8,  "You struggle to build a killing Robot with RoboJango! Your robot saves you!!!", "robot_lab", "On your way around you find the robot lab", 5, "end", "bad")
-
-
-# sid - story_id; n - name; desc - description
-def add_story(n, desc, pic):
-
-    path = "./populate_img/stories/"+pic+".jpg"
-    dJango_file = File(open(path), 'r')
-    name = os.path.basename(path)
-
-    story = Story.objects.create(name=n, description = desc)
-
-    story.picture.save(name, dJango_file)
-    story.save()
-
-    return story
-
-# Storypoint - story point which is the foreign key (which leads to this sp)
-# s_id - story_id
-# description - what the user will be shown AFTER selecting this story point
-# choice - what the user will be shown BEFORE selecting this story point
-# exp - how much experience points the user will get
-# type - type of the story point (mid/end/start)
-def add_sp(mid, sid,storypoint_parent, desc, pic, choice, exp, type, end):
-
-    path = "./populate_img/points/"+pic+".jpg"
-    dJango_file = File(open(path), 'r')
-    name = os.path.basename(path)
-
-    sp = StoryPoint.objects.create(
-        main_story_id=mid,
-        story_point_id = sid,
-        parentSP=storypoint_parent,
-        description = desc,
-        choiceText = choice,
-        experience = exp,
-        story_type = type,
-        ending_type = end,
-    )
-
-    sp.picture.save(name, dJango_file)
-    sp.save()
-
-    return sp
 
 
 if __name__ == '__main__':

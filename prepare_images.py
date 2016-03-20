@@ -8,7 +8,7 @@ import glob
 
 ##################################
 #change me to your pictures dir!!!!
-DIR = "/home/kostis/Desktop/laura_pics/"
+DIR = "/home/kostis/Desktop/img/"
 
 #story icons are saved at  "./populate_img/stories"  with width 100
 #story point icons are saved at  "./populate_img/points"  with width 350
