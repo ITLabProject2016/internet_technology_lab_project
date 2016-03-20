@@ -6,7 +6,8 @@ from django.contrib.auth.admin import User
 
 class StoryPointAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'main_story_id', 'parentSP', 'choiceText', 'description', 'picture', 'experience', 'story_type', 'ending_type', 'visits')
+        'id', 'main_story_id', 'parentSP', 'choiceText', 'description', 'picture', 'experience', 'story_type',
+        'ending_type', 'visits')
 
 
 class StoryAdmin(admin.ModelAdmin):
@@ -20,7 +21,8 @@ class UserProfileInline(admin.StackedInline):
 
 
 class UserAdmin(UserAdmin):
-    inlines = (UserProfileInline, )
+    inlines = (UserProfileInline,)
+
 
 # Registering the models
 admin.site.unregister(User)
