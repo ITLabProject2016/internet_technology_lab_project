@@ -69,6 +69,16 @@
                                 </div>
                                 <div class="row"><span class="badge_labels">You can move</span></div>
                             </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Get your first exp to unlock this badge</span></div>
+                            </div>
                         {% endif %}
 
                         {% if experience >= 50 %}
@@ -80,6 +90,16 @@
                                     </div>
                                 </div>
                                 <div class="row"><span class="badge_labels">Zombie Killer?</span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Get 50 exp to unlock this badge</span></div>
                             </div>
                         {% endif %}
 
@@ -93,6 +113,16 @@
                                 </div>
                                 <div class="row"><span class="badge_labels">Definitely Zombie Killer</span></div>
                             </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Get 100 exp to unlock this badge</span></div>
+                            </div>
                         {% endif %}
 
                         {% if experience >= 300 %}
@@ -104,6 +134,16 @@
                                     </div>
                                 </div>
                                 <div class="row"><span class="badge_labels">Zombie Assassin</span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Get 300 exp to unlock this badge</span></div>
                             </div>
                         {% endif %}
 
@@ -117,6 +157,16 @@
                                 </div>
                                 <div class="row"><span class="badge_labels">Samurai Zombie Slayer</span></div>
                             </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Get 400 exp to unlock this badge</span></div>
+                            </div>
                         {% endif %}
 
                         {% if experience >= 500 %}
@@ -128,6 +178,16 @@
                                     </div>
                                 </div>
                                 <div class="row"><span class="badge_labels">Legend</span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Get 500 exp to unlock this badge</span></div>
                             </div>
                         {% endif %}
 
@@ -146,6 +206,16 @@
                                 </div>
                                 <div class="row"><span class="badge_labels">First Story</span></div>
                             </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Play your first story to unlock this badge</span></div>
+                            </div>
                         {% endif %}
 
                         {% if finished_stories >= 3 %}
@@ -157,6 +227,16 @@
                                     </div>
                                 </div>
                                 <div class="row"><span class="badge_labels">Story Tester</span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Win 3 stories to unlock this badge</span></div>
                             </div>
                         {% endif %}
 
@@ -170,17 +250,37 @@
                                 </div>
                                 <div class="row"><span class="badge_labels">Story Player</span></div>
                             </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Win 5 stories to unlock this badge</span></div>
+                            </div>
                         {% endif %}
 
                         {% if finished_stories >= 10 %}
                             <div class="col-md-1 badge_external">
                                 <div class="row">
                                     <div class="badge badge_internal">
-                                        <img src="{% static "images/badges/badge_4.png" %}" class="img-rounded"
+                                        <img src="{% static "images/badges/badge_3.png" %}" class="img-rounded"
                                              width="50">
                                     </div>
                                 </div>
                                 <div class="row"><span class="badge_labels">Wanderer</span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Win 10 stories to unlock this badge</span></div>
                             </div>
                         {% endif %}
 
@@ -194,17 +294,37 @@
                                 </div>
                                 <div class="row"><span class="badge_labels">Adventurer</span></div>
                             </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Win 15 stories to unlock this badge</span></div>
+                            </div>
                         {% endif %}
 
                         {% if finished_stories >= 20 %}
                             <div class="col-md-1 badge_external">
                                 <div class="row">
                                     <div class="badge badge_internal">
-                                        <img src="{% static "images/badges/badge_3.png" %}" class="img-rounded"
+                                        <img src="{% static "images/badges/badge_4.png" %}" class="img-rounded"
                                              width="50">
                                     </div>
                                 </div>
                                 <div class="row"><span class="badge_labels">Story Teller!</span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels">Win 20 stories to unlock this badge</span></div>
                             </div>
                         {% endif %}
 
