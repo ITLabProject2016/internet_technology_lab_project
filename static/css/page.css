@@ -139,8 +139,6 @@ body {
 }
 
 /* What happens when we hover over them */
-/* STILL NEEDS TO BE DONE: WHEN CLICKED, IT APPEARS TO BE BLUE, SO NEED TO CHANGE THAT
- not working now wtf*/
 .custom_buttons:hover {
     color: rgba(0,0,0.8);
 }
@@ -197,7 +195,7 @@ ul.nav a:hover {
 }
 
 .dropdown_custom {
-    
+
 }
 
 .home {

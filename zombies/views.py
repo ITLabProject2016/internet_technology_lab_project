@@ -27,7 +27,6 @@ def index_min(request):
 
 # 'About' view.
 def about(request):
-
     return render(request, 'zombies/about.html', {})
 
 
@@ -202,8 +201,9 @@ def statistics(request):
             self.color = "#F7464A"
             self.highlight = "#FF5A5E"
             self.label = "story_part"
-    colors = cycle(["#F7464A","#46BFBD","#FDB45C","#949FB1","#4D5360"])
-    colorsh = cycle(["#FF5A5E","#5AD3D1","#FFC870","#A8B3C5","#616774"])
+
+    colors = cycle(["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"])
+    colorsh = cycle(["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"])
 
     pie = []
     stories = Story.objects.all()
@@ -218,17 +218,16 @@ def statistics(request):
     context_dict['pie'] = pie
 
     # Bar chart. Shows visited good and bad endings for each story.
-    story_good_ends = [0]*len(Story.objects.all())
-    story_bad_ends = [0]*len(Story.objects.all())
+    story_good_ends = [0] * len(Story.objects.all())
+    story_bad_ends = [0] * len(Story.objects.all())
 
     for sp in story_points:
-        if sp.story_type == 'end' and sp.ending_type=="good":
-            story_good_ends[int(sp.main_story_id.id)-1] += sp.visits
-        elif sp.story_type == 'end' and sp.ending_type=="bad":
-            story_bad_ends[int(sp.main_story_id.id)-1] += sp.visits
+        if sp.story_type == 'end' and sp.ending_type == "good":
+            story_good_ends[int(sp.main_story_id.id) - 1] += sp.visits
+        elif sp.story_type == 'end' and sp.ending_type == "bad":
+            story_bad_ends[int(sp.main_story_id.id) - 1] += sp.visits
 
     context_dict['story_good_ends'] = story_good_ends
     context_dict['story_bad_ends'] = story_bad_ends
 
     return render(request, 'zombies/statistics.html', context_dict)
-

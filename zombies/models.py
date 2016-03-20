@@ -41,6 +41,8 @@ class UserProfile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
+
+
 post_save.connect(create_user_profile, sender=User)
 
 
@@ -94,5 +96,6 @@ class StoryPoint(models.Model):
         return str(self.id)
 
     def __to_string__(self):
-        Str = 'story point obj: ' + str(self.main_story_id) +' '+str(self.story_point_id) +' '+ str(self.description)+' '+ str(self.story_type)
+        Str = 'story point obj: ' + str(self.main_story_id) + ' ' + str(self.story_point_id) + ' ' + str(
+            self.description) + ' ' + str(self.story_type)
         return str(Str)
