@@ -10,7 +10,7 @@ body {
 }
 
 #holder {
-    margin-top: 20%;
+    margin-top: 10%;
     background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     color: #f2f2f2;
