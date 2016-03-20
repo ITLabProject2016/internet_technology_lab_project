@@ -1,13 +1,5 @@
 import os
 
-# These will be needed when the project goes live
-# from django.conf import settings
-# from django.conf.urls.static import static
-
-# This as well
-# if not settings.DEBUG:
-#         urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!

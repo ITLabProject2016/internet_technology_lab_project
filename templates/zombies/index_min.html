@@ -15,16 +15,19 @@
         {% if forloop.counter0|divisibleby:2 %}
             <div class="row botmar">
         {% endif %}
-    <div class="col-md-6">
-        <button class="story_start_button btn btn-lg btn-danger" type="button"
-                value="{% url 'story-point' story.id 1 %}">
-            <img src="{% url 'media' story.picture %}" class="img-rounded" alt="{{ story.name }}"
-                 width="120">
-        </button>
-    </div>
+
+        <div class="col-md-6">
+            <button class="story_start_button btn btn-lg btn-danger" type="button"
+                    value="{% url 'story-point' story.id 1 %}">
+                <img src="{% static story.picture.url %}" class="img-rounded" alt="{{ story.name }}"
+                     width="100"/>
+            </button>
+        </div>
+
         {% if forloop.counter|divisibleby:2 %}
             </div>
         {% endif %}
+
     {% endfor %}
 
 {% else %}

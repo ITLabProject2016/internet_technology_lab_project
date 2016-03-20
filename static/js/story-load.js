@@ -58,11 +58,3 @@ $(document).ready(function () {
 });
 
 //$('#story_content').hide(); //may be in use
-
-// Need this to fix the story point text being cut short.
-// See https://github.com/mattboldt/typed.js/issues/60 for explanation
-function jiggle_cursor(){
-  $('.typed-cursor').toggle();
-  setTimeout(function(){ jiggle_cursor(); }, 600);
-}
-jiggle_cursor();

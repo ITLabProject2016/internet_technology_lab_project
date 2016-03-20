@@ -7,17 +7,14 @@ import django
 
 django.setup()
 
-from django.core.files import File
-from zombies.models import Story, StoryPoint
 from story_functions import add_story
 from story_functions import add_sp
 
 
 def populate():
-    #the story name has to be unique
 	story = add_story("Zombies in Campus", "Zombies in uni?? Noooo!!!", "main_building_1")
 
-    # # Level 1
+    # Level 1
 	sp1 = add_sp(story, 1, None,  "You wake up from a well-deserved nap in the library. You look around. Where are all the people?? That's strange. You hear some noises outside.", "library_2", None, 10, "start", None)
 
     # Level 2

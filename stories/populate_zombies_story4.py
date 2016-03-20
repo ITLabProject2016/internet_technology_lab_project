@@ -13,7 +13,7 @@ def populate():
     story = add_story("Love Story in Campus", " Wonderful days were those", "love")
 
     # Level 1
-    sp1 = add_sp(story, 1, None,  "It is your first day in university. You are heart broken, and have just been_dumped. However, you came with the hope and desire to explore something new and exciting.",
+    sp1 = add_sp(story, 1, None,  "It is your first day in university. You are heart broken, and have just been dumped. However, you came with the hope and desire to explore something new and exciting.",
                  "univ", None, 10, "start", None)
 
     # Level 2
