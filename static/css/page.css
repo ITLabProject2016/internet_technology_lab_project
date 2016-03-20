@@ -18,7 +18,7 @@ body {
 }
 
 #stats_holder {
-    margin-top: 5%;
+    margin-top: 2%;
     background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     font-size: 17px;
