@@ -27,19 +27,20 @@
                     <form id="user_form" method="post" action="{% url 'profile' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ picture_form }}
-                        <input type="submit" name="submit" class="btn-primary" value="Upload image"/>
+                        <br/>
+                        <input type="submit" name="submit" class="btn btn-md btn-primary" value="Upload image"/>
                     </form>
                     <br/>
-                    <a href="{% url 'auth_password_change' %}">Change password</a>
+                    <a href="{% url 'auth_password_change' %}"><button class="btn btn-md btn-primary">Change password</button></a>
                 {% endblock %}
             </div>
 
             <div class="col-md-8 user_stats">
                 {% block user_stats %}
 
-                    <h2 class="botmar">Player Status</h2>
+                    <h2>Player Status</h2>
 
-                    <div class="botmar">
+                    <div>
                         {% if experience %}
                             <p>Your current experience is: {{ experience }}</p>
                         {% else %}
@@ -47,7 +48,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="">
+                    <div>
                         {% if finished_stories %}
                             {% block stories_text %}You have{% endblock %} finished
                             {{ finished_stories }} {% if finished_stories == 1 %}story{% else %}stories{% endif %}.
@@ -67,7 +68,18 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">You can move</span></div>
+                                <div class="row"><span class="badge_labels"><p>You can move</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Get your first exp to unlock this
+                                    badge</p></span></div>
                             </div>
                         {% endif %}
 
@@ -79,7 +91,18 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Zombie Killer?</span></div>
+                                <div class="row"><span class="badge_labels"><p>Zombie Killer?</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Get 50 exp to unlock this
+                                    badge</p></span></div>
                             </div>
                         {% endif %}
 
@@ -91,7 +114,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Definitely Zombie Killer</span></div>
+                                <div class="row"><span class="badge_labels"><p>Definitely Zombie Killer</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Get 100 exp to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -103,7 +138,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Zombie Assassin</span></div>
+                                <div class="row"><span class="badge_labels"><p>Zombie Assassin</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Get 300 exp to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -115,7 +162,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Samurai Zombie Slayer</span></div>
+                                <div class="row"><span class="badge_labels"><p>Samurai Zombie Slayer</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Get 400 exp to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -127,7 +186,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Legend</span></div>
+                                <div class="row"><span class="badge_labels"><p>Legend</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Get 500 exp to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -144,7 +215,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">First Story</span></div>
+                                <div class="row"><span class="badge_labels"><p>First Story</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span
+                                        class="badge_labels"><p>Play your first story to unlock this badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -156,7 +239,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Story Tester</span></div>
+                                <div class="row"><span class="badge_labels"><p>Story Tester</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Win 3 stories to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -168,7 +263,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Story Player</span></div>
+                                <div class="row"><span class="badge_labels"><p>Story Player</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Win 5 stories to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -176,11 +283,23 @@
                             <div class="col-md-1 badge_external">
                                 <div class="row">
                                     <div class="badge badge_internal">
-                                        <img src="{% static "images/badges/badge_4.png" %}" class="img-rounded"
+                                        <img src="{% static "images/badges/badge_3.png" %}" class="img-rounded"
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Wanderer</span></div>
+                                <div class="row"><span class="badge_labels"><p>Wanderer</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Win 10 stories to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -192,7 +311,19 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Adventurer</span></div>
+                                <div class="row"><span class="badge_labels"><p>Adventurer</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Win 15 stories to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -200,11 +331,23 @@
                             <div class="col-md-1 badge_external">
                                 <div class="row">
                                     <div class="badge badge_internal">
-                                        <img src="{% static "images/badges/badge_3.png" %}" class="img-rounded"
+                                        <img src="{% static "images/badges/badge_4.png" %}" class="img-rounded"
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels">Story Teller!</span></div>
+                                <div class="row"><span class="badge_labels"><p>Story Teller!</p></span></div>
+                            </div>
+                        {% else %}
+                            <div class="col-md-1 badge_external">
+                                <div class="row">
+                                    <div class="badge badge_internal">
+                                        <img src="{% static "images/badges/badge_question.png" %}" class="img-rounded"
+                                             width="50">
+                                    </div>
+                                </div>
+                                <div class="row"><span class="badge_labels"><p>Win 20 stories to unlock this
+                                    badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 

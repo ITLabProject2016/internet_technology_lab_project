@@ -70,6 +70,18 @@ body {
     font-size: 20px;
 }
 
+.user_stats h2 {
+    margin-bottom: 20px;
+}
+
+.user_stats h3 {
+    margin-top: 30px;
+}
+
+.user_stats p {
+    margin-bottom: 10px;
+}
+
 .badges {
     color: white;
     position: relative;
@@ -231,8 +243,15 @@ ul.nav a:hover {
 }
 
 .badge_labels {
-    font-size: 14px;
+
+    line-height: 1.2;
 }
+
+.badge_labels p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
 
 .badge_holder_row{
     margin-left: 0px  ;

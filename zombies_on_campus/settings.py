@@ -1,4 +1,3 @@
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
 # These will be needed when the project goes live
@@ -16,11 +15,12 @@ SECRET_KEY = 'n#isjueba2@d1pwttf#8ic!w@=8gm&0x^3h8=^t=@6r1)8@)t7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
 TEMPLATE_DEBUG = True
 
 # Will need to set this when the project goes live.
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kostiskag.pythonanywhere.com']
 
 # Application definition
 INSTALLED_APPS = (
