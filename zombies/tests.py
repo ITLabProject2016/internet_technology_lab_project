@@ -111,10 +111,10 @@ class ViewTests(TestCase):
         c = Client()
         response = c.get("/zombies/about/")
         self.assertEquals(response.status_code, 200)
-        self.assertContains(response, "Our game")
-        self.assertContains(response, "Ourselves")
-        self.assertContains(response, "Our project")
-        self.assertContains(response, "What was used to create the page")
+        self.assertContains(response, "Zombies on Campus")
+        self.assertContains(response, "Zombies on Campus is a quick fun choice-based game.")
+        self.assertContains(response, "The development team")
+        self.assertContains(response, "We would like to acknowledge our lecturer Dr Leif Azzopardi")
 
 
 # Test cases for Models
