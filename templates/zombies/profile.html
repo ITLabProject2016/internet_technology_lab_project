@@ -28,10 +28,10 @@
                         {% csrf_token %}
                         {{ picture_form }}
                         <br/>
-                        <input type="submit" name="submit" class="btn-primary" value="Upload image"/>
+                        <input type="submit" name="submit" class="btn btn-md btn-primary" value="Upload image"/>
                     </form>
                     <br/>
-                    <a href="{% url 'auth_password_change' %}"><button class="btn-md btn-primary">Change password</button></a>
+                    <a href="{% url 'auth_password_change' %}"><button class="btn btn-md btn-primary">Change password</button></a>
                 {% endblock %}
             </div>
 
