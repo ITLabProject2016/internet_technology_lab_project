@@ -35,7 +35,7 @@ def populate():
 
     #Level 4
     sp8 = add_sp(story, 8, sp4, "Love-luck is not in your favour. You better concentrate on your studies, so at least you can stabilise your career!",
-                 "no-love", "Simply disheartened, and go to your lectures", 10, "end", None)
+                 "no-love", "You are disheartened, and you go to your lectures", 10, "end", None)
     sp9 = add_sp(story, 9, sp4, "Here begins your love story! You take it however you wish to take further.",
                  "couple-love2", "Walk towards a beautiful girl standing all alone who seems to be lost", 5, "end", "good")
 
