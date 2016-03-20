@@ -196,21 +196,9 @@ ul.nav a:hover {
     font-size: 14px;
 }
 
-
-/*.dropdown_link:link {*/
-    /*color: white;*/
-    /*text-decoration: none;*/
-/*}*/
-
-/*.dropdown_link:hover{*/
-    /*padding: 15px 15px;*/
-    /*background: rgba(0,0,0,0.2);*/
-    /*border-radius: 5px;*/
-/*}*/
-
-/*dropdown_link:active {*/
-    /*background: red;*/
-/*}*/
+.dropdown_custom {
+    
+}
 
 .home {
     background-color:#991f00;
