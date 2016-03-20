@@ -27,19 +27,20 @@
                     <form id="user_form" method="post" action="{% url 'profile' %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ picture_form }}
+                        <br/>
                         <input type="submit" name="submit" class="btn-primary" value="Upload image"/>
                     </form>
                     <br/>
-                    <a href="{% url 'auth_password_change' %}">Change password</a>
+                    <a href="{% url 'auth_password_change' %}"><button class="btn-md btn-primary">Change password</button></a>
                 {% endblock %}
             </div>
 
             <div class="col-md-8 user_stats">
                 {% block user_stats %}
 
-                    <h2 class="botmar">Player Status</h2>
+                    <h2>Player Status</h2>
 
-                    <div class="botmar">
+                    <div>
                         {% if experience %}
                             <p>Your current experience is: {{ experience }}</p>
                         {% else %}
@@ -47,7 +48,7 @@
                         {% endif %}
                     </div>
 
-                    <div class="">
+                    <div>
                         {% if finished_stories %}
                             {% block stories_text %}You have{% endblock %} finished
                             {{ finished_stories }} {% if finished_stories == 1 %}story{% else %}stories{% endif %}.
@@ -77,7 +78,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Get your first exp to unlock this badge</p></span></div>
+                                <div class="row"><span class="badge_labels"><p>Get your first exp to unlock this
+                                    badge</p></span></div>
                             </div>
                         {% endif %}
 
@@ -99,7 +101,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Get 50 exp to unlock this badge</p></span></div>
+                                <div class="row"><span class="badge_labels"><p>Get 50 exp to unlock this
+                                    badge</p></span></div>
                             </div>
                         {% endif %}
 
@@ -121,7 +124,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Get 100 exp to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Get 100 exp to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -144,7 +148,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Get 300 exp to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Get 300 exp to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -167,7 +172,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Get 400 exp to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Get 400 exp to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -190,7 +196,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Get 500 exp to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Get 500 exp to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -219,7 +226,8 @@
                                     </div>
                                 </div>
                                 <div class="row"><span
-                                        class="badge_labels"><p>Play your first story to unlock this badge</p></span></div>
+                                        class="badge_labels"><p>Play your first story to unlock this badge</p></span>
+                                </div>
                             </div>
                         {% endif %}
 
@@ -241,7 +249,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Win 3 stories to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Win 3 stories to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -264,7 +273,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Win 5 stories to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Win 5 stories to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -287,7 +297,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Win 10 stories to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Win 10 stories to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -310,7 +321,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Win 15 stories to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Win 15 stories to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
@@ -333,7 +345,8 @@
                                              width="50">
                                     </div>
                                 </div>
-                                <div class="row"><span class="badge_labels"><p>Win 20 stories to unlock this badge</p></span>
+                                <div class="row"><span class="badge_labels"><p>Win 20 stories to unlock this
+                                    badge</p></span>
                                 </div>
                             </div>
                         {% endif %}
