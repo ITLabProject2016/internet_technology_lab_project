@@ -5,31 +5,75 @@
 <!--Title block can be added (if we want a user's tab to have something specific written-->
 
 {% block body %}
-    <h2>Zombies on Campus</h2>
+
+    <script>
+        $(document).ready(function () {
+            $('#holder').css("background", "rgba(0,0,0,0.7)");
+        });
+    </script>
+
     <div class="about">
+        <h2>Zombies on Campus</h2>
+
+        <p>Zombies on Campus is a fun, quick choice-based game.</p>
+
+        <p>The development team</p>
+
+        <ul>
+            <li>Konstantinos Kagiampakis, MSc SE <a href="https://github.com/kostiskag" target="_blank"> Git</a> <a
+                    href="mailto:2224668K@student.gla.ac.uk"
+                    target="_blank"><span
+                    class="glyphicon glyphicon-envelope"></span> Mail</a></li>
+            <li>Shallu Gangwani, MSc IT <a href="https://github.com/2165738G" target="_blank"> Git</a> <a
+                    href="mailto:2165738G@student.gla.ac.uk"
+                    target="_blank"><span
+                    class="glyphicon glyphicon-envelope"></span> Mail</a></li>
+            <li>Simonas Viliunas, MSc IT <a href="https://github.com/vilisimo" target="_blank"> Git</a> <a
+                    href="mailto:1101582V@student.gla.ac.uk"
+                    target="_blank"><span
+                    class="glyphicon glyphicon-envelope"></span> Mail</a></li>
+            <li>Laura Zebrauskaite, MSc SD <a href="https://github.com/laurabzz" target="_blank"> Git</a> <a
+                    href="mailto:1102501Z@student.gla.ac.uk"
+                    target="_blank"><span
+                    class="glyphicon glyphicon-envelope"></span> Mail</a></li>
+        </ul>
+
+        <p>Univeristy of Glasgow, March 2016</p>
+
         <p>
-            Zombies on Campus is a fun, quick choice-based game. It was built as a project for 2016 Internet
-            Technology course, taught by <a href="http://www.dcs.gla.ac.uk/~leif/" target="_blank">Leif Azzopardi.</a>
+            We would like to acknowledge our lecturer Dr. Leif Azzopardi <a
+                href="http://www.dcs.gla.ac.uk/~leif/"
+                target="_blank"><span
+                class="glyphicon glyphicon-globe"></span> web</a> for his guidance and his valuable online guide <a
+                href="http://www.tangowithdjango.com/"><span
+                class="glyphicon glyphicon-globe"></span> Tango With Django </a>.
         </p>
 
         <p>
-            The team that built this game:
-            <ul>
-                <li><a href="https://github.com/kostiskag" target="_blank">Konstantinos Kagiampakis</a></li>
-                <li><a href="https://github.com/2165738G" target="_blank">Shallu Gangwani</a></li>
-                <li><a href="https://github.com/vilisimo" target="_blank">Simonas Viliunas</a></li>
-                <li><a href="https://github.com/laurabzz" target="_blank">Laura Zebrauskaite</a></li>
-            </ul>
+            The project was built with the help of a variety of technologies
         </p>
 
-        <p>
-            The project was built using a variety of technologies: Django Framework, HTML, CSS, JavaScript, AJAX - with
-            a help of a Leif Azzopardi's book <a href="http://www.tangowithdjango.com/">Tango with Django</a>.
-        </p>
+        <ul>
+            <li>Python <a href="https://www.python.org/"><span
+                    class="glyphicon glyphicon-globe"></span> web</a></li>
+            <li>Django <a href="https://www.djangoproject.com/"><span
+                    class="glyphicon glyphicon-globe"></span> web</a></li>
+            <li>jQuery <a href="https://jquery.com/"><span
+                    class="glyphicon glyphicon-globe"></span> web</a></li>
+            <li>Bootstrap <a href="http://getbootstrap.com/"><span
+                    class="glyphicon glyphicon-globe"></span> web</a></li>
+            <li>Chart.js <a href="http://www.chartjs.org/"><span
+                    class="glyphicon glyphicon-globe"></span> web</a></li>
+            <li>Typed.js <a href="http://www.mattboldt.com/demos/typed-js/"><span
+                    class="glyphicon glyphicon-globe"></span> web</a></li>
+        </ul>
 
         <p>
-            If you wish to follow the project (why wouldn't you?): <br/><br/>
-            <iframe src="https://ghbtns.com/github-btn.html?user=ITLabProject2016&repo=internet_technology_lab_project&type=watch&size=small&v=2" frameborder="0" scrolling="0" width="190px" height="30px"></iframe>
+            If you wish follow the project on GitHub <br/><br/>
+            <a aria-label="Watch ITLabProject2016/internet_technology_lab_project on GitHub" data-style="mega"
+               href="https://github.com/ITLabProject2016/internet_technology_lab_project"
+               class="github-button">Watch</a>
+            <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
         </p>
     </div>
 {% endblock %}
