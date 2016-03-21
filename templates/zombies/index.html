@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
-
 {% load staticfiles %}
-
-<!--Title block can be added (if we want a user's tab to have something specific written-->
-
 {% block body %}
 
     {% if user.is_authenticated %}
@@ -35,7 +31,6 @@
             {% endif %}
 
         {% endfor %}
-	
 
     {% else %}
         <strong>There are no stories present.</strong>

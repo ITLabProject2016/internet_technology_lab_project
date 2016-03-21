@@ -31,9 +31,9 @@
     {% endfor %}
 
 {% else %}
-    <strong>There are no stories present.</strong>
+    <p>There are no stories present.</p>
 {% endif %}
 
 {% if not user.is_authenticated %}
-    Not a zombie killer yet? Register <a href="{% url 'registration_register' %}" >here!</a>
+    <p>Not a zombie killer yet? Register <a href="{% url 'registration_register' %}" >here!</a></p>
 {% endif %}
