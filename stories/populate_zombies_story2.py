@@ -17,8 +17,8 @@ def populate():
     sp1 = add_sp(story, 1, None,  "You are in University of Glasgow academic space station when alien zombies start to appear from nowhere.", "space_station", None, 10, "start", None)
 
     # Level 2
-    sp2 = add_sp(story, 2, sp1,  "You rush into the escape pods but there is one hungry zombie in your way",  "zombie_1", "Go go to the escape pods.",10, "mid", None)
-    sp3 = add_sp(story, 3, sp1,  "The study place is full of zombies!", "space_study", "Go go to the study place. It looks safe...", 10, "mid", None)
+    sp2 = add_sp(story, 2, sp1,  "You rush into the escape pods but there is one hungry zombie in your way",  "zombie_1", "Go to the escape pods.",10, "mid", None)
+    sp3 = add_sp(story, 3, sp1,  "The study place is full of zombies!", "space_study", "Go to the study place. It looks safe...", 10, "mid", None)
     sp4 = add_sp(story, 4, sp1,  "You close the gates, send the transmit signal and wait there drinking hot chocolate. In five days a rescue group finds and saves you!", "space_command_station",
                  "Go to the transmission station to broadcast a help signal", 10, "end", "good")
 
