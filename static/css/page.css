@@ -1,6 +1,4 @@
-/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
 body {
-    /*background: url('http://placehold.it/1920x1080') no-repeat center center fixed;*/
     background-color: #164e82;
     background: url("/static/images/uog.png") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -11,26 +9,41 @@ body {
 
 #holder {
     margin-top: 10%;
-    background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
-    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    background:rgba(0,0,0,0.3);
+    font-family: 'Source Sans Pro', sans-serif;
     color: #f2f2f2;
     border-radius: 6px;
 }
 
 #stats_holder {
     margin-top: 2%;
-    background:rgba(0,0,0,0.3); /*almost transparent box - black colour*/
-    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    background:rgba(0,0,0,0.3);
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     color: #f2f2f2;
     border-radius: 6px;
 }
 
 #profile_holder {
-    background:rgba(0,0,0,0.5); /*almost transparent box - black colour*/
-    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    background:rgba(0,0,0,0.5);
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     border-radius: 6px;
+}
+
+#survivors_list {
+    font-size: 18px;
+}
+
+#profile_img {
+    width: 180px;
+    height: 180px;
+}
+
+#collapseOne {
+    background: rgba(0,0,0,0.2);
+    font-family: 'Source Sans Pro', sans-serif; /*our font*/
+    color: #f2f2f2;
 }
 
 .internal {
@@ -48,7 +61,6 @@ body {
     margin-bottom: 5%;
     color: white;
 }
-
 
 .profile {
     min-height: 300px;
@@ -88,6 +100,28 @@ body {
     top: 50px;
 }
 
+.badge_external {
+    margin-right: 35px;
+}
+
+.badge_internal {
+    background-color: #ff0000;
+}
+
+.badge_labels {
+    line-height: 1.2;
+}
+
+.badge_labels p {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+
+.badge_holder_row{
+    margin-left: 0px;
+}
+
 .profile_pic {
     border: 2px solid black;
     border-radius: 100%;
@@ -95,59 +129,35 @@ body {
     margin-bottom: 10%;
 }
 
-/*Set how leaderboard (usernames) appear*/
-#survivors_list {
-    font-size: 18px;
-}
-
-#profile_img {
-    width: 180px;
-    height: 180px;
-}
-
 .font_style, .navbar a, .modal-body {
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
 
-/* Collapsible text font and other stuff - innards of the "Where am I" tab */
-#collapseOne {
-    background: rgba(0,0,0,0.2);
-    font-family: 'Source Sans Pro', sans-serif; /*our font*/
-    color: #f2f2f2;
-}
-
-/* How the topmost part appears ("Where am I?..") */
 .panel {
-    background:rgba(0,0,0,0.2); /*almost transparent box - black colour*/
+    background:rgba(0,0,0,0.2);
 }
 
-/* Similar to above, for playing around with tab heading */
 #headingOne {
     background:rgba(0,0,0,0.2);
 }
 
-/* Title's font, etc. */
 .panel-title {
     color: #f2f2f2;
 }
 
-/* Background of the new window */
 .modal-content {
     background:rgba(0,0,0,0.4);
 }
 
-/* Can add this class to buttons, change their transparency and other properties if we wish */
 .custom_buttons {
     background: rgba(0,0,0,0.4);
     user-select:none;
     transition-duration: 0.2s;
-
 }
 
-/* What happens when we hover over them */
 .custom_buttons:hover {
-    color: rgba(0,0,0.8);
+    color: rgba(0,0,0,0.8);
 }
 
 .custom_buttons:active {
@@ -164,16 +174,6 @@ body {
     background: #801a00;
 }
 
-.a_button {
-     background: rgba(0,0,0,0.4);
-     border: none;
-     border-radius: 5px;
-}
-
-.a_button:hover {
-    background: rgba(0,0,0,0.8);
-}
-
 .story_start_button {
      background: #991f00;
      border: rgba(0,0,0,0.4);
@@ -187,12 +187,21 @@ body {
     background: rgba(0,0,0,0.8);
 }
 
+.a_button {
+     background: rgba(0,0,0,0.4);
+     border: none;
+     border-radius: 5px;
+}
+
+.a_button:hover {
+    background: rgba(0,0,0,0.8);
+}
+
 ul.nav a:hover {
     background: rgba(0,0,0,0.2);
     border-radius: 10px;
 }
 
-/*Dropdown button custom layout */
 .dropdown_custom {
     position: relative;
     top: 7px;
@@ -224,26 +233,3 @@ ul.nav a:hover {
     font-size: 16px;
     list-style-type: none;
 }
-
-.badge_external {
-    margin-right: 35px;
-}
-
-.badge_internal {
-    background-color: #ff0000;
-}
-
-.badge_labels {
-    line-height: 1.2;
-}
-
-.badge_labels p {
-    margin-top: 5px;
-    font-size: 13px;
-}
-
-
-.badge_holder_row{
-    margin-left: 0px;
-}
-
