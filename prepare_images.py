@@ -1,5 +1,3 @@
-__author__ = 'kostis'
-
 import os
 import Image
 import glob

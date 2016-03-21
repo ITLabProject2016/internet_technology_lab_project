@@ -8,7 +8,6 @@ from django.test import Client
 
 
 # Test cases for URL
-
 class URLTests(TestCase):
     def test_root_url_resolves_to_index_view(self):
         found = resolve('/zombies/')
@@ -36,7 +35,6 @@ class URLTests(TestCase):
 
 
 # Test cases for Views
-
 class ViewTests(TestCase):
     def test_index_view_test_no_story(self):
         c = Client()
@@ -118,7 +116,6 @@ class ViewTests(TestCase):
 
 
 # Test cases for Models
-
 class StoryMethodTests(TestCase):
     def test_ensure_story_is_inserted(self):
         story = Story(name="Zombies on Campus", visits=1, description='Zombies desciption', picture='testpic')

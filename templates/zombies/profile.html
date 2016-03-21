@@ -31,7 +31,9 @@
                         <input type="submit" name="submit" class="btn btn-md btn-primary" value="Upload image"/>
                     </form>
                     <br/>
-                    <a href="{% url 'auth_password_change' %}"><button class="btn btn-md btn-primary">Change password</button></a>
+                    <a href="{% url 'auth_password_change' %}">
+                        <button class="btn btn-md btn-primary">Change password</button>
+                    </a>
                 {% endblock %}
             </div>
 
@@ -350,18 +352,12 @@
                                 </div>
                             </div>
                         {% endif %}
-
-
                     </div>
-
                 {% endblock %}
             </div>
-
-
             {% block additional_info %}
             {% endblock %}
         </div>
-
     </div>
     <div class="col-md-2"></div>
     </div>
