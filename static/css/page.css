@@ -59,6 +59,12 @@ ul.nav a:hover {
     font-size: 16px;
 }
 
+.box {
+    width: 400px;
+    font-size: 16px;
+    padding-bottom: 30px;
+}
+
 .internal {
     margin-bottom: 5%;
     margin-left: 5%;
