@@ -1,8 +1,8 @@
 {% load staticfiles %}
-<script src="{% static "typedjs/js/typed.min.js" %}"></script>
 <link href="{% static "typedjs/css/typed.css" %}" rel="stylesheet">
 
 {% if story %}
+
 
     <script>
 
@@ -23,7 +23,7 @@
             }
         }
 
-        $(document).ready(function (e) {
+        $(document).ready(function () {
 
             $('.story_options').hide();
 
@@ -53,6 +53,7 @@
         });
 
     </script>
+
 
     <div id="story_content">
         <div id="story_desc">
