@@ -8,13 +8,13 @@ body {
 }
 
 ul.nav a:hover {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
 #holder {
     margin-top: 10%;
-    background:rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     font-family: 'Source Sans Pro', sans-serif;
     color: #f2f2f2;
     border-radius: 6px;
@@ -22,7 +22,7 @@ ul.nav a:hover {
 
 #stats_holder {
     margin-top: 2%;
-    background:rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     color: #f2f2f2;
@@ -30,7 +30,7 @@ ul.nav a:hover {
 }
 
 #profile_holder {
-    background:rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 17px;
     border-radius: 6px;
@@ -46,13 +46,13 @@ ul.nav a:hover {
 }
 
 #collapseOne {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     font-family: 'Source Sans Pro', sans-serif; /*our font*/
     color: #f2f2f2;
 }
 
 #headingOne {
-    background:rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 #register_line {
@@ -61,8 +61,9 @@ ul.nav a:hover {
 
 .box {
     width: 400px;
-    font-size: 16px;
-    padding-bottom: 30px;
+    font-size: 18px;
+    margin: 20px auto;
+    text-align: left;
 }
 
 .internal {
@@ -138,7 +139,7 @@ ul.nav a:hover {
     font-size: 13px;
 }
 
-.badge_holder_row{
+.badge_holder_row {
     margin-left: 0px;
 }
 
@@ -155,7 +156,7 @@ ul.nav a:hover {
 }
 
 .panel {
-    background:rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .panel-title {
@@ -163,25 +164,25 @@ ul.nav a:hover {
 }
 
 .modal-content {
-    background:rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .custom_buttons {
-    background: rgba(0,0,0,0.4);
-    user-select:none;
+    background: rgba(0, 0, 0, 0.4);
+    user-select: none;
     transition-duration: 0.2s;
 }
 
 .custom_buttons:hover {
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .custom_buttons:active {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .story_button {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     border: none;
     border-radius: 5px;
 }
@@ -191,45 +192,45 @@ ul.nav a:hover {
 }
 
 .story_start_button {
-     background: #991f00;
-     border: rgba(0,0,0,0.4);
-     border-radius: 5px;
-     border: none;
-     padding: 5px 5px;
-     font-size: 16px;
+    background: #991f00;
+    border: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    border: none;
+    padding: 5px 5px;
+    font-size: 16px;
 }
 
 .story_start_button:hover {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .a_button {
-     background: rgba(0,0,0,0.4);
-     border: none;
-     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 5px;
 }
 
 .a_button:hover {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .dropdown_custom {
     position: relative;
     top: 7px;
-    background:transparent;
+    background: transparent;
     border: 0px;
     font-size: 14px;
 }
 
 .home {
-    background-color:#991f00;
+    background-color: #991f00;
     border: none;
     padding: 5px 5px;
     font-size: 16px;
 }
 
 .home:hover {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .about {
@@ -244,3 +245,4 @@ ul.nav a:hover {
     font-size: 16px;
     list-style-type: none;
 }
+

@@ -6,19 +6,29 @@
 
     <script>
 
-        $(document).ready(function () {
+        /*
+         typewriter.js
+         http://codepen.io/voronianski/pen/aicwk
+         */
 
-             $('.story_options').hide();
+        function typeWriter(text, n) {
+            if (n < (text.length)) {
+                $('.type_text').html(text.substring(0, n + 1));
+                n++;
+                setTimeout(function () {
+                    typeWriter(text, n)
+                }, 30);
+            } else {
+                $('.story_options').delay(500).fadeIn(900);
+            }
+        }
 
-             $(function () {
-                $(".element").typed({
-                    strings: ["{{ story.description }}"],
-                    typeSpeed: 5,
-                    callback: function() {
-                         $('.story_options').delay(500).fadeIn(900);
-                    }
-                });
-            });
+        $(document).ready(function (e) {
+
+            $('.story_options').hide();
+
+            var text = "{{ story.description }}";
+            typeWriter(text, 0);
 
             $("button").click(function () {
                 if ($(this).hasClass('home') || $(this).hasClass('story_start_button') || $(this).hasClass('story_button')) {
@@ -48,8 +58,7 @@
         <div id="story_desc">
             <img class="botmar" src="{% static story.picture.url %}"/>
 
-            <div class="box"><span class="element"></span></div>
-
+            <div class="box"><span class="type_text"></span></div>
         </div>
 
         <div id="story_choices" class="story_options botmar">
