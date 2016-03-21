@@ -16,7 +16,6 @@
 
                 <p><span class="username font_style">{% block uname %}{{ username }}{% endblock %}</span></p>
 
-                {# Uploading profile picture inside the profile template #}
                 {% block upload_pic %}
                     <form id="user_form" method="post" action="{% url 'profile' %}" enctype="multipart/form-data">
                         {% csrf_token %}

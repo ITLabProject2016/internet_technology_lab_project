@@ -1,8 +1,5 @@
-{# This file requires some serious clean-up - some divs are missing (or are there too many?), etc. #}
-{# We must correct it, and, ultimately, run through the tool Leif talked about to make sure all is ok #}
 {% load staticfiles %}
 <script src="{% static "typedjs/js/typed.min.js" %}"></script>
-{# <script src="{% static "js/story-load.js" %}"></script> #}
 <link href="{% static "typedjs/css/typed.css" %}" rel="stylesheet">
 
 {% if story %}
@@ -11,7 +8,6 @@
 
         $(document).ready(function () {
 
-            //$('#main_content').hide();
              $('.story_options').hide();
 
              $(function () {
@@ -24,12 +20,8 @@
                 });
             });
 
-
             $("button").click(function () {
-                //alert("you clicked a button");
                 if ($(this).hasClass('home') || $(this).hasClass('story_start_button') || $(this).hasClass('story_button')) {
-                    //alert($('.story_start_button').val());
-
                     $.get($(this).val(), function (data) {
                         $('#main_content').hide();
                         $('#main_content').html(data); //we need this line to make the connection
@@ -39,8 +31,6 @@
             });
 
             $('input[name=choice]').click(function () {
-                //alert("you clicked a choice");
-                //alert($(this).val());
                 $('#main_content').fadeOut("slow");
                 $.get($(this).val(), function (data) {
 
@@ -51,7 +41,6 @@
                 $('#main_content').fadeIn("slow");
             });
         });
-
 
     </script>
 
