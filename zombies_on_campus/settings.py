@@ -12,7 +12,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 # Will need to set this when the project goes live.
-ALLOWED_HOSTS = ['kostiskag.pythonanywhere.com']
+ALLOWED_HOSTS = ['zoc.pythonanywhere.com']
 
 # Application definition
 INSTALLED_APPS = (
