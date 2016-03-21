@@ -85,9 +85,11 @@ ul.nav a:hover {
 }
 
 .username {
+    margin-left: -25px;
     color: #080808;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .user_stats {
