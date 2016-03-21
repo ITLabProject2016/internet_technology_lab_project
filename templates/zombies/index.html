@@ -19,11 +19,15 @@
             {% endif %}
 
             <div class="col-md-6">
+                <div class="row">
                 <button class="story_start_button btn btn-lg btn-danger" type="button"
                         value="{% url 'story-point' story.id 1 %}">
                 <img src="{% static story.picture.url %}" class="img-rounded" alt="{{ story.name }}"
                      width="100"/>
+
                 </button>
+                </div>
+                <div class="row"><span>{{ story.name }}</span></div>
             </div>
 
             {% if forloop.counter|divisibleby:2 %}
@@ -37,7 +41,7 @@
     {% endif %}
 
     {% if not user.is_authenticated %}
-        Not a zombie killer yet? Register <a href="{% url 'registration_register' %}" >here!</a>
+        <span id="register_line">Not a zombie killer yet? Register <a href="{% url 'registration_register' %}" >here!</a></span>
     {% endif %}
 
 {% endblock %}

@@ -1,4 +1,3 @@
-
 import os
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'zombies_on_campus.settings')
@@ -75,7 +74,3 @@ def populate():
 	#Level 7
 	sp18 = add_sp(story, 18, sp17, "You go to the Adam Smith Building to seek shelter. Little do you know that it is filled with zombies. Your knife doesn't save you against 20 very hungry zombie-students.", "adam_smith_1", "Retrieve a knife from the dead girl and seek safety.", 10, "end", "bad")
 	sp19 = add_sp(story, 19, sp17, "You notice 3 people going towards you. You think they are the dead girl's friends. You're mistaken. You become a lovely afternoon snack for the zombies.", "bin_1", "Shout for help.", 5, "end", "bad")
-	
-if __name__ == '__main__':
-    print "Starting Zombies population script..."
-    populate()

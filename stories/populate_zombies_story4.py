@@ -3,6 +3,7 @@ import os
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'zombies_on_campus.settings')
 
 import django
+
 django.setup()
 
 from story_functions import add_story
@@ -51,7 +52,3 @@ def populate():
     sp13 = add_sp(story, 13, sp10, "Bad luck! Such a fool you are, it was just an illusion. Now you just lost your new love. Next time you better think before taking such a quick action.", "no-love",
                   "You scream, leave everything(even your new found love) and run.", 10, "end", "bad")
 
-
-if __name__ == '__main__':
-    print "Starting Zombies population script..."
-    populate()

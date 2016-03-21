@@ -1,19 +1,11 @@
-# We will most likely need a population script so that we can work with the same data.
-
-# We have to import project's settings. When creating the script, uncomment the following lines first:
 import os
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'zombies_on_campus.settings')
 
-# These two lines import the Django settings. Uncomment these as well
-# (otherwise will not allow to import our models)
 import django
 
 django.setup()
 
-# Finally, uncomment and edit this line
-from django.core.files import File
-from zombies.models import Story, StoryPoint
 from story_functions import add_story
 from story_functions import add_sp
 
@@ -23,7 +15,7 @@ def populate():
     story = add_story("Zombies in Cave", "There is no light but seems like there is fire coming towards you", "cave")
 
     # # Level 1
-    sp1 = add_sp(story, 1, None, "You are in Boydd Orr, and you have just explored a cave underneath.", "bo_floor",
+    sp1 = add_sp(story, 1, None, "Deadlines for assignments are approaching and you are studying till late in Boyd Orr lab, you walk down the stairs and you reach the basement and guess what??? you notice a cave! What??? a cave Underneath?", "bo_floor",
                  None, 10, "start", None)
 
     # Level 2
@@ -59,7 +51,3 @@ def populate():
                   "Congratulations!! you are a millionnaire now as you got a solitaire in the treasure..", "party1",
                   "You see treasure on your left and decide to grab before you go.", 10, "end", "good")
 
-
-if __name__ == '__main__':
-    print "Starting Zombies population script..."
-    populate()
