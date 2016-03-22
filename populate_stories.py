@@ -2,6 +2,7 @@ import stories.populate_zombies_story1
 import stories.populate_zombies_story2
 import stories.populate_zombies_story3
 import stories.populate_zombies_story4
+import stories.populate_users
 
 class bcolors:
     HEADER = '\033[95m'
@@ -23,3 +24,5 @@ if __name__ == '__main__':
     stories.populate_zombies_story3.populate()
     print bcolors.HEADER + "Populating story 4..." + bcolors.default
     stories.populate_zombies_story4.populate()
+    print "Populating users..."
+    stories.populate_users.populate()
