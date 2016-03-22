@@ -40,9 +40,13 @@
 <li>pip intall -r requirements.txt</li>
 </ul>
 
-<h3>Populating</h3>
-there is an allready populated database, in case you want to repopulate remove database entries
+<h3>Run Server</h3>
+python manage.py runserver
+
+<h3>Populate Stories</h3>
+There is an allready populated database, in case you want to repopulate remove database entries
 and do
 
-python populate_stories.py
+<li>python manage.py migrate</li>
+<li>python populate_stories.py</li>
 
