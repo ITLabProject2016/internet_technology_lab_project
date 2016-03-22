@@ -36,11 +36,13 @@
                     <h2>Player Status</h2>
 
                     <div>
-                        {% if experience %}
-                            <p>Your current experience is: {{ experience }}</p>
-                        {% else %}
-                            <p>You have no experience yet. Get back in the campus!</p>
-                        {% endif %}
+
+                            {% if experience %}
+                                <p>{% block exp_text %}Your current experience is: {{ experience }}{% endblock %}</p>
+                            {% else %}
+                                <p>{% block no_exp_text %}You have no experience yet. Get back in the campus!{% endblock %}</p>
+                            {% endif %}
+
                     </div>
 
                     <div>
