@@ -47,6 +47,8 @@ python manage.py runserver
 There is an allready populated database, in case you want to repopulate remove database entries
 and do
 
+<ul>
 <li>python manage.py migrate</li>
 <li>python populate_stories.py</li>
+</ul>
 
