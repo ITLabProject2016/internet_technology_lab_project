@@ -1,9 +1,10 @@
 {% load staticfiles %}
 
 {% if user.is_authenticated %}
-    <p>Hello, {{ user.username }}!</p>
+    <p><span class="welcome_font">Welcome back to the campus, {{ user.username }}. <br/>Where will the night take you..?</span>
+    </p>
 {% else %}
-    <p>Hello, Stranger.</p>
+    <p><span class="welcome_font">Welcome to the campus, stranger. Where will the night take you?..</span></p>
 {% endif %}
 <br/>
 
@@ -16,23 +17,30 @@
             <div class="row botmar">
         {% endif %}
 
-        <div class="col-md-6">
+    <div class="col-md-6">
+        <div class="row">
             <button class="story_start_button btn btn-lg btn-danger" type="button"
                     value="{% url 'story-point' story.id 1 %}">
-                <img src="{% static story.picture.url %}" class="img-rounded" alt="{{ story.name }}"
+                <img width=125 height=105 src="{% static story.picture.url %}" class="img-rounded"
+                     alt="{{ story.name }}"
                      width="100"/>
+
             </button>
         </div>
+        <div class="row"><span>{{ story.name }}</span></div>
+    </div>
 
-        {% if forloop.counter|divisibleby:2 %}
-            </div>
-        {% endif %}
+    {% if forloop.counter|divisibleby:2 %}
+        </div>
+    {% endif %}
+
     {% endfor %}
 
 {% else %}
-    <p>There are no stories present.</p>
+    <strong>There are no stories present.</strong>
 {% endif %}
 
 {% if not user.is_authenticated %}
-    <p>Not a zombie killer yet? Register <a href="{% url 'registration_register' %}" >here!</a></p>
+    <span id="register_line">Not a zombie killer yet? Register <a
+            href="{% url 'registration_register' %}">here!</a></span>
 {% endif %}

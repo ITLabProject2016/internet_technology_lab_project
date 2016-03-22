@@ -22,7 +22,7 @@ if __name__ == '__main__':
     stories.populate_zombies_story2.populate()
     print bcolors.OKGREEN + "Populating story 3..."
     stories.populate_zombies_story3.populate()
-    print bcolors.HEADER + "Populating story 4..." + bcolors.default
+    print bcolors.HEADER + "Populating story 4..."
     stories.populate_zombies_story4.populate()
-    print "Populating users..."
+    print bcolors.OKGREEN + "Populating users..." + bcolors.default
     stories.populate_users.populate()
