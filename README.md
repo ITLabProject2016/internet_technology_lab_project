@@ -50,5 +50,6 @@ and do
 <ul>
 <li>python manage.py migrate</li>
 <li>python populate_stories.py</li>
+<p>Note that the population script will also create the users (with superuser priviledges).</p>
 </ul>
 
