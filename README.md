@@ -37,7 +37,7 @@
 <li>cd ...</li>
 <li>mkvirtualenv zombies</li>
 <li>workon zombies</li>
-<li>pip intall -r requirements.txt</li>
+<li>pip install -r requirements.txt</li>
 </ul>
 
 <h3>Run Server</h3>
