@@ -1,5 +1,8 @@
 <h1>Zombies on Campus</h1>
 
+Please view a running version of the project from the following url:
+http://zombiesoncampus.pythonanywhere.com
+
 <h2>About</h2>
 
 <p>Zombies on Campus is a quick fun choice-based game where a user can play a variety of stories and make choices that affect the ending.</p>
